@@ -4,6 +4,7 @@ import { GiAnimalSkull } from 'react-icons/gi'
 import { AiFillTwitterCircle, AiFillGithub, AiFillLinkedin, AiFillGitlab } from 'react-icons/ai'
 import Image from 'next/image';
 import Tony from '../public/IMG_3544.png';
+import { BsPersonBoundingBox } from 'react-icons/bs';
 
 export default function Home() {
 
@@ -27,7 +28,7 @@ export default function Home() {
         <section className='min-h-screen  bg-chillblack '>
           <nav className='py-7  flex justify-between bg-chillblack rounded-full px-1  ml-6 mr-6'>
             <GiAnimalSkull className='text-5xl ml-8' />
-            <ul className='flex items-center mr-12 bg-chillblack'>
+            <ul className='flex items-center mr-12 bg-chillblack animate-bounce'>
               <a href="#" class="relative px-6 py-3 font-bold text-white rounded-lg group">
                 <span className="absolute inset-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 bg-amber-400 ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0"></span>
                 <span className="absolute inset-0 w-full h-full transition duration-300 transform translate-x-1 translate-y-1 bg-amber-300 ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-screen"></span>
@@ -37,21 +38,36 @@ export default function Home() {
             </ul>
           </nav>
           <div className='text-center p-10'>
-            <div id="tooltip" className='hidden t-tooltip grad p-4 text-black rounded-xl bg-white left-60 h-48 mt-4 absolute'>
-              <h2 className='font-bold text-xl mr-2 mb-2'>Information personnelle</h2>
-              Ceci est un tooltip!
+            <div id='tooltip' class="max-w-sm p-8 left-32 top-12 bg-black border border-amber-200 rounded-2xl shadow-lg shadow-amber-500 dark:bg-amber-100 dark:border-gray-200  absolute hidden" >
+              <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-black">Avant-goût</h5>
+              <dl class="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-amber-500 dark:divide-black">
+                <div class="flex flex-col pb-3 mt-6">
+                  <dt class="mb-1 text-gray-500 md:text-lg dark:text-black">Nationalité</dt>
+                  <dd class="text-lg font-semibold">Vietnamienne</dd>
+                </div>
+                <div class="flex flex-col py-3">
+                  <dt class="mb-1 text-gray-500 md:text-lg dark:text-black">Date de naissance</dt>
+                  <dd class="text-lg font-semibold">2003/05/02 - 19ans</dd>
+                </div>
+                <div class="flex flex-col pt-3">
+                  <dt class="mb-1 text-gray-500 md:text-lg dark:text-black">Passe-temps/Passion</dt>
+                  <dd class="text-lg font-semibold">programmer, technologie(WEB3), bodybuilding ...</dd>
+                </div>
+              </dl>
+
             </div>
-            <h2 className='text-7xl py-2 text-amber-300 font-medium shadow-xl cursor-pointer '><p className='content-center' onMouseEnter={showtooltip} onMouseLeave={hidetooltip}>TONY BUI</p></h2>
+            <h2 className='text-7xl py-2 text-amber-300 font-medium  '><p className='content-center inline-block cursor-pointer underline underline-offset-8 animate-pulse' onMouseEnter={showtooltip} onMouseLeave={hidetooltip}>TONY BUI</p></h2>
             <h3 className='text-2xl py-2 text-amber-200'>Étudiant - Développements d'applications Web et Mobile</h3>
-            <p className='text-md py-1 leading-6 text-amber-100'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p className='text-md py-1 -indent-6 text-amber-100'>Étudiant travailleur qui cherche un stage/emploi.  Prêt à utiliser mes compétences et
+              ma passion pour faire avancer la mission d'une entreprise. </p>
           </div>
           <div className='text-5xl flex justify-center gap-14 py-3 text-white'>
             <AiFillLinkedin />
-            <AiFillTwitterCircle />
-            <AiFillGithub />
-            <AiFillGitlab />
+            <a href="https://twitter.com/AlchemyTown"><AiFillTwitterCircle /></a>
+            <a href='https://github.com/tonybbb2'><AiFillGithub /></a>
+            <a href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></a>
           </div>
-          <div className='relative mx-auto bg-gradient-to-b from-amber-400 rounded-full w-80 h-80 mt-20 overflow-hidden'>
+          <div className='relative mx-auto bg-gradient-to-b from-amber-400 rounded-full w-80 h-80 mt-20  overflow-hidden'>
             <Image src={Tony} layout='fill' objectFit='cover' />
           </div>
         </section>
