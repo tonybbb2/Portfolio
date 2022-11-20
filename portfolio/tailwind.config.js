@@ -14,6 +14,6 @@ module.exports = {
         'chillblack' : '#252525'
       },
     },
-    plugins: [],
+    plugins: [require('tailwind-scrollbar'),],
   }
 }
