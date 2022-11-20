@@ -1,6 +1,13 @@
 import Head from 'next/head';
 import { MdOutlineWork } from 'react-icons/md';
 import { FaCode } from 'react-icons/fa';
+import Tony from '../public/IMG_3544.png';
+import Image from 'next/image';
+import { TbSeparator } from 'react-icons/tb'
+import { BsFillTelephoneFill } from 'react-icons/bs'
+import { MdOutlineAlternateEmail } from 'react-icons/md'
+import { ImLocation } from 'react-icons/im'
+import { TbFileDownload } from 'react-icons/tb'
 
 export default function Resume() {
     return (
@@ -12,8 +19,38 @@ export default function Resume() {
             </Head>
             <main className='bg-chillblack'>
                 <section className='min-h-screen  bg-chillblack '>
-                    <h1 className="text-6xl py-6 p-12 text-amber-50">smtg.</h1>
-                    <div className=" w-1/4 ml-12 mr-3 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                    <div className=' flex justify-between py-6 p-12 text-amber-50'>
+                        <div className='text-6xl font-serif'>Résumé</div>
+
+                        <div className='text-xl text-amber-100 mr-2 mt-4'>
+                            <p className='inline-block text-lg font-medium ml-2 text-white underline underline-offset-2 '>Curriculum vitae</p><a href="../public/" download="Tony.pdf" target="_blank"><TbFileDownload className='inline-block text-2xl ml-2 hover:scale-150 cursor-pointer'></TbFileDownload></a>
+                        </div>
+
+                    </div>
+                    <div className=" w-1/6 ml-12 mr-3 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                        <div className='relative mx-auto bg-gradient-to-b from-amber-400 rounded-full mt-10 tablet:w-20 tablet:h-20 laptop:w-40 laptop:h-40 desktop:w-60 desktop:h-60 overflow-hidden'>
+                            <Image src={Tony} layout='fill' objectFit='cover' />
+                        </div>
+                        <h3 className='text-5xl text-center'><p className='text3xl font-semibold text-amber-300'>Tony Bui</p></h3>
+                        <h3 className='text-xl text-center mt-1'><p className='font-semibold text-amber-100'>Futur full-stack développeur</p></h3>
+                        <div className='text-center'>
+                            <TbSeparator className='text-white text-7xl inline-block' />
+                        </div>
+                        <h3 className='text-3xl ml-4'><p className='font-semibold text-amber-200'>A propos de moi</p></h3>
+                        <p className=' text-white mt-2 p-1 ml-4'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,d it e9aining Loredesktop publishing.</p>
+                        <h3 className='text-3xl p-4'><p className='font-semibold text-amber-200'>Contact</p></h3>
+                        <div className='text-xl mb-2 text-amber-100'>
+                            <BsFillTelephoneFill className='inline-block text-2xl ml-4' /><p className='inline-block text-lg font-medium ml-4 text-white'>514 262-6304</p>
+                        </div>
+                        <div className='text-xl mb-2 text-amber-100'>
+                            <MdOutlineAlternateEmail className='inline-block text-2xl ml-4' /><p className='inline-block text-lg font-medium ml-4 text-white'>bui.tony35@gmail.com</p>
+                        </div>
+                        <div className='text-xl mb-4 text-amber-100'>
+                            <ImLocation className='inline-block text-2xl ml-4' /><p className='inline-block text-lg font-medium ml-4 text-white'>Montréal, Québec (Canada)</p>
+                        </div>
+
+                    </div>
+                    <div className=" w-1/4 ml-4 mr-3 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
                         <h3 className='text-5xl p-3 ml-4'><MdOutlineWork className='inline-block text-amber-400 mr-2' /><p className='inline-block text-3xl font-semibold text-amber-200'>expériences</p></h3>
                         <ol class="ml-14 border-l border-amber-100">
                             <li class="mb-10 ml-8 mt-2 ">
@@ -37,7 +74,7 @@ export default function Resume() {
                                 <p class="mb-4 text-xl font-normal text-gray-500 dark:text-gray-400">septembre/2019—mars/2021</p>
 
                             </li>
-                            <li class="mb-8 ml-0">
+                            <li class="mb-8 ml-8">
                                 <div class="absolute w-3 h-3 rounded-full mt-1.5 ml-0.5 left-12 border border-white dark:bg-amber-300"></div>
                                 <time class="text-2xl font-semibold text-gray-900 dark:text-white">Réceptionniste</time>
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Jenny Spa Nail's</h3>
@@ -47,7 +84,7 @@ export default function Resume() {
                         </ol>
 
                     </div>
-                    <div className="overflow-hidden backdrop-blur-xl bg-white/10 w-1/2 rounded-md">
+                    <div className="overflow-hidden backdrop-blur-xl bg-white/10 w-1/2 rounded-md hover:scale-105">
                         <h3 className='text-5xl p-3 ml-4'><FaCode className='inline-block text-amber-400 mr-4' /><p className='inline-block text-3xl font-semibold text-amber-200'>compétences programmation</p></h3>
                         <div className='ml-20 mt-2'>
                             <div class="mb-1 text-base font-medium dark:text-white">HTML</div>
@@ -97,7 +134,7 @@ export default function Resume() {
                                 <div class="bg-gray-600 h-2.5 rounded-full dark:bg-red-600 w-3/5"></div>
                             </div>
                         </div>
-                        <div className='ml-20 mb-8'>
+                        <div className='ml-20 mb-9'>
                             <div class="mb-1 text-base font-medium dark:text-white">Git</div>
                             <div class="w-3/4 bg-orange-500 rounded-full h-2.5 mb-4 dark:bg-gray-700">
                                 <div class="bg-gray-600 h-2.5 rounded-full dark:bg-red-500 w-3/4"></div>
@@ -105,6 +142,14 @@ export default function Resume() {
                         </div>
 
                     </div>
+                    <div className="w-1/3 ml-4 mr-3 mt-4 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                        <h3 className='text-5xl p-3 ml-4'><MdOutlineWork className='inline-block text-amber-400 mr-2' /><p className='inline-block text-3xl font-semibold text-amber-200'>Intérets</p></h3>
+                    </div>
+
+
+
+
+
                 </section>
             </main>
         </div>
