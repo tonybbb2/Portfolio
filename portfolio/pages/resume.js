@@ -8,8 +8,21 @@ import { BsFillTelephoneFill } from 'react-icons/bs'
 import { MdOutlineAlternateEmail } from 'react-icons/md'
 import { ImLocation } from 'react-icons/im'
 import { TbFileDownload } from 'react-icons/tb'
+import React from "react";
+import { IoMdSchool } from 'react-icons/io'
+import { GiSandsOfTime } from 'react-icons/gi'
+import { RiStarSFill } from 'react-icons/ri'
+import { AiFillCode } from 'react-icons/ai'
+import { AiOutlineRead } from 'react-icons/ai'
+import { CgGym } from 'react-icons/cg'
+import { GiCook } from 'react-icons/gi'
+import { GiGamepad } from 'react-icons/gi'
+import {TbArrowBackUp} from 'react-icons/tb'
+import Link from 'next/link';
 
 export default function Resume() {
+    const [showModal, setShowModal] = React.useState(false);
+
     return (
         <div>
             <Head>
@@ -19,15 +32,63 @@ export default function Resume() {
             </Head>
             <main className='bg-chillblack'>
                 <section className='min-h-screen  bg-chillblack '>
-                    <div className=' flex justify-between py-6 p-12 text-amber-50'>
-                        <div className='text-6xl font-serif'>Résumé</div>
+                    {showModal ? (
+                        <>
+                            <div
+                                className="justify-center items-center mt-14 align-bottom overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                            >
+                                <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                                    {/*content*/}
+                                    <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gray-800 outline-none focus:outline-none">
+                                        {/*body*/}
+                                        <div class=" px-4">
+                                            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white mt-4">Contacte</h2>
+                                            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Vous voulez entrer en contact avec moi ? Pas de probleme, écrivez moi un message ci-dessous et je vous reviendrais!</p>
+                                            <form action="#" class="space-y-8">
+                                                <div>
+                                                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                                                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+                                                </div>
+                                                <div>
+                                                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sujet</label>
+                                                    <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Comment puis-je me rendre a votre service?" required />
+                                                </div>
+                                                <div class="sm:col-span-2">
+                                                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Votre message</label>
+                                                    <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laisser un message..."></textarea>
+                                                </div>
+                                                <div class="flex justify-end ">
+                                                    <button type="submit" class="py-3 px-5 text-sm mb-5 font-medium text-right text-white rounded-lg bg-lime-500 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        {/*footer*/}
+                                        <div className="flex items-center justify-center p-6 border-t border-solid border-slate-200 rounded-b">
+                                            <button
+                                                className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                type="button"
+                                                onClick={() => setShowModal(false)}
+                                            >
+                                                Fermer
+                                            </button>
 
-                        <div className='text-xl text-amber-100 mr-2 mt-4'>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                        </>
+                    ) : null}
+                    <div className=' flex justify-between py-6 p-12  text-amber-50'>
+
+                        <div className='text-xl mt-4 font-serif'><Link href='/'><TbArrowBackUp className='inline-block text-xl ml-2 hover:scale-150 cursor-pointer'></TbArrowBackUp></Link>&nbsp;accueil</div>
+                        <div className='text-6xl font-serif'>Résumé</div>
+                        <div className='text-xl text-amber-100  mt-4'>
                             <p className='inline-block text-lg font-medium ml-2 text-white underline underline-offset-2 '>Curriculum vitae</p><a href="../public/" download="Tony.pdf" target="_blank"><TbFileDownload className='inline-block text-2xl ml-2 hover:scale-150 cursor-pointer'></TbFileDownload></a>
                         </div>
 
                     </div>
-                    <div className=" w-1/6 ml-12 mr-3 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                    <div className=" w-1/6 ml-14 mr-3  float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
                         <div className='relative mx-auto bg-gradient-to-b from-amber-400 rounded-full mt-10 tablet:w-20 tablet:h-20 laptop:w-40 laptop:h-40 desktop:w-60 desktop:h-60 overflow-hidden'>
                             <Image src={Tony} layout='fill' objectFit='cover' />
                         </div>
@@ -48,6 +109,16 @@ export default function Resume() {
                         <div className='text-xl mb-4 text-amber-100'>
                             <ImLocation className='inline-block text-2xl ml-4' /><p className='inline-block text-lg font-medium ml-4 text-white'>Montréal, Québec (Canada)</p>
                         </div>
+                        <div className='text-xl mb-11  text-amber-100 text-center'>
+                            <button
+                                className="bg-amber-400 hover:bg-amber-600 text-white font-bold mt-4 py-2 px-4 border-b-4 border-amber-300 hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500 rounded "
+                                type="button"
+                                onClick={() => setShowModal(true)}
+                            >
+                                Me contacter
+                            </button>
+                        </div>
+
 
                     </div>
                     <div className=" w-1/4 ml-4 mr-3 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
@@ -142,15 +213,40 @@ export default function Resume() {
                         </div>
 
                     </div>
-                    <div className="w-1/3 ml-4 mr-3 mt-4 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
-                        <h3 className='text-5xl p-3 ml-4'><MdOutlineWork className='inline-block text-amber-400 mr-2' /><p className='inline-block text-3xl font-semibold text-amber-200'>Intérets</p></h3>
+                    <div className="w-1/4 ml-4 mr-3 mt-4 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                        <h3 className='text-5xl p-3 ml-4'><IoMdSchool className='inline-block text-amber-400 mr-2' /><p className='inline-block text-3xl font-semibold text-amber-200'>education</p></h3>
+                        <ul class="mb-8 ml-10 space-y-4 text-left">
+                            <li class="flex items-center space-x-3 mt-2 text-white font-semibold text-2xl">
+
+                                <GiSandsOfTime className='text-amber-200' />
+                                <span>Cégep de Maisonneuve</span>
+
+                            </li>
+                            <p className='text-gray-400 text-lg ml-12 '>Automne 2020 - présent</p>
+                            <li class="flex items-center space-x-3 text-white font-semibold text-2xl">
+
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>Académie Michele-Provost </span>
+                            </li>
+                            <p className='text-gray-400 text-lg ml-12 '>Automne 2020 - présent</p>
+
+                        </ul>
                     </div>
-
-
-
-
-
+                    <div className="w-1/2 mr-3 mt-4 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                        <h3 className='text-5xl p-3 ml-4'><RiStarSFill className='inline-block text-amber-400 mr-2' /><p className='inline-block text-3xl font-semibold text-amber-200'>intérets</p></h3>
+                        <div className='text-8xl flex justify-center gap-12 py-8 mb-12 text-amber-200'>
+                            <AiFillCode />
+                            <AiOutlineRead />
+                            <CgGym />
+                            <GiCook />
+                            <GiGamepad />
+                        </div>
+                    </div>
                 </section>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
             </main>
         </div>
     );
