@@ -88,7 +88,7 @@ export default function Resume() {
                         </div>
 
                     </div>
-                    <div className=" w-1/6 ml-14 mr-3  float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                    <div className="  ml-14 mr-3  float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105 phone:w-1/2 tablet:w-1/2 laptop:w-1/6 tablet:mb-4 laptop:mb-4 desktop:mb-0 desktop:w-1/6">
                         <div className='relative mx-auto bg-gradient-to-b from-amber-400 rounded-full mt-10 tablet:w-20 tablet:h-20 laptop:w-40 laptop:h-40 desktop:w-60 desktop:h-60 overflow-hidden'>
                             <Image src={Tony} layout='fill' objectFit='cover' />
                         </div>
@@ -109,7 +109,7 @@ export default function Resume() {
                         <div className='text-xl mb-4 text-amber-100'>
                             <ImLocation className='inline-block text-2xl ml-4' /><p className='inline-block text-lg font-medium ml-4 text-white'>Montréal, Québec (Canada)</p>
                         </div>
-                        <div className='text-xl mb-11  text-amber-100 text-center'>
+                        <div className='text-xl  text-amber-100 text-center tablet:mb-14 laptop:mb-14 desktop:mb-11'>
                             <button
                                 className="bg-amber-400 hover:bg-amber-600 text-white font-bold mt-4 py-2 px-4 border-b-4 border-amber-300 hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500 rounded "
                                 type="button"
@@ -121,7 +121,7 @@ export default function Resume() {
 
 
                     </div>
-                    <div className=" w-1/4 ml-4 mr-3 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                    <div className="ml-4 mr-3 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105 phone:w-1/2 tablet:w-1/3 laptop:w-1/6 desktop:w-1/4">
                         <h3 className='text-5xl p-3 ml-4'><MdOutlineWork className='inline-block text-amber-400 mr-2' /><p className='inline-block text-3xl font-semibold text-amber-200'>expériences</p></h3>
                         <ol class="ml-14 border-l border-amber-100">
                             <li class="mb-10 ml-8 mt-2 ">
@@ -145,7 +145,7 @@ export default function Resume() {
                                 <p class="mb-4 text-xl font-normal text-gray-500 dark:text-gray-400">septembre/2019—mars/2021</p>
 
                             </li>
-                            <li class="mb-8 ml-8">
+                            <li class="mb-8 ml-8 tablet:mb-28 desktop:mb-8">
                                 <div class="absolute w-3 h-3 rounded-full mt-1.5 ml-0.5 left-12 border border-white dark:bg-amber-300"></div>
                                 <time class="text-2xl font-semibold text-gray-900 dark:text-white">Réceptionniste</time>
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Jenny Spa Nail's</h3>
@@ -155,7 +155,7 @@ export default function Resume() {
                         </ol>
 
                     </div>
-                    <div className="overflow-hidden backdrop-blur-xl bg-white/10 w-1/2 rounded-md hover:scale-105">
+                    <div className=" backdrop-blur-xl bg-white/10 tablet:w-1/2 tablet:inline-block desktop:overflow-hidden tablet:ml-14 desktop:ml-1  desktop:w-1/2 rounded-md hover:scale-105">
                         <h3 className='text-5xl p-3 ml-4'><FaCode className='inline-block text-amber-400 mr-4' /><p className='inline-block text-3xl font-semibold text-amber-200'>compétences programmation</p></h3>
                         <div className='ml-20 mt-2'>
                             <div class="mb-1 text-base font-medium dark:text-white">HTML</div>
@@ -213,7 +213,7 @@ export default function Resume() {
                         </div>
 
                     </div>
-                    <div className="w-1/4 ml-4 mr-3 mt-4 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                    <div className="mt-4 tablet:w-1/3 tablet:float-right tablet:mr-20 desktop:mr-14 tablet:inline-block desktop:w-1/4 desktop:inline-block  backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
                         <h3 className='text-5xl p-3 ml-4'><IoMdSchool className='inline-block text-amber-400 mr-2' /><p className='inline-block text-3xl font-semibold text-amber-200'>education</p></h3>
                         <ul class="mb-8 ml-10 space-y-4 text-left">
                             <li class="flex items-center space-x-3 mt-2 text-white font-semibold text-2xl">
@@ -232,7 +232,7 @@ export default function Resume() {
 
                         </ul>
                     </div>
-                    <div className="w-1/2 mr-3 mt-4 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
+                    <div className="w-1/2 mr-3 ml-4 mt-4 float-left backdrop-blur-xl bg-white/10 rounded-md hover:scale-105">
                         <h3 className='text-5xl p-3 ml-4'><RiStarSFill className='inline-block text-amber-400 mr-2' /><p className='inline-block text-3xl font-semibold text-amber-200'>intérets</p></h3>
                         <div className='text-8xl flex justify-center gap-12 py-8 mb-12 text-amber-200'>
                             <AiFillCode />
