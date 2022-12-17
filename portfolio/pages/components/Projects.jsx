@@ -1,6 +1,9 @@
 import React from 'react'
 import { ProjectsItem } from './ProjectsItem'
-import comingsoon from '../../public/hd-coming-soon-lettering-text-words-png-11639788427fzll9qzquc.png'
+import comics from '../../public/comics.jpg'
+import anime from '../../public/anime.jpg'
+import pokemon from '../../public/pokemon.jpg'
+import podcasts from '../../public/podcasts.jpg'
 
 export const Projects = () => {
   return (
@@ -11,10 +14,10 @@ export const Projects = () => {
         <div className='grid md:grid-cols-2 gap-8'>
 
 
-          <ProjectsItem title='Coming Soon' backgroundImg={comingsoon} projectUrl='/comingsoon' />
-          <ProjectsItem title='Coming Soon' backgroundImg={comingsoon} projectUrl='/comingsoon' />
-          <ProjectsItem title='Coming Soon' backgroundImg={comingsoon} projectUrl='/comingsoon' />
-          <ProjectsItem title='Coming Soon' backgroundImg={comingsoon} projectUrl='/comingsoon' />
+          <ProjectsItem title='Comics Application' backgroundImg={comics} projectUrl='/Comics' />
+          <ProjectsItem title='Anime Application' backgroundImg={anime} projectUrl='/Anime' />
+          <ProjectsItem title='Pokemon Application' backgroundImg={pokemon} projectUrl='/Pokemon' />
+          <ProjectsItem title='Podcasts Application' backgroundImg={podcasts} projectUrl='/Podcasts' />
 
 
         </div>

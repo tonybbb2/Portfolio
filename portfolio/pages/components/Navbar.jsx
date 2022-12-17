@@ -12,6 +12,7 @@ export const Navbar = () => {
     const [nav, setNav] = useState(false)
     const [shadow, setShadsow] = useState(false)
     const [navBg, setNavBg] = useState('#ecf0f3');
+    const [LinkColor, setLinkColor] = useState('#1f2937');
     const router = useRouter();
 
     const handleNav = () => {
@@ -19,11 +20,21 @@ export const Navbar = () => {
     }
 
     useEffect(() => {
-        if (router.asPath === '/') {
-            setNavBg('#ecf0f3')
-        } else {
-            setNavBg('#transparent')
+        if (
+            router.asPath === '/Comics' ||
+            router.asPath === '/Anime' ||
+            router.asPath === '/Pokemon' ||
+            router.asPath === '/Podcasts'
+        ) {
+            setNavBg('transparent')
+            setLinkColor('#ecf0f3')
         }
+        else {
+            setNavBg('#ecf0f3')
+            setLinkColor('#1f2937')
+        }
+
+
     }, [router])
 
 
@@ -43,7 +54,7 @@ export const Navbar = () => {
             <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
                 <Image src='/../../portfolio/public/IMG_3544.png' alt='/' width='100' height='80' />
                 <div>
-                    <ul className='hidden md:flex'>
+                    <ul style={{color : `${LinkColor}`}} className='hidden md:flex'>
                         <Link href='/#main'>
                             <li className='ml-10 text-sm uppercase hover:border-b'>Home</li>
                         </Link>
@@ -71,7 +82,9 @@ export const Navbar = () => {
                 }>
                     <div>
                         <div className='flex w-full items-center justify-between'>
-                            <Image src='/../../portfolio/public/IMG_3544.png' alt='/' width='90' height='75' />
+                            <Link href='/'>
+                                <Image src='/../../portfolio/public/IMG_3544.png' alt='/' width='90' height='75' />
+                            </Link>
                             <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
                                 <AiOutlineClose size={25} />
                             </div>
@@ -82,11 +95,21 @@ export const Navbar = () => {
                     </div>
                     <div className='py-4 flex flex-col'>
                         <ul className='uppercase'>
-                            <li className='py-4 text-sm'>Home</li>
-                            <li className='py-4 text-sm'>About</li>
-                            <li className='py-4 text-sm'>Skills</li>
-                            <li className='py-4 text-sm'>Projects</li>
-                            <li className='py-4 text-sm'>Contact</li>
+                            <Link href='/'>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Home</li>
+                            </Link>
+                            <Link href='/#about'>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>About</li>
+                            </Link>
+                            <Link href='/#skills'>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Skills</li>
+                            </Link>
+                            <Link href='/#projects'>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Projects</li>
+                            </Link>
+                            <Link href='/#contact'>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Contact</li>
+                            </Link>
                         </ul>
                         <div className='pt-40'>
                             <p className='uppercase tracking-widest text-red-500'>Let's connect</p>
