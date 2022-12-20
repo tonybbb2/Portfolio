@@ -9,8 +9,8 @@ export const Projects = () => {
   return (
     <div id='projects' className='w-full'>
       <div className='max-w-[1240px] mx-auto px-2 py-16'>
-        <p className='text-xl tracking-widest uppercase text-[#5651e5]'>Projects</p>
-        <h2 className='py-4'>What ive built</h2>
+        <p className='text-xl tracking-widest uppercase text-[#5651e5]'>Projets</p>
+        <h2 className='py-4'>Ce que j'ai construis</h2>
         <div className='grid md:grid-cols-2 gap-8'>
 
 

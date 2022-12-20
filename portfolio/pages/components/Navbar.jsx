@@ -56,16 +56,16 @@ export const Navbar = () => {
                 <div>
                     <ul style={{color : `${LinkColor}`}} className='hidden md:flex'>
                         <Link href='/#main'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Home</li>
+                            <li className='ml-10 text-sm uppercase hover:border-b'>Accueil</li>
                         </Link>
                         <Link href='/#about'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>About</li>
+                            <li className='ml-10 text-sm uppercase hover:border-b'>À propos</li>
                         </Link>
                         <Link href='/#skills'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Skills</li>
+                            <li className='ml-10 text-sm uppercase hover:border-b'>Compétences</li>
                         </Link>
                         <Link href='/#projects'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Projects</li>
+                            <li className='ml-10 text-sm uppercase hover:border-b'>Projets</li>
                         </Link>
                         <Link href='/#contact'>
                             <li className='ml-10 text-sm uppercase hover:border-b'>Contact</li>
@@ -90,29 +90,29 @@ export const Navbar = () => {
                             </div>
                         </div>
                         <div className='border-b border-gray-300 my-4'>
-                            <p className='w-[85%] md:w-[90%] py-4'>Let's build something together!</p>
+                            <p className='w-[85%] md:w-[90%] py-4'>Construisons quelque chose ensemble!</p>
                         </div>
                     </div>
                     <div className='py-4 flex flex-col'>
                         <ul className='uppercase'>
                             <Link href='/'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Home</li>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Accueil</li>
                             </Link>
                             <Link href='/#about'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>About</li>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>À propos </li>
                             </Link>
                             <Link href='/#skills'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Skills</li>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Compétences</li>
                             </Link>
                             <Link href='/#projects'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Projects</li>
+                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Projets</li>
                             </Link>
                             <Link href='/#contact'>
                                 <li onClick={() => setNav(false)} className='py-4 text-sm'>Contact</li>
                             </Link>
                         </ul>
                         <div className='pt-40'>
-                            <p className='uppercase tracking-widest text-red-500'>Let's connect</p>
+                            <p className='uppercase tracking-widest text-red-500'>Connectez-vous avec moi!</p>
                             <div className='flex items-center justify-between my-4 w-full sm:w[80%]'>
                                 <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200'>
                                     <FaLinkedinIn />

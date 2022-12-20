@@ -3,8 +3,12 @@ import Image from "next/image";
 import comicsIMG from "../public/comics.jpg";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
+import gif from '../public/comicsgif.gif'
 
 const Comics = () => {
+
+    const [showModal, setShowModal] = React.useState(false);
+
     return (
         <div className='w-full'>
             <div className='w-screen h-[30vh] lg:h-[40vh] relative'>
@@ -17,10 +21,13 @@ const Comics = () => {
             </div>
             <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8'>
                 <div className='col-span-4'>
-                    <p>Projects</p>
-                    <h2>Overview</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    <button className='px-8 py-2 mt-4 mr-8'>Demo</button>
+                    <p>Projets</p>
+                    <h2>Aperçu</h2>
+                    <p className='mt-4'>Cette application de comics web permets a l'utilisateur de parcourir des centaines de milliers de comics numériques et de trouver les derniers titres. L'utilisateur pourra rechercher par genre ou par mot-clé pour trouver exactement ce qu'il veut rechercher.
+                        Cette application permet de découvrir des comics classiques, et des titres indépendants, tous avec une qualité d'image élevée. L'utilisation de cette application permet de découvrir des comics pour tous les gouts et en apprendre plus sur les artistes et les auteurs qui font le monde des comics.
+                    </p>
+                    <button className='px-8 py-2 mt-4 mr-8'
+                        onClick={() => setShowModal(true)}>Demo</button>
                 </div>
                 <div className='col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4'>
                     <div className='p-2'>
@@ -32,11 +39,42 @@ const Comics = () => {
                         <p className='text-gray-700 py-2 flex items-center'><RiRadioButtonFill /> Bulma</p>
                         <p className='text-gray-700 py-2 flex items-center'><RiRadioButtonFill /> NodeJS</p>
                         <p className='text-gray-700 py-2 flex items-center'><RiRadioButtonFill /> API (json)</p>
+                        <p className='text-gray-700 py-2 flex items-center'><RiRadioButtonFill /> Git </p>
                     </div>
                 </div>
             </div>
+            {showModal ? (
+                <>
+                    <div
+                        className="justify-center items-center mt-14 align-bottom overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                    >
+                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                            {/*content*/}
+                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gray-800 outline-none focus:outline-none">
+                                {/*body*/}
+                                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white mt-4">Démonstration</h2>
+                                <div class=" px-2 mt-2 rounded-lg border-">
+
+                                    <Image src={gif} alt='/' />
+                                </div>
+                                {/*footer*/}
+                                <div className="flex items-center justify-center p-6 rounded-b">
+                                    <button
+                                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="button"
+                                        onClick={() => setShowModal(false)}
+                                    >
+                                        Fermer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+            ) : null}
             <Link href='/#projects'>
-                <p className='text-center text-gray-700 py-4 mt-24 cursor-pointer'>Back to Projects</p>
+                <p className='text-center text-gray-700 py-4 mt-24 cursor-pointer'>Retour au projets</p>
             </Link>
         </div>
     )
