@@ -15,7 +15,7 @@ export const Contact = () => {
         console.log(values)
         let config = {
             method: 'post',
-            url: `${process.env.development.NEXT_PUBLIC_API_URL}/api/contact`,
+            url: `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
             headers: {
                 'Content-Type': 'application/json'
             },
