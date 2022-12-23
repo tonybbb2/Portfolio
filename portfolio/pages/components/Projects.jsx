@@ -4,6 +4,7 @@ import comics from '../../public/comics.jpg'
 import anime from '../../public/anime.jpg'
 import pokemon from '../../public/pokemon.jpg'
 import podcasts from '../../public/podcasts.jpg'
+import Vi from '../../public/Vi.png'
 
 export const Projects = () => {
   return (
@@ -13,11 +14,11 @@ export const Projects = () => {
         <h2 className='py-4'>Ce que j'ai construis</h2>
         <div className='grid md:grid-cols-2 gap-8'>
 
-
+          <ProjectsItem title='ViFitness mobile Application ' backgroundImg={Vi} projectUrl='/Vi' />
           <ProjectsItem title='Comics Application' backgroundImg={comics} projectUrl='/Comics' />
           <ProjectsItem title='Anime Application' backgroundImg={anime} projectUrl='/Anime' />
-          <ProjectsItem title='Pokemon Application' backgroundImg={pokemon} projectUrl='/Pokemon' />
           <ProjectsItem title='Podcasts Application' backgroundImg={podcasts} projectUrl='/Podcasts' />
+          <ProjectsItem title='Pokemon Application' backgroundImg={pokemon} projectUrl='/Pokemon' />
 
 
         </div>

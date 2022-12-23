@@ -4,8 +4,35 @@ import { AiOutlineMail } from 'react-icons/ai'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
+import { useForm } from 'react-hook-form'
+import axios from 'axios'
 
 export const Contact = () => {
+
+    const { register, handleSubmit, errors, reset } = useForm();
+
+    async function onSubmitForm(values) {
+        console.log(values)
+        let config = {
+            method: 'post',
+            url: `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: values,
+        };
+
+        try {
+            const response = await axios(config)
+            if (response.status === 200) {
+                reset()
+            }
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div id='contact' className='w-full lg:h-screen'>
             <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
@@ -45,28 +72,38 @@ export const Contact = () => {
 
                     <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4'>
                         <div className='p-4'>
-                            <form >
+                            <form onSubmit={handleSubmit(onSubmitForm)}>
                                 <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
-                                        <label className='uppercase text-sm py-2'>Nom</label>
-                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' type='text' />
+                                        <label className='uppercase text-sm py-2' for='name'>Nom</label>
+                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' type='text' name='name' {...register('name', { required: { value: true, message: 'veuillez svp entrer votre nom' } })} />
+                                        <span className='text-red-400 text-sm py-2'>{errors?.name?.message}</span>
                                     </div>
                                     <div className='flex flex-col'>
-                                        <label className='uppercase text-sm py-2'>Numéro de téléphone</label>
-                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' type='text' />
+                                        <label className='uppercase text-sm py-2' for='telephone'>Numéro de téléphone</label>
+                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' type='text' name='telephone' {...register('telephone', { required: { value: true, message: 'veuillez svp entrer votre numéro de téléphone' } })} />
+                                        <span className='text-red-400 text-sm py-2'>{errors?.telephone?.message}</span>
                                     </div>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                    <label className='uppercase text-sm py-2'>Email</label>
-                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' type='Email' />
+                                    <label className='uppercase text-sm py-2' for='email'>Email</label>
+                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' type='Email' name='email' {...register('email', { required: { value: true, message: 'veuillez svp entrer votre courriel' } })} />
+                                    <span className='text-red-400 text-sm py-2'>{errors?.email?.message}</span>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                    <label className='uppercase text-sm py-2'>Sujet</label>
-                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' type='text' />
+                                    <label className='uppercase text-sm py-2' for='sujet'>Sujet</label>
+                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' type='text' name='sujet' {...register('sujet', { required: { value: true, message: 'veuillez svp entrer le sujet du message' } })} />
+                                    <span className='text-red-400 text-sm py-2'>{errors?.sujet?.message}</span>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                    <label className='uppercase text-sm py-2'>Message</label>
-                                    <textarea className='border-2 rounded-lg p-3 border-gray-300 ' rows='10'> </textarea>
+                                    <label className='uppercase text-sm py-2' for='message'>Message</label>
+                                    <textarea className='border-2 rounded-lg p-3 border-gray-300 ' rows='10' name='message' {...register('message', {
+                                        required: { value: true, message: 'veuillez svp entrer un message' }, maxLength: {
+                                            value: 500,
+                                            message: 'veuillez svp entrer un message de moins de 500 caractères'
+                                        }
+                                    })}> </textarea>
+                                    <span className='text-red-400 text-sm py-2'>{errors?.message?.message}</span>
                                 </div>
                                 <button className='w-full p-4 text-gray-100 mt-4'>Envoyer un message</button>
                             </form>
