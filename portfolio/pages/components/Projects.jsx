@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProjectsItem } from './ProjectsItem'
+import  ProjectsItem  from '../ProjectsItem'
 import comics from '../../public/comics.jpg'
 import anime from '../Anime.jpg'
 import pokemon from '../Pokemon.jpg'
