@@ -7,8 +7,6 @@ import { AiFillGitlab } from 'react-icons/ai';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-
-
 export const Navbar = () => {
     const [nav, setNav] = useState(false)
     const [shadow, setShadsow] = useState(false)
@@ -143,4 +141,4 @@ export const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default Navbar
