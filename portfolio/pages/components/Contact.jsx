@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
-import { AiOutlineMail } from 'react-icons/ai'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 import { useForm } from 'react-hook-form'
+import { AiFillGitlab } from 'react-icons/ai'
 import axios from 'axios'
+
 
 export const Contact = () => {
 
@@ -25,6 +25,7 @@ export const Contact = () => {
         try {
             const response = await axios(config)
             if (response.status === 200) {
+                alert('Message envoyé')
                 reset()
             }
         }
@@ -52,17 +53,15 @@ export const Contact = () => {
                             <div>
                                 <p className='uppercase pt-8'>Contacter moi</p>
                                 <div className='flex items-center justify-between py-4'>
+
                                     <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                        <FaLinkedin />
+                                        <a href='https://www.linkedin.com/in/tony-bui-383a52253/'><FaLinkedin /></a>
                                     </div>
                                     <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                        <FaGithub />
+                                        <a href='https://github.com/tonybbb2'><FaGithub /></a>
                                     </div>
                                     <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                        <AiOutlineMail />
-                                    </div>
-                                    <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                        <BsFillPersonLinesFill />
+                                        <a href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></a>
                                     </div>
                                 </div>
                             </div>

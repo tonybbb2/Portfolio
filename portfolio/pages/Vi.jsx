@@ -71,7 +71,7 @@ const Vi = () => {
                 </>
             ) : null}
             <Link href='/#projects'>
-                <p className='text-center text-gray-700 py-4 mt-24 cursor-pointer underline underline-offset-2'>Back to Projects</p>
+                <p className='text-center text-gray-700 py-4 mt-24 cursor-pointer underline underline-offset-2'>Retour au projets</p>
             </Link>
         </div>
     )

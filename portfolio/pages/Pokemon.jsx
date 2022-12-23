@@ -3,7 +3,7 @@ import Image from "next/image";
 import pokemon from "../public/pokemon.jpg";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
-import gif from "../public/ex05c.gif";
+import PokemonDemo from "../public/PokemonDemo.gif";
 
 const Pokemon = () => {
 
@@ -20,9 +20,9 @@ const Pokemon = () => {
             </div>
             <div className='max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8'>
                 <div className='col-span-4'>
-                    <p>Projects</p>
-                    <h2>Overview</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Projets</p>
+                    <h2>Aperçu</h2>
+                    <p className='mt-4'>L'application web Pokemon est une application en ligne interactive qui offre aux utilisateurs la possibilité de découvrir et d'explorer les différentes caractéristiques et évolutions des Pokemon. Les utilisateurs peuvent se connecter et naviguer à travers des fiches avec des informations détaillées sur chaque Pokemon, ainsi que des images et des vidéos. Les utilisateurs peuvent ajouter des Pokemon à leurs favoris et les supprimer à tout moment, ce qui leur permet de personnaliser leur expérience. Les informations sur les évolutions des Pokemon sont fournies sous forme de diagrammes et de schémas, ce qui facilite la navigation et la compréhension des informations.</p>
                     <button className='px-8 py-2 mt-4 mr-8'
                         onClick={() => setShowModal(true)}>Demo</button>
                 </div>
@@ -42,27 +42,25 @@ const Pokemon = () => {
             {showModal ? (
                 <>
                     <div
-                        className="justify-center items-center mt-14 align-bottom overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+                        className="justify-center items-center rounded-lg bg-slate-300mt-14 align-bottom overflow-x-hidden text-center overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none mt-36"
                     >
-                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                        <div className=" relative bg-slate-100 rounded-lg w-auto my-6 mx-auto max-w-3xl text-center shadow-xl shadow-gray-400">
                             {/*content*/}
-                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gray-800 outline-none focus:outline-none">
+                            <div className="border-0 rounded-lg relative flex flex-col w-full shadow-xl outline-none text-center focus:outline-none">
                                 {/*body*/}
-                                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white mt-4">Demonstration</h2>
+                                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-black mt-4">Démonstration</h2>
                                 <div class=" px-2 mt-2 rounded-lg border-">
 
-                                    <Image src={gif} alt='/' />
+                                    <Image className='text-center' src={PokemonDemo} alt='/' />
                                 </div>
                                 {/*footer*/}
-                                <div className="flex items-center justify-center p-6 rounded-b">
-                                    <button
-                                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                        type="button"
-                                        onClick={() => setShowModal(false)}
-                                    >
-                                        Close
-                                    </button>
-                                </div>
+                                <button
+                                    className="text-red-500  font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 mt-4"
+                                    type="button"
+                                    onClick={() => setShowModal(false)}
+                                >
+                                    Fermer
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -70,7 +68,7 @@ const Pokemon = () => {
                 </>
             ) : null}
             <Link href='/#projects'>
-                <p className='text-center text-gray-700 py-4 mt-24 cursor-pointer'>Back to Projects</p>
+                <p className='text-center text-gray-700 py-4 mt-24 cursor-pointer underline underline-offset-2'>Retour au projets</p>
             </Link>
         </div>
     )

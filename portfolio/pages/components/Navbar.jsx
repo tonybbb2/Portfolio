@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { AiOutlineClose, AiOutlineMail } from 'react-icons/ai';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { AiFillGitlab } from 'react-icons/ai';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
 
 
 export const Navbar = () => {
@@ -24,7 +25,9 @@ export const Navbar = () => {
             router.asPath === '/Comics' ||
             router.asPath === '/Anime' ||
             router.asPath === '/Pokemon' ||
-            router.asPath === '/Podcasts'
+            router.asPath === '/Podcasts' ||
+            router.asPath === '/Vi' ||
+            router.asPath === '/Portfolio'
         ) {
             setNavBg('transparent')
             setLinkColor('#ecf0f3')
@@ -54,7 +57,7 @@ export const Navbar = () => {
             <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
                 <Image src='/../../portfolio/public/IMG_3544.png' alt='/' width='100' height='80' />
                 <div>
-                    <ul style={{color : `${LinkColor}`}} className='hidden md:flex'>
+                    <ul style={{ color: `${LinkColor}` }} className='hidden md:flex'>
                         <Link href='/#main'>
                             <li className='ml-10 text-sm uppercase hover:border-b'>Accueil</li>
                         </Link>
@@ -70,6 +73,10 @@ export const Navbar = () => {
                         <Link href='/#contact'>
                             <li className='ml-10 text-sm uppercase hover:border-b'>Contact</li>
                         </Link>
+                        <a href='../../public/mycv.pdf' download>
+                            <li className='ml-10 text-sm uppercase hover:border-b'>CV</li>
+                        </a>
+
                     </ul>
                 </div>
                 <div onClick={handleNav} className='md:hidden'>
@@ -114,17 +121,17 @@ export const Navbar = () => {
                         <div className='pt-40'>
                             <p className='uppercase tracking-widest text-red-500'>Connectez-vous avec moi!</p>
                             <div className='flex items-center justify-between my-4 w-full sm:w[80%]'>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <FaLinkedinIn />
+                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
+                                    <a href='https://www.linkedin.com/in/tony-bui-383a52253/'><FaLinkedin /></a>
                                 </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <FaGithub />
+                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
+                                    <a href='https://github.com/tonybbb2'><FaGithub /></a>
                                 </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <AiOutlineMail />
+                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
+                                    <a href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></a>
                                 </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <BsFillPersonLinesFill />
+                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
+                                    <a href='/#contact'><AiOutlineMail onClick={() => setNav(false)} /></a>
                                 </div>
 
                             </div>

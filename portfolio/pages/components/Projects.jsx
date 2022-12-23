@@ -5,6 +5,7 @@ import anime from '../../public/anime.jpg'
 import pokemon from '../../public/pokemon.jpg'
 import podcasts from '../../public/podcasts.jpg'
 import Vi from '../../public/Vi.png'
+import portfolio from '../../public/portfolio.png'
 
 export const Projects = () => {
   return (
@@ -19,6 +20,7 @@ export const Projects = () => {
           <ProjectsItem title='Anime Application' backgroundImg={anime} projectUrl='/Anime' />
           <ProjectsItem title='Podcasts Application' backgroundImg={podcasts} projectUrl='/Podcasts' />
           <ProjectsItem title='Pokemon Application' backgroundImg={pokemon} projectUrl='/Pokemon' />
+          <ProjectsItem title='Mon site web (portfolio)' backgroundImg={portfolio} projectUrl='/Portfolio' />
 
 
         </div>
