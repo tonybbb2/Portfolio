@@ -3,7 +3,7 @@ import Image from "next/image";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
 import ViPng from "../public/Vi.png";
-import Vigif from "../public/ViDemo.gif";
+import Vigif from "./ViDemo.gif";
 
 const Vi = () => {
 

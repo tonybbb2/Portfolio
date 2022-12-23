@@ -89,7 +89,7 @@ export const Navbar = () => {
                     <div>
                         <div className='flex w-full items-center justify-between'>
                             <Link href='/'>
-                                <Image src='/../../portfolio/public/IMG_3544.png' alt='/' width='90' height='75' />
+                                <Image src={profil} alt='/' width='90' height='75' />
                             </Link>
                             <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
                                 <AiOutlineClose size={25} />
