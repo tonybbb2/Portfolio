@@ -2,6 +2,7 @@ import React from 'react'
 import { AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { AiFillGitlab } from 'react-icons/ai'
+import Link from 'next/link'
 
 export const Main = () => {
     return (
@@ -24,16 +25,16 @@ export const Main = () => {
                     </p>
                     <div className='flex items-center justify-between max-w-[330px] m-auto py-4'>
                         <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                            <a href='https://www.linkedin.com/in/tony-bui-383a52253/'><FaLinkedin /></a>
+                            <Link href='https://www.linkedin.com/in/tony-bui-383a52253/'><FaLinkedin /></Link>
                         </div>
                         <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                            <a href='https://github.com/tonybbb2'><FaGithub /></a>
+                            <Link href='https://github.com/tonybbb2'><FaGithub /></Link>
                         </div>
                         <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                            <a href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></a>
+                            <Link href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></Link>
                         </div>
                         <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                            <a href='/#contact'><AiOutlineMail /></a>
+                            <Link href='/#contact'><AiOutlineMail /></Link>
                         </div>
                     </div>
                 </div>

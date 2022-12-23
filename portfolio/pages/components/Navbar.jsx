@@ -122,16 +122,16 @@ export const Navbar = () => {
                             <p className='uppercase tracking-widest text-red-500'>Connectez-vous avec moi!</p>
                             <div className='flex items-center justify-between my-4 w-full sm:w[80%]'>
                                 <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <a href='https://www.linkedin.com/in/tony-bui-383a52253/'><FaLinkedin /></a>
+                                    <Link href='https://www.linkedin.com/in/tony-bui-383a52253/'><FaLinkedin /></Link>
                                 </div>
                                 <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <a href='https://github.com/tonybbb2'><FaGithub /></a>
+                                    <Link href='https://github.com/tonybbb2'><FaGithub /></Link>
                                 </div>
                                 <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <a href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></a>
+                                    <Link href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></Link>
                                 </div>
                                 <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <a href='/#contact'><AiOutlineMail onClick={() => setNav(false)} /></a>
+                                    <Link href='/#contact'><AiOutlineMail onClick={() => setNav(false)} /></Link>
                                 </div>
 
                             </div>
