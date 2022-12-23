@@ -1,9 +1,9 @@
 import React from 'react'
 import { ProjectsItem } from './ProjectsItem'
 import comics from '../../public/comics.jpg'
-import anime from '../../public/anime.jpg'
-import pokemon from '../../public/pokemon.jpg'
-import podcasts from '../../public/podcasts.jpg'
+import anime from '../Anime.jpg'
+import pokemon from '../Pokemon.jpg'
+import podcasts from '../Podcasts.jpg'
 import Vi from '../../public/Vi.png'
 import portfolio from '../../public/portfolio.png'
 
