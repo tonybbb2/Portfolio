@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import anime from "../public/anime.jpg";
+import anime from "./Anime.jpg";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
 import gif from "../public/AnimeDemo.gif";
