@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { AiFillGitlab } from 'react-icons/ai';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import profil from '../../public/IMG_3544.png'
 
 export const Navbar = () => {
     const [nav, setNav] = useState(false)
@@ -53,7 +54,7 @@ export const Navbar = () => {
     return (
         <div style={{ backgroundColor: `${navBg}` }} className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
             <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-                <Image src='/../../portfolio/public/IMG_3544.png' alt='/' width='100' height='80' />
+                <Image src={profil} alt='/' width='100' height='80' />
                 <div>
                     <ul style={{ color: `${LinkColor}` }} className='hidden md:flex'>
                         <Link href='/#main'>
