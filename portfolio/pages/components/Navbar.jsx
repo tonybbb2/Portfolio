@@ -8,7 +8,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import profil from '../../public/IMG_3544.png'
 
+
 export const Navbar = () => {
+
     const [nav, setNav] = useState(false)
     const [shadow, setShadsow] = useState(false)
     const [navBg, setNavBg] = useState('#ecf0f3');
@@ -21,12 +23,15 @@ export const Navbar = () => {
 
     useEffect(() => {
         if (
+            
             router.asPath === '/Comics' ||
             router.asPath === '/Anime' ||
             router.asPath === '/Pokemon' ||
             router.asPath === '/Podcasts' ||
             router.asPath === '/Vi' ||
-            router.asPath === '/Portfolio'
+            router.asPath === '/Portfolio' ||
+            router.asPath === '/Netflix'
+
         ) {
             setNavBg('transparent')
             setLinkColor('#ecf0f3')
@@ -72,9 +77,9 @@ export const Navbar = () => {
                         <Link href='/#contact'>
                             <li className='ml-10 text-sm uppercase hover:border-b'>Contact</li>
                         </Link>
-                        <a href='../../public/mycv.pdf' download>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>CV</li>
-                        </a>
+
+                        <a href='../../public/static/mycv.pdf' download><li className='ml-10 text-sm uppercase hover:border-b'>CV</li></a>
+
 
                     </ul>
                 </div>
