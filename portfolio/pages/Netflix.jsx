@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
-import gif from '../public/NetflixDemo.gif'
+import gifnetflix from './NetflixDemo.gif'
 import netflixDetails from '../public/NetflixDetails.png'
 
 const Netflix = () => {
@@ -54,7 +54,7 @@ const Netflix = () => {
                                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-black mt-4">Démonstration</h2>
                                 <div class=" px-2 mt-2 rounded-lg border-">
 
-                                    <Image className='text-center' src={gif} alt='/' />
+                                    <Image className='text-center' src={gifnetflix} alt='/' />
                                 </div>
                                 {/*footer*/}
                                 <button
