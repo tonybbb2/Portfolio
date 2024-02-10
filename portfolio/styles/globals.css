@@ -37,7 +37,7 @@ html{
   }
 }
 
-/* .loading:nth-child(2) {
+.loading:nth-child(2) {
   border-bottom-width : 8px;
   border-color : black;
   animation: animate2 2s linear infinite;
@@ -52,7 +52,7 @@ html{
   100% {
     transform: rotateX(55deg) rotateY(15deg) rotateZ(360deg);
   }
-} */
+}
 
 .loading:nth-child(3) {
   border-bottom-width : 8px;
@@ -74,7 +74,8 @@ html{
 
 @layer base{
   body {
-    background-color: #121212;
+    background-color: #18181B;
+    inset: 0;
   }
 
   h1,h2,h3,h4,h5,h6{

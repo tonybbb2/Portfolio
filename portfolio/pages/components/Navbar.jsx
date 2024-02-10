@@ -37,7 +37,7 @@ export const Navbar = () => {
             setLinkColor('#ecf0f3')
         }
         else {
-            setNavBg('#ecf0f3')
+            setNavBg('#252529')
             setLinkColor('#1f2937')
         }
 
@@ -57,36 +57,33 @@ export const Navbar = () => {
     }, [])
 
     return (
-        <div style={{ backgroundColor: `${navBg}` }} className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
-            <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-                <Image src={profil} alt='/' width='100' height='80' />
-                <div>
-                    <ul style={{ color: `${LinkColor}` }} className='hidden md:flex'>
-                        <Link href='/#main'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Accueil</li>
-                        </Link>
-                        <Link href='/#about'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>À propos</li>
-                        </Link>
-                        <Link href='/#skills'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Compétences</li>
-                        </Link>
-                        <Link href='/#projects'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Projets</li>
-                        </Link>
-                        <Link href='/#contact'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Contact</li>
-                        </Link>
-
-                        <a href='../../public/static/mycv.pdf' download><li className='ml-10 text-sm uppercase hover:border-b'>CV</li></a>
-
-
-                    </ul>
-                </div>
+        <div className={'relative flex gap-4 w-full h-10 top-5 z-[100]'}>
+            <div className='flex flex-1'></div>
+                 <div style={{ backgroundColor: `${navBg}` }} className='flex flex-1 justify-end 2xl:px-16 rounded-full border border-slate-500 shadow-lg hidden md:block md:justify-center'>
+                    <nav>
+                        <ul className='flex rounded-full w-full h-full text-white'>
+                            <Link href='/#main'>
+                                <li className='relative block px-3 py-2 transition hover:text-red dark:hover:text-teal-400'>About</li>
+                            </Link>
+                            <Link href='/#about'>
+                                <li className='relative block px-3 py-2 transition hover:text-red dark:hover:text-teal-400'>Blog</li>
+                            </Link>
+                            <Link href='/#skills'>
+                                <li className='relative block px-3 py-2 transition hover:text-red dark:hover:text-teal-400'>Skills</li>
+                            </Link>
+                            <Link href='/#projects'>
+                                <li className='relative block px-3 py-2 transition hover:text-red dark:hover:text-teal-400'>Projects</li>
+                            </Link>
+                            <Link href='/#contact'>
+                                <li className='relative block px-3 py-2 transition hover:text-red dark:hover:text-teal-400'>Contact</li>
+                            </Link>
+                        </ul>
+                    </nav>
                 <div onClick={handleNav} className='md:hidden'>
                     <AiOutlineMenu size={25} />
                 </div>
             </div>
+            <div className='flex flex-1'></div>
             <div className={nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/80' : ''}>
                 <div className={nav ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500' :
                     'fixed left-[-100%] top-0 p-10 ease-in duration-500'
