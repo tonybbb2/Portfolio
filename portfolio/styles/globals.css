@@ -6,8 +6,76 @@ html{
   scroll-behavior: smooth;
 }
 
-@layer base{
+/*
+*
+* PRELOADER CSS - ANIMATION
+*
+*/
 
+.loading {
+  position : absolute;
+  width: 150px;
+  height: 150px;
+  border: 0px solid black;
+  border-radius: 50%;
+}
+
+.loading:nth-child(1) {
+  border-bottom-width : 8px;
+  border-color : white;
+  animation: animate1 2s linear infinite;
+  filter: drop-shadow(0px 0px 10px white);
+}
+
+@keyframes animate1 {
+  0% {
+    transform: rotateX(40deg) rotateY(-50deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(40deg) rotateY(-50deg) rotateZ(360deg);
+  }
+}
+
+/* .loading:nth-child(2) {
+  border-bottom-width : 8px;
+  border-color : black;
+  animation: animate2 2s linear infinite;
+  filter: drop-shadow(0px 0px 10px black);
+}
+
+@keyframes animate2 {
+  0% {
+    transform: rotateX(55deg) rotateY(15deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(55deg) rotateY(15deg) rotateZ(360deg);
+  }
+} */
+
+.loading:nth-child(3) {
+  border-bottom-width : 8px;
+  border-color : red;
+  animation: animate3 2s linear infinite;
+  filter: drop-shadow(0px 0px 10px red);
+}
+
+@keyframes animate3 {
+  0% {
+    transform: rotateX(40deg) rotateY(60deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(40deg) rotateY(60deg) rotateZ(360deg);
+  }
+}
+
+
+@layer base{
+  body {
+    background-color: #121212;
+  }
 
   h1,h2,h3,h4,h5,h6{
     @apply font-bold
