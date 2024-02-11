@@ -55,7 +55,7 @@ export const Navbar = () => {
     }, [])
 
     return (
-        <div className={shadow ? 'fixed flex justify-center w-full h-10 top-5 z-[100] gap-[10px]' : 'relative flex justify-center w-full h-10 top-5 z-[100] gap-[10px]' }>
+        <div className={'relative flex justify-center w-full h-10 top-5 z-[100] gap-[10px]' }>
             <div className='hidden md:flex md:justify-end md:flex-1 md:pr-32'>
                 <div class="hidden h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10"><a aria-label="Home" class="pointer-events-auto" href="/"></a>
                     <Image src={profil} alt='/' className='rounded-full' />
@@ -90,60 +90,10 @@ export const Navbar = () => {
                     <MdOutlineLanguage size={20} className='text-white' />
                 </button>
             </div>
-            <div className={nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/80' : ''}>
-                <div className={nav ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500' :
-                    'fixed left-[-100%] top-0 p-10 ease-in duration-500'
-                }>
-                    <div>
-                        <div className='flex w-full items-center justify-between'>
-                            <Link href='/'>
-                                <Image src={profil} alt='/' width='90' height='75' />
-                            </Link>
-                            <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
-                                <AiOutlineClose size={25} />
-                            </div>
-                        </div>
-                        <div className='border-b border-gray-300 my-4'>
-                            <p className='w-[85%] md:w-[90%] py-4'>Construisons quelque chose ensemble!</p>
-                        </div>
-                    </div>
-                    <div className='py-4 flex flex-col'>
-                        <ul className='uppercase'>
-                            <Link href='/'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Accueil</li>
-                            </Link>
-                            <Link href='/#about'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>À propos </li>
-                            </Link>
-                            <Link href='/#skills'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Compétences</li>
-                            </Link>
-                            <Link href='/#projects'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Projets</li>
-                            </Link>
-                            <Link href='/#contact'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Contact</li>
-                            </Link>
-                        </ul>
-                        <div className='pt-40'>
-                            <p className='uppercase tracking-widest text-red-500'>Connectez-vous avec moi!</p>
-                            <div className='flex items-center justify-between my-4 w-full sm:w[80%]'>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <Link href='https://www.linkedin.com/in/tony-bui-383a52253/'><FaLinkedin /></Link>
-                                </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <Link href='https://github.com/tonybbb2'><FaGithub /></Link>
-                                </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <Link href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></Link>
-                                </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <Link href='/#contact'><AiOutlineMail onClick={() => setNav(false)} /></Link>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+            <div className={nav ? 'fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800' : 'hidden'}>
+                <div className='flex flex-row-reverse items-center justify-between'>
+                    <button aria-label="Close menu" class="-m-1 p-1" type="button" data-headlessui-state="open" onClick={handleNav}><svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 text-zinc-500 dark:text-zinc-400"><path d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+                    <h2 className='text-sm font-medium text-zinc-600 dark:text-zinc-400'>Navigation</h2>
                 </div>
             </div>
         </div>
