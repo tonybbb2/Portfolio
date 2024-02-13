@@ -12,7 +12,6 @@ export const Contact = () => {
     const { register, handleSubmit, errors, reset } = useForm();
 
     async function onSubmitForm(values) {
-        console.log(values)
         let config = {
             method: 'post',
             url: '/api/contact',

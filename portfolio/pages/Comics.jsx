@@ -52,8 +52,8 @@ const Comics = () => {
                             {/*content*/}
                             <div className="border-0 rounded-lg relative flex flex-col w-full shadow-xl outline-none focus:outline-none">
                                 {/*body*/}
-                                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-black mt-4">Démonstration</h2>
-                                <div class=" px-2 mt-2 rounded-lg border-">
+                                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-black mt-4">Démonstration</h2>
+                                <div className=" px-2 mt-2 rounded-lg border-">
 
                                     <Image src={gif} alt='/' />
                                 </div>
