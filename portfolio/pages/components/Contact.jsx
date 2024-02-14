@@ -35,7 +35,7 @@ export const Contact = () => {
 
     return (
         <div id='contact' className='w-full lg:h-screen'>
-            <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
+            {/* <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
                 <p className='text-xl tracking-widest uppercase text-[#5651e5]'>Contact</p>
                 <h2 className='py-4'>Entrer en contact</h2>
                 <div className='grid md:grid-cols-5 gap-8'>
@@ -115,7 +115,7 @@ export const Contact = () => {
                         </div>
                     </Link>
                 </div>
-            </div>
+            </div> */}
         </div >
     )
 }

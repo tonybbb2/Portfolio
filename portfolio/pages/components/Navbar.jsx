@@ -72,7 +72,7 @@ export const Navbar = () => {
                         <Link href='/#main'>
                             <li className='relative block px-4 py-2 transition hover:text-red dark:hover:text-red-600'>About</li>
                         </Link>
-                        <Link href='/#about'>
+                        <Link href='/#Blog'>
                             <li className='relative block px-4 py-2 transition hover:text-red dark:hover:text-red-600'>Blog</li>
                         </Link>
                         <Link href='/#skills'>
