@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { AiOutlineMail } from "react-icons/ai";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
 import Link from "next/link";
-import profil from "../../public/PRpic.png";
-import interests05 from "../../public/INT0.5.jpg";
-import interests2 from "../../public/INT2.jpg";
-import interests3 from "../../public/INT3.jpg";
-import interests4 from "../../public/INT4.jpg";
-import interests5 from "../../public/INT5.jpg";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
+import { GiCloudDownload } from "react-icons/gi";
 import Article from "./Article";
-import Primaco from "../../public/primacoLogo.png";
-import PLPS from "../../public/PLPS.png";
-import JennySpaNails from "../../public/JennySpaNails.png";
 
 export const Main = () => {
   const [news, setNews] = useState([]);
@@ -46,6 +38,54 @@ export const Main = () => {
     console.log(news);
   }, []);
 
+  // Import images dynamically as needed
+  const images = {
+    profil: require("../../public/PRpic.png"),
+    interests05: require("../../public/INT0.5.jpg"),
+    interests2: require("../../public/INT2.jpg"),
+    interests3: require("../../public/INT3.jpg"),
+    interests4: require("../../public/INT4.jpg"),
+    interests5: require("../../public/INT5.jpg"),
+    Primaco: require("../../public/primacoLogo.png"),
+    metro: require("../../public/metroLogo.jpg"),
+    PLPS: require("../../public/PLPS.png"),
+    jeancoutu: require("../../public/jeancoutu.png"),
+    JennySpaNails: require("../../public/JennySpaNails.png"),
+  };
+
+  const experiences = [
+    {
+      company: "Primaco",
+      role: "Junior web developer",
+      date: "2023 ----- Present",
+      image: images.Primaco,
+    },
+    {
+      company: "Metro",
+      role: "Cashier",
+      date: "2021 ----- 2022",
+      image: images.metro,
+    },
+    {
+      company: "PLPS pools",
+      role: "Pool technician",
+      date: "2021 ----- 2021",
+      image: images.PLPS,
+    },
+    {
+      company: "Jean Coutu",
+      role: "Floor clerk",
+      date: "2019 ----- 2021",
+      image: images.jeancoutu,
+    },
+    {
+      company: "Jenny's spa nails",
+      role: "Receptionist",
+      date: "2015 ----- 2018",
+      image: images.JennySpaNails,
+    },
+  ];
+
   return (
     <>
       <div id="main" className="w-full h-screen">
@@ -57,7 +97,7 @@ export const Main = () => {
                 <div className="relative">
                   <div className="absolute left-0 h-[75px] rounded-full bg-white/90 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
                     <Image
-                      src={profil}
+                      src={images.profil}
                       alt="/"
                       className="rounded-full "
                       width={75}
@@ -70,86 +110,50 @@ export const Main = () => {
           </div>
         </div>
         <div className="flex-auto">
-          <div className="sm:px-8 mt-9">
-            <div className="mx-auto w-full max-w-7xl lg:px-8">
-              <div className="relative px-4">
-                <div className="mx-auto max-w-2xl lg:max-w-5xl">
-                  <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 font-display">
-                    <span className="text-[#DA3028]">TONY BUI</span>,
-                  </h1>
-                  <h1 className="animate-typing overflow-hidden whitespace-nowrap text-4xl font-bold tracking-tight text-zinc-800 sm:text-6xl dark:text-zinc-100 font-display">
-                    A junior web developper
-                  </h1>
-                  <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-                    I'm Tony, a junior web developer based in Montreal, Canada.
-                    With a deep passion for coding, I specialize in crafting
-                    responsive websites that blend creativity with
-                    functionality, while continuously exploring the diverse
-                    realms of computer science to expand my knowledge and
-                    skills.
-                  </p>
-                  <div className="mt-6 flex gap-6 text-2xl text-gray-400">
-                    <Link href="/">
-                      <FaLinkedin />
-                    </Link>
-                    <Link href="/">
-                      <FaGithub />
-                    </Link>
-                    <Link href="/">
-                      <FaInstagram />
-                    </Link>
-                    <Link href="/">
-                      <AiOutlineMail />
-                    </Link>
-                  </div>
-                </div>
+          <div className="sm:px-8 mt-9 mx-auto w-full max-w-7xl lg:px-8 relative px-4">
+            <div className="mx-auto max-w-2xl lg:max-w-5xl">
+              <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 font-display">
+                <span className="text-[#DA3028]">TONY BUI</span>,
+              </h1>
+              <h1 className="animate-typing overflow-hidden whitespace-nowrap text-4xl font-bold tracking-tight text-zinc-800 sm:text-6xl dark:text-zinc-100 font-display">
+                A junior web developer
+              </h1>
+              <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+                I'm Tony, a junior web developer based in Montreal, Canada.
+                With a deep passion for coding, I specialize in crafting
+                responsive websites that blend creativity with
+                functionality, while continuously exploring the diverse
+                realms of computer science to expand my knowledge and
+                skills.
+              </p>
+              <div className="mt-6 flex gap-6 text-2xl text-gray-400">
+                {[
+                  { href: '/', icon: <FaLinkedin /> },
+                  { href: '/', icon: <FaGithub /> },
+                  { href: '/', icon: <FaInstagram /> },
+                  { href: '/', icon: <AiOutlineMail /> },
+                ].map((link, index) => (
+                  <Link key={index} href={link.href}>
+                    {link.icon}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
         <div className="mt-20 sm:mt-24 w-full">
           <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-              <Image
-                className="absolute z-1 object-fill"
-                layout="fill"
-                src={interests5}
-                alt="/"
-              />
-            </div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
-              <Image
-                className="absolute z-1 object-fill"
-                layout="fill"
-                src={interests2}
-                alt="/"
-              />
-            </div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-              <Image
-                className="absolute z-1 object-fill md:object-none"
-                layout="fill"
-                src={interests05}
-                alt="/"
-              />
-              <h1 className="absolute text-white z-0"></h1>
-            </div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 -rotate-2">
-              <Image
-                className="absolute z-1 object-fill md:object-none"
-                layout="fill"
-                src={interests3}
-                alt="/"
-              />
-            </div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 rotate-2">
-              <Image
-                className="absolute z-1 object-fill"
-                layout="fill"
-                src={interests4}
-                alt="/"
-              />
-            </div>
+            {[images.interests5, images.interests2, images.interests05, images.interests3, images.interests4].map((interest, index) => (
+              <div key={index} className={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 ${index % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
+                <Image
+                  className={`absolute z-1 object-fill'}`}
+                  layout="fill"
+                  src={interest}
+                  alt="/"
+                />
+                {index === 2 && <h1 className="absolute text-white z-0"></h1>}
+              </div>
+            ))}
           </div>
         </div>
         <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
@@ -208,132 +212,30 @@ export const Main = () => {
                           <span className="ml-3">Experience</span>
                         </h2>
                         <ol className="mt-6 space-y-4">
-                          <li className="flex gap-4">
-                            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                              <Image
-                                src={Primaco}
-                                className="rounded-full object-fill"
-                              ></Image>
-                            </div>
-                            <dl className="flex flex-auto flex-wrap gap-x-2">
-                              <dt className="sr-only">Company</dt>
-                              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                Primaco
-                              </dd>
-                              <dt className="sr-only">Role</dt>
-                              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                Junior web developper
-                              </dd>
-                              <dt className="sr-only">Date</dt>
-                              <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
-                                <time dateTime="2023">2023</time>
-                                <span aria-hidden="true"> ----- </span>
-                                <time dateTime="2024">Present</time>
-                              </dd>
-                            </dl>
-                          </li>
-                          <li className="flex gap-4">
-                            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                              <Image
-                                src={PLPS}
-                                className="rounded-full object-fill"
-                              ></Image>
-                            </div>
-                            <dl className="flex flex-auto flex-wrap gap-x-2">
-                              <dt className="sr-only">Company</dt>
-                              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                PLPS pools
-                              </dd>
-                              <dt className="sr-only">Role</dt>
-                              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                Pool technician
-                              </dd>
-                              <dt className="sr-only">Date</dt>
-                              <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
-                                <time dateTime="2022">2022</time>
-                                <span aria-hidden="true"> ----- </span>
-                                <time dateTime="2022">2022</time>
-                              </dd>
-                            </dl>
-                          </li>
-                          <li className="flex gap-4">
-                            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                              <Image
-                                src={JennySpaNails}
-                                className="rounded-full object-fill"
-                              ></Image>
-                            </div>
-                            <dl className="flex flex-auto flex-wrap gap-x-2">
-                              <dt className="sr-only">Company</dt>
-                              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                Jenny's spa nails
-                              </dd>
-                              <dt className="sr-only">Role</dt>
-                              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                Receptionist
-                              </dd>
-                              <dt className="sr-only">Date</dt>
-                              <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
-                                <time dateTime="2015">2015</time>
-                                <span aria-hidden="true"> ----- </span>
-                                <time dateTime="2018">2018</time>
-                              </dd>
-                            </dl>
-                          </li>
-                          <li className="flex gap-4">
-                            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                              <Image
-                                src={JennySpaNails}
-                                className="rounded-full object-fill"
-                              ></Image>
-                            </div>
-                            <dl className="flex flex-auto flex-wrap gap-x-2">
-                              <dt className="sr-only">Company</dt>
-                              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                Primaco
-                              </dd>
-                              <dt className="sr-only">Role</dt>
-                              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                Junior web developper
-                              </dd>
-                              <dt className="sr-only">Date</dt>
-                              <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
-                                <time dateTime="2023">2023</time>
-                                <span aria-hidden="true"> ----- </span>
-                                <time dateTime="2024">Present</time>
-                              </dd>
-                            </dl>
-                          </li>
-                          <li className="flex gap-4">
-                            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                              <Image
-                                src={JennySpaNails}
-                                className="rounded-full object-fill"
-                              ></Image>
-                            </div>
-                            <dl className="flex flex-auto flex-wrap gap-x-2">
-                              <dt className="sr-only">Company</dt>
-                              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                                Primaco
-                              </dd>
-                              <dt className="sr-only">Role</dt>
-                              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                                Junior web developper
-                              </dd>
-                              <dt className="sr-only">Date</dt>
-                              <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
-                                <time dateTime="2023">2023</time>
-                                <span aria-hidden="true"> ----- </span>
-                                <time dateTime="2024">Present</time>
-                              </dd>
-                            </dl>
-                          </li>
+                          {experiences.map((experience, index) => (
+                            <li key={index} className="flex gap-4">
+                              <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                                <Image src={experience.image} className="rounded-full object-fill" />
+                              </div>
+                              <dl className="flex flex-auto flex-wrap gap-x-2">
+                                <dt className="sr-only">Company</dt>
+                                <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">{experience.company}</dd>
+                                <dt className="sr-only">Role</dt>
+                                <dd className="text-xs text-zinc-500 dark:text-zinc-400">{experience.role}</dd>
+                                <dt className="sr-only">Date</dt>
+                                <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
+                                  <time dateTime="2015">{experience.date}</time>
+                                </dd>
+                              </dl>
+                            </li>
+                          ))}
                         </ol>
                         <a
                           className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
-                          href=""
+                          href="/TonyBui_CV.pdf"
+                          download="TonyBui_CV"
                         >
-                          Download CV
+                          Download CV <GiCloudDownload />
                         </a>
                       </div>
                     </div>
