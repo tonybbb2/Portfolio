@@ -21,6 +21,7 @@
     "react-hook-form": "^7.41.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.3",
+    "react-toggle-dark-mode": "^1.1.1",
     "react-use-downloader": "^1.2.1"
   },
   "devDependencies": {

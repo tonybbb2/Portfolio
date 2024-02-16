@@ -4,6 +4,8 @@ import { MdOutlineLanguage } from "react-icons/md";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import profil from '../../public/PRpic.png'
+import { MdOutlineDarkMode } from "react-icons/md";
+import Switcher from "../components/Switcher";
 
 
 export const Navbar = () => {
@@ -88,8 +90,11 @@ export const Navbar = () => {
                 </nav>
             </div>
             <div className='flex justify-start md:flex-1 md:pl-32'>
-                <button type="button" aria-label="Choose your language" onClick={handleLang} className="group rounded-full px-3 py-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
-                    <MdOutlineLanguage size={20} className='text-white' />
+                <button type="button" aaria-label="Toggle dark mode" className="group rounded-full px-3 py-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20">
+                    <Switcher  className='text-black dark:text-white' />
+                </button>
+                <button type="button" aria-label="Choose your language" onClick={handleLang} className="group rounded-full px-3 py-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 ml-2">
+                    <MdOutlineLanguage size={20} className='text-black dark:text-white' />
                 </button>
                 <div id="dropdown-lang" className={lang ? "absolute w-[45px] top-12 z-10 bg-white rounded-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20" : "hidden"}>
                     <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">

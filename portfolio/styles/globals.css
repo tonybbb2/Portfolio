@@ -73,7 +73,7 @@ html{
 
 
 @layer base{
-  body {
+  .dark {
     background-color: #040406;
   }
 
@@ -97,8 +97,3 @@ html{
     @apply shadow-xl rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white
   }
 }
-
-
-
-
-
