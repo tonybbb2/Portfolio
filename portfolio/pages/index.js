@@ -4,15 +4,13 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./Projects";
 import Contact from "./components/Contact";
-import profil from '../../portfolio/public/PRpic.png';
-
 
 export default function Home() {
   return (
     <div>
       <Head>
         <title>Tony Bui - Web developper</title>
-        <meta name="description" content="Personal website - web developper" />
+        <meta name="description" content="Personal website - web developer" />
         <link rel='icon' href='/PRpic.png' type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

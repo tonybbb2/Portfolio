@@ -15,7 +15,7 @@ export default function handler(req, res) {
     secure: true,
     auth: {
       user: 'bui.tony35@gmail.com',
-      pass: 'xknulagtjicqrijk'
+      pass: 'sibp nykl mufk okyv'
     }
   });
 

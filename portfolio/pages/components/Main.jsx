@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
+import { MdWork, MdMarkEmailUnread } from "react-icons/md";
 import { GiCloudDownload } from "react-icons/gi";
 import Article from "./Article";
 
@@ -43,8 +43,8 @@ export const Main = () => {
     profil: require("../../public/PRpic.png"),
     interests05: require("../../public/INT0.5.jpg"),
     interests2: require("../../public/INT2.jpg"),
-    interests3: require("../../public/INT3.jpg"),
-    interests4: require("../../public/INT4.jpg"),
+    interests3: require("../../public/INT00.jpg"),
+    interests4: require("../../public/INT002.jpg"),
     interests5: require("../../public/INT5.jpg"),
     Primaco: require("../../public/primacoLogo.png"),
     metro: require("../../public/metroLogo.jpg"),
@@ -95,11 +95,11 @@ export const Main = () => {
             <div className="mx-auto max-w-2xl lg:max-w-5xl">
               <div className="top-[var(--avatar-top,theme(spacing.3))] w-full">
                 <div className="relative">
-                  <div className="absolute left-0 h-[75px] rounded-full bg-white/90 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
+                  <div className="absolute left-0 h-[75px] rounded-full bg-white/90  shadow-xl ring-4 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
                     <Image
                       src={images.profil}
                       alt="/"
-                      className="rounded-full "
+                      className="rounded-full"
                       width={75}
                       height={75}
                     />
@@ -126,12 +126,12 @@ export const Main = () => {
                 realms of computer science to expand my knowledge and
                 skills.
               </p>
-              <div className="mt-6 flex gap-6 text-2xl text-gray-400">
+              <div className="mt-6 flex gap-6 text-2xl text-[#18181B] dark:text-gray-400">
                 {[
-                  { href: '/', icon: <FaLinkedin /> },
-                  { href: '/', icon: <FaGithub /> },
-                  { href: '/', icon: <FaInstagram /> },
-                  { href: '/', icon: <AiOutlineMail /> },
+                  { href: 'https://www.linkedin.com/in/dev-tonybui/', icon: <FaLinkedin className="cursor-pointer"/> },
+                  { href: 'https://github.com/tonybbb2', icon: <FaGithub className="cursor-pointer"/> },
+                  { href: 'https://www.instagram.com/tooony____/', icon: <FaInstagram  className="cursor-pointer"/> },
+                  { href: '/', icon: <AiOutlineMail className="cursor-pointer"/> },
                 ].map((link, index) => (
                   <Link key={index} href={link.href}>
                     {link.icon}
@@ -164,7 +164,7 @@ export const Main = () => {
                 <div className="mx-auto max-w-2xl lg:max-w-5xl">
                   <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
                     <div className="flex flex-col gap-16">
-                      <h1 className="text-4xl font-display text-white uppercase ">
+                      <h1 className="text-4xl font-display text-black dark:text-white uppercase ">
                         <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
                         <span className="text-xs text-[#DA3028]">
                           Read my blogs!
@@ -185,6 +185,7 @@ export const Main = () => {
                       <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
                       <form className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
                         <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                          <MdMarkEmailUnread size={20} />
                           <span className="ml-3">Stay up to date</span>
                         </h2>
                         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
@@ -209,6 +210,7 @@ export const Main = () => {
                       </form>
                       <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
                         <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                          <MdWork size={20}/>
                           <span className="ml-3">Experience</span>
                         </h2>
                         <ol className="mt-6 space-y-4">
