@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Preloader from "./Preloader";
 import Footer from "./components/Footer";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(true);
@@ -15,6 +16,24 @@ function MyApp({ Component, pageProps }) {
     <>
       {!loading ? (
         <React.Fragment>
+          <Head>
+            <title>Tony Bui - Web developper</title>
+            <meta
+              name="description"
+              content="Personal website - web developer"
+            />
+            <link rel="icon" href="/PRpic.png" type="image/png" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossorigin
+            />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap"
+              rel="stylesheet"
+            ></link>
+          </Head>
           <div className="flex w-full ">
             <div className="fixed inset-0 flex justify-center sm:px-8">
               <div className="flex w-full max-w-7xl lg:px-8">
