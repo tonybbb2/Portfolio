@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import React from "react";
 import Navbar from "./components/Navbar";
 import Preloader from "./Preloader";
+import Footer from "./components/Footer";
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(true);
@@ -23,6 +24,7 @@ function MyApp({ Component, pageProps }) {
             <div className="relative flex w-full flex-col">
               <Navbar />
               <Component {...pageProps} />
+              <Footer />
             </div>
           </div>
         </React.Fragment>

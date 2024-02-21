@@ -12,6 +12,7 @@ export const Navbar = () => {
 
     const [nav, setNav] = useState(false);
     const [lang, setLang] = useState(false);
+    const [showProfil, setShowProfil] = useState(false);
     const [shadow, setShadsow] = useState(false)
     const [navBg, setNavBg] = useState('#ecf0f3');
     const [LinkColor, setLinkColor] = useState('#1f2937');
@@ -27,16 +28,9 @@ export const Navbar = () => {
 
     useEffect(() => {
         if (
-            router.asPath === '/Comics' ||
-            router.asPath === '/Anime' ||
-            router.asPath === '/Pokemon' ||
-            router.asPath === '/Podcasts' ||
-            router.asPath === '/Vi' ||
-            router.asPath === '/Portfolio' ||
-            router.asPath === '/Netflix'
+            router.asPath === '/About'
         ) {
-            setNavBg('transparent')
-            setLinkColor('#ecf0f3')
+            setShowProfil(true)
         }
         else {
             setNavBg('#252529')
@@ -60,9 +54,11 @@ export const Navbar = () => {
 
     return (
         <div className={'relative flex justify-center w-full h-10 top-5 z-[100] gap-[10px]' }>
-            <div className='hidden md:flex md:justify-end md:flex-1 md:pr-32'>
-                <div className="hidden h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10"><a aria-label="Home" className="pointer-events-auto" href="/"></a>
-                    <Image src={profil} alt='/' className='rounded-full' />
+            <div className='md:flex md:justify-end md:flex-1 md:pr-32'>
+                <div className={showProfil ? 'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10': 'hidden'}>
+                    <a aria-label="Home" className="pointer-events-auto" href="/">
+                      <Image src={profil} alt='/' className='rounded-full' />
+                    </a>
                 </div>
             </div>
             <div onClick={handleNav} className='flex justify-end md:hidden'>
@@ -70,8 +66,8 @@ export const Navbar = () => {
             </div>
             <div className='hidden justify-end md:justify-center rounded-full md:flex flex-1 bg-white dark:bg-[#252529] shadow-lg ring-1 ring-zinc-900/5'>
                 <nav>
-                    <ul className='flex rounded-full w-full h-full text-black dark:text-white font-semibold text-md'>
-                        <Link href='/#main'>
+                    <ul className='flex rounded-full w-full h-full text-black dark:text-white font-semibold font-display text-md'>
+                        <Link href='/About'>
                             <li className='relative block px-4 py-2 transition hover:text-red-600'>About</li>
                         </Link>
                         <Link href='/#Blog'>
