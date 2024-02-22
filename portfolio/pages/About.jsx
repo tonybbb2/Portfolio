@@ -71,7 +71,7 @@ const About = () => {
                   <li className="flex">
                     <FaXTwitter size={22} className="text-zinc-700" />
                     <Link href="/">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 ">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600 ">
                         Follow on X
                       </span>
                     </Link>
@@ -79,7 +79,7 @@ const About = () => {
                   <li className="mt-4 flex">
                     <FaLinkedin size={22} className="text-zinc-700" />
                     <Link href="https://www.linkedin.com/in/dev-tonybui/">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 ">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600 ">
                         Follow on LinkedIn
                       </span>
                     </Link>
@@ -87,7 +87,7 @@ const About = () => {
                   <li className="mt-4 flex">
                     <FaGithub size={22} className="text-zinc-700" />
                     <Link href="https://github.com/tonybbb2">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600">
                         Follow on Github
                       </span>
                     </Link>
@@ -95,7 +95,7 @@ const About = () => {
                   <li className="mt-4 flex">
                     <FaInstagram size={22} className="text-zinc-700" />
                     <Link href="https://www.instagram.com/tooony____/">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600">
                         Follow on Instagram
                       </span>
                     </Link>
@@ -103,7 +103,7 @@ const About = () => {
                   <li className="mt-8 border-t pt-8 border-zinc-700/40 flex">
                     <AiOutlineMail size={22} className="text-zinc-700" />
                     <Link href="/">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600">
                         Bui.tony35@gmail.com
                       </span>
                     </Link>
