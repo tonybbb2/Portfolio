@@ -1,13 +1,8 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { MdWork, MdMarkEmailUnread } from "react-icons/md";
-import { GiCloudDownload } from "react-icons/gi";
-import Article from "./Article";
-import Footer from "./Footer";
 
 export const Main = () => {
 

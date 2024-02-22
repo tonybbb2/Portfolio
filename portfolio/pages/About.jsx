@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import gymAbout from "../public/aboutGym.jpg";
+import Link from "next/link";
+import { FaXTwitter } from "react-icons/fa6";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -15,7 +19,7 @@ const About = () => {
                     src={gymAbout}
                     width={800}
                     height={800}
-                    className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                    className="aspect-square rotate-3 rounded-4xl bg-zinc-100 object-cover dark:bg-zinc-800"
                   ></Image>
                 </div>
               </div>
@@ -44,7 +48,7 @@ const About = () => {
                     a big part of my routine—work, eat, and gym sessions.
                   </p>
                   <p>
-                    In addition to bodybuilding, I have ambitious plans to delve
+                    In addition to bodybuilding, I have ambitious plans to dive
                     into the world of Muay Thai. I'm eager to dedicate myself to
                     rigorous training, honing my skills with the aim of one day
                     journeying to Thailand to train alongside the sport's
@@ -61,6 +65,50 @@ const About = () => {
                     ahead.
                   </p>
                 </div>
+              </div>
+              <div className="lg:pl-20">
+                <ul role="list">
+                  <li className="flex">
+                    <FaXTwitter size={22} className="text-zinc-700" />
+                    <Link href="/">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 ">
+                        Follow on X
+                      </span>
+                    </Link>
+                  </li>
+                  <li className="mt-4 flex">
+                    <FaLinkedin size={22} className="text-zinc-700" />
+                    <Link href="https://www.linkedin.com/in/dev-tonybui/">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 ">
+                        Follow on LinkedIn
+                      </span>
+                    </Link>
+                  </li>
+                  <li className="mt-4 flex">
+                    <FaGithub size={22} className="text-zinc-700" />
+                    <Link href="https://github.com/tonybbb2">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600">
+                        Follow on Github
+                      </span>
+                    </Link>
+                  </li>
+                  <li className="mt-4 flex">
+                    <FaInstagram size={22} className="text-zinc-700" />
+                    <Link href="https://www.instagram.com/tooony____/">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600">
+                        Follow on Instagram
+                      </span>
+                    </Link>
+                  </li>
+                  <li className="mt-8 border-t pt-8 border-zinc-700/40 flex">
+                    <AiOutlineMail size={22} className="text-zinc-700" />
+                    <Link href="/">
+                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600">
+                        Bui.tony35@gmail.com
+                      </span>
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
