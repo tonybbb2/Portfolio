@@ -11,7 +11,7 @@ export default function postPage({ source, frontMatter}) {
         <>
             <div className='w-full'>
                 <h1>{frontMatter.title}</h1>
-                <MDXRemote {...source} components={components} />
+                {/* <MDXRemote {...source} components={components} /> */}
             </div>
         </>
     )

@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import BlogsImage from '../../public/INT0.5.jpg'
 import profil from "../../public/PRpic.png";
 
-const BlogCards = ({ title, description, time}) => {
+const BlogCards = ({ title, description, time, link}) => {
   return (
     <>
         <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-800 dark:border-gray-700 flex flex-col transition duration-300 hover:scale-105">
@@ -41,7 +42,9 @@ const BlogCards = ({ title, description, time}) => {
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                     {description}
                 </p>    
-                <div aria-hidden="true" className="relative mt-4 mb-4 flex items-center text-sm font-medium text-sky-300 underline hover:cursor-pointer">Read full blog</div>    
+                <Link href={`/blog/${link}`}>
+                    <div aria-hidden="true" className="relative mt-4 mb-4 flex items-center text-sm font-medium text-sky-300 underline hover:cursor-pointer">Read full blog</div>    
+                </Link>
             </div>
             
         </div>

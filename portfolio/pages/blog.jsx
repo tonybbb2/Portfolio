@@ -8,6 +8,7 @@ import Image from 'next/image'
 import BlogCards from "./components/BlogCards"
 
 export default function Blog({ posts }) {
+  console.log(posts)
     return (
         <div id="Blog">
         <div className="sm:px-8 mt-16 sm:mt-32">
@@ -30,8 +31,9 @@ export default function Blog({ posts }) {
                             key={index}
                             title={post.data.title}
                             time={post.data.time}
+                            link={post.filepath.replace(".mdx", "")}
                             description={post.data.description}
-                          />
+                        />
                         ))}   
                     </div>
                 </div>
