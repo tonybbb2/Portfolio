@@ -19,6 +19,7 @@ const About = () => {
                     src={gymAbout}
                     width={800}
                     height={800}
+                    alt="gym picture"
                     className="aspect-square rotate-3 rounded-4xl bg-zinc-100 object-cover dark:bg-zinc-800"
                   ></Image>
                 </div>

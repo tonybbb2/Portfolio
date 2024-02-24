@@ -4,7 +4,7 @@ const ExperienceLi = ({ Image, Company, Position, DateBefore, DateNow }) => {
   return (
     <>
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={Image} className="rounded-full object-fill"></Image>
+        <Image src={Image} alt="company logo" className="rounded-full object-fill"></Image>
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>

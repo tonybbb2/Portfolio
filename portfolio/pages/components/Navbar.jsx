@@ -59,9 +59,9 @@ export const Navbar = () => {
               : "hidden"
           }
         >
-          <a aria-label="Home" className="pointer-events-auto" href="/">
+          <Link className="pointer-events-auto" href="/">
             <Image src={profil} alt="/" className="rounded-full" />
-          </a>
+          </Link>
         </div>
       </div>
       <div onClick={handleNav} className="flex justify-end md:hidden">
