@@ -6,12 +6,12 @@ import profil from "../../public/PRpic.png";
 
 const BlogCards = ({ title, description, time, link, thumbnail }) => {
     const [dynamicThumbnail, setDynamicThumbnail] = useState(null);
-    
+
     useEffect(() => {
         const importThumbnail = async () => {
             try {
                 // Dynamically import the image based on the thumbnail prop
-                const dynamicImage = await import('../../public/INT00.jpg');
+                const dynamicImage = await import(`${thumbnail}`);
                 setDynamicThumbnail(dynamicImage.default);
             } catch (error) {
                 console.error('Error loading image:', error);
@@ -20,11 +20,14 @@ const BlogCards = ({ title, description, time, link, thumbnail }) => {
 
         importThumbnail();
 
+        console.log(thumbnail)
+        console.log('../../public/INT00.jpg')
+
     }, [thumbnail]);
 
     return (
         <>
-            <div class="w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-800 dark:border-gray-700 flex flex-col transition duration-300 hover:scale-105">
+            <div className="w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-800 dark:border-gray-700 flex flex-col transition duration-300 hover:scale-105">
                 <div className="flex justify-between">
                     <div className="flex px-5 py-4">
                         <div>
@@ -43,13 +46,16 @@ const BlogCards = ({ title, description, time, link, thumbnail }) => {
                     </div>
                 </div>
                 <div className="flex justify-center w-full">
-                    <Image
-                        className="rounded-lg"
-                        src={dynamicThumbnail}
-                        alt="test"
-                        width={275}
-                        height={200}
-                    />
+                    {
+                        thumbnail ? 
+                            <Image
+                                className="rounded-lg"
+                                src={BlogsImage}
+                                alt="test"
+                                width={275}
+                                height={200}
+                         /> : null
+                    }   
                 </div>
                 <h5 className="mt-2 text-lg px-6 py-2 font-bold tracking-tight text-gray-900 dark:text-white">
                     {title}

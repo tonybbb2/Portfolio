@@ -6,6 +6,21 @@ html{
   scroll-behavior: smooth;
 }
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(-primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #27272A;
+  border-radius: 14px;
+}
+
 /*
 *
 * PRELOADER CSS - ANIMATION

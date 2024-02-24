@@ -31,7 +31,7 @@ const About = () => {
                 <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                   <p>
                     Growing up, I was always fascinated by technology,
-                    especially video games. But I never thought I'd be into
+                    especially video games. However I never thought I'd be into
                     coding until I built my first PC. It was a significant
                     turning point for me—I suddenly knew I wanted to study
                     computer science. After three years of college, I graduated
@@ -102,7 +102,7 @@ const About = () => {
                   </li>
                   <li className="mt-8 border-t pt-8 border-zinc-700/40 flex">
                     <AiOutlineMail size={22} className="text-zinc-700" />
-                    <Link href="/">
+                    <Link href="mailto:'Bui.tony35@gmail.com'">
                       <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600">
                         Bui.tony35@gmail.com
                       </span>
