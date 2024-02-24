@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BlogsImage from '../../public/INT0.5.jpg'
 import profil from "../../public/PRpic.png";
 
-const BlogCards = ({ title, description, time, link }) => {
+const BlogCards = ({ title, description, time, link, thumbnail }) => {
+    const [dynamicThumbnail, setDynamicThumbnail] = useState(null);
+    
+    useEffect(() => {
+        const importThumbnail = async () => {
+            try {
+                // Dynamically import the image based on the thumbnail prop
+                const dynamicImage = await import('../../public/INT00.jpg');
+                setDynamicThumbnail(dynamicImage.default);
+            } catch (error) {
+                console.error('Error loading image:', error);
+            }
+        };
+
+        importThumbnail();
+
+    }, [thumbnail]);
+
     return (
         <>
             <div class="w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-800 dark:border-gray-700 flex flex-col transition duration-300 hover:scale-105">
@@ -28,8 +45,8 @@ const BlogCards = ({ title, description, time, link }) => {
                 <div className="flex justify-center w-full">
                     <Image
                         className="rounded-lg"
-                        src={BlogsImage}
-                        alt=""
+                        src={dynamicThumbnail}
+                        alt="test"
                         width={275}
                         height={200}
                     />

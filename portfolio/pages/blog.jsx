@@ -33,6 +33,7 @@ export default function Blog({ posts }) {
                             time={post.data.time}
                             link={post.filepath.replace(".mdx", "")}
                             description={post.data.description}
+                            thumbnail={post.data.image}
                         />
                         ))}   
                     </div>

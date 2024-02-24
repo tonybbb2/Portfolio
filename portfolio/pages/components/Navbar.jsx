@@ -25,7 +25,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     if (router.asPath === "/About" || 
-        router.asPath === "/blog") {
+        router.asPath === "/Blog") {
       setShowProfil(true);
     } else {
       setNavBg("#252529");
@@ -94,7 +94,7 @@ export const Navbar = () => {
                 About
               </li>
             </Link>
-            <Link href="/blog">
+            <Link href="/Blog">
               <li className="relative block px-4 py-2 transition hover:text-red-600">
                 Blog
               </li>
