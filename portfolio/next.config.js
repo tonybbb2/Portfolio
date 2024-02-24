@@ -10,9 +10,10 @@ const nextConfig = {
   // },
 }
 module.exports = {
-  future: {
-    // Opt-in to webpack@5
-    webpack5: true,
+  images : {
+      domains : [
+        'images.ctfassets.net'
+      ]
   },
   reactStrictMode: true,
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {

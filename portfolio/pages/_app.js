@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    setTimeout(() => setLoading(false), 3500);
+    setTimeout(() => setLoading(false), 1250);
   }, []);
 
   return (

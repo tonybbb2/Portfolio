@@ -6,13 +6,17 @@ import dynamic from 'next/dynamic'
 import path from 'path'
 import { postFilePaths, POSTS_PATH } from '../lib/mdxUtils'
 
+const components = {
+
+}
+
 export default function postPage({ source, frontMatter}) {
     return (
         <>
             <div className='w-full'>
                 <h1>{frontMatter.title}</h1>
-                {/* <MDXRemote {...source} components={components} /> */}
             </div>
+            <MDXRemote {...source} components={components} />
         </>
     )
 }
