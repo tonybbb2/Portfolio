@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
               name="description"
               content="Personal website - web developer"
             />
-            <link rel="icon" href="/PRpic.png" type="image/png" />
+            <link rel="icon" href="/PRpicTransparent.png" type="image/png" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
               rel="preconnect"
