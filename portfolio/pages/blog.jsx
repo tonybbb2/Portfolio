@@ -2,7 +2,6 @@ import React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import { postFilePaths, POSTS_PATH } from '/lib/mdxUtils.js'
 import BlogCards from "./components/BlogCards"
 
 export default function Blog({ posts }) {
@@ -29,7 +28,7 @@ export default function Blog({ posts }) {
                             key={index}
                             title={post.data.title}
                             time={post.data.time}
-                            link={post.filepath.replace(".mdx", "")}
+                            link={post.fileName.replace(".mdx", "")}
                             description={post.data.description}
                             thumbnail={post.data.image}
                         />
@@ -44,18 +43,26 @@ export default function Blog({ posts }) {
     );
 }
 
-export function getStaticProps() {
-    const posts = postFilePaths.map((filepath) => {
-        const source = fs.readFileSync(path.join(POSTS_PATH, filepath))
-        const { content, data } = matter(source)
 
+const POSTS_DIR = path.join(process.cwd(), 'pages', 'posts');
+
+export async function getStaticProps() {
+    const postFileNames = fs.readdirSync(POSTS_DIR);
+    const posts = postFileNames.map(fileName => {
+        const fullPath = path.join(POSTS_DIR, fileName);
+        const source = fs.readFileSync(fullPath, 'utf8');
+        const { content, data } = matter(source);
+        
         return {
             content,
             data,
-            filepath
-        }
-    })
+            fileName, // You can use fileName instead of filepath if needed
+        };
+    });
 
-    return { props : {posts}}
+    return {
+        props: {
+            posts,
+        },
+    };
 }
-

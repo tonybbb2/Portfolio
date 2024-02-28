@@ -20,9 +20,6 @@ const BlogCards = ({ title, description, time, link, thumbnail }) => {
 
         importThumbnail();
 
-        console.log(thumbnail)
-        console.log('../../public/INT00.jpg')
-
     }, [thumbnail]);
 
     return (
@@ -66,7 +63,7 @@ const BlogCards = ({ title, description, time, link, thumbnail }) => {
                         {description}
                     </p>
                     <div aria-hidden="true" className="relative mt-4 mb-4 flex items-center text-sm font-medium text-sky-300 underline hover:cursor-pointer">
-                        <Link href={`/blog/${link}`}>
+                        <Link href={`/Blog/${link}`}>
                             <p>Read full blog</p>
                         </Link>
                     </div>

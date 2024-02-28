@@ -6,6 +6,13 @@ const POSTS_PATH = path.join(process.cwd(), 'posts');
 const postFilePaths = fs
     .readdirSync(POSTS_PATH)
     .filter((filePath) => /\.mdx?$/.test(filePath))
-    .map((filePath) => path.join(POSTS_PATH, filePath));
+    .map((filePath) => {
+        const fileName = path.basename(filePath, path.extname(filePath));
+        return {
+            params: {
+                slug: fileName,
+            },
+        };
+    });
 
 export { POSTS_PATH, postFilePaths };

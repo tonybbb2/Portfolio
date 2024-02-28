@@ -7,8 +7,6 @@ export default function Blogs() {
 
     var fs = require('fs').promises;
 
-    console.log(fs);
-
     const blogsDir = "blogs";
 
     const files = fs.readdirSync(path.join("blogs"));
