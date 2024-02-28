@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { MdWork, MdMarkEmailUnread } from "react-icons/md";
 import { GiCloudDownload } from "react-icons/gi";
@@ -79,7 +78,7 @@ export const Recent = () => {
 
   return (
     <div id="Blog">
-      <div className="sm:px-8 mt-24 md:mt-28">
+      <div className="sm:px-8">
         <div className="mx-auto w-full max-w-7xl lg:px-8">
           <div className="relative px-4 sm:px-8 lg:px-12">
             <div className="mx-auto max-w-2xl lg:max-w-5xl">

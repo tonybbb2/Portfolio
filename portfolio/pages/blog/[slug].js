@@ -4,7 +4,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import dynamic from 'next/dynamic'
 import path from 'path'
-import { postFilePaths, POSTS_PATH } from '../lib/mdxUtils'
+import { postFilePaths, POSTS_PATH } from '/lib/mdxUtils.js'
 
 const components = {
 
@@ -44,12 +44,17 @@ export const getStaticProps = async ({params}) => {
 }
 
 export const getStaticPaths = async () => {
+    if (!postFilePaths) {
+        // Handle the case where postFilePaths doesn't exist
+        return { paths: [], fallback: false };
+    }
+
     const paths = postFilePaths
         .map((path) => path.replace(/\.mdx?$/, ''))
-        .map((slug) => ({ params : {slug}}))
+        .map((slug) => ({ params: { slug } }));
 
     return {
         paths,
-        fallback : false,
-    }
-}
+        fallback: false,
+    };
+};

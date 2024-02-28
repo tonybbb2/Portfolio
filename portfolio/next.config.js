@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+  output: "standalone",
   // use: {
   //   loader: 'file-loader',
   //   options: {

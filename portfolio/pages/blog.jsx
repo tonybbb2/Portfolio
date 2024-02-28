@@ -2,9 +2,7 @@ import React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import {NextLink, Link} from 'next/link'
-import { postFilePaths, POSTS_PATH } from './lib/mdxUtils'
-import Image from 'next/image'
+import { postFilePaths, POSTS_PATH } from '/lib/mdxUtils.js'
 import BlogCards from "./components/BlogCards"
 
 export default function Blog({ posts }) {

@@ -113,6 +113,91 @@ export const Skills = () => {
                         </div>
                     </div>
                     </div>
+                    <h1 className='text-xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100'>
+                  FrontEnd
+                  </h1>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5'>
+                    <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                            <div className='m-auto'>
+                                <IoLogoHtml5 className='text-5xl text-orange-500 w-[64px] h-[64px]' />
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <h3>HTML</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                            <div className='m-auto'>
+                                <RiCss3Fill className='text-5xl text-blue-500 w-[64px] h-[64px]' />
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <h3>CSS</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                            <div className='m-auto'>
+                                <TbBrandJavascript className='text-5x text-yellow-400 w-[64px] h-[64px]' />
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <h3>JS</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                            <div className='m-auto'>
+                                <FaReact className='text-5x text-cyan-500 w-[64px] h-[64px]' />
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <h3>React</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                            <div className='m-auto'>
+                                <IoLogoVue className='text-5xl text-green-600 w-[64px] h-[64px]' />
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <h3>Vue</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                            <div className='m-auto'>
+                                <AiOutlineConsoleSql className='text-5xl text-black w-[64px] h-[64px]' />
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <h3>SQL</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                            <div className='m-auto'>
+                                <DiPython className='text-5xl w-[64px] h-[64px]' />
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <h3>Python</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
+                        <div className='grid grid-cols-2 gap-4 justify-center items-center'>
+                            <div className='m-auto'>
+                                <SiTailwindcss className='text-5x text-cyan-600 w-[64px] h-[64px]' />
+                            </div>
+                            <div className='flex flex-col items-center justify-center'>
+                                <h3>Tailwind</h3>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
               </div>
             </div>
