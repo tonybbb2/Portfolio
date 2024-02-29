@@ -26,66 +26,216 @@ html{
 * PRELOADER CSS - ANIMATION
 *
 */
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.loading {
-  position : absolute;
-  width: 150px;
-  height: 150px;
-  border: 0px solid black;
-  border-radius: 50%;
+  .box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .title {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: #af2b19;
+        position: absolute;
+        animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        display: flex;
+      }
+
+      h1 {
+        font-family: 'Poppins';
+        font-size: 32px;
+        -webkit-animation: mainFadeIn 2s forwards;
+        -o-animation: mainFadeIn 2s forwards;
+        animation: mainFadeIn 2s forwards;
+        animation-delay: 1.6s;
+        opacity: 0;
+        display: flex;
+        position: relative;
+
+        span {
+          width:0px;
+          height: 0px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+
+          background: #ffb510;
+          -webkit-animation: load 0.6s cubic-bezier(.74, .06, .4, .92) forwards;
+          animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+          animation-delay: 2s;
+          margin-left: 5px;
+          margin-top: -10px;
+          position: absolute;
+          bottom: 13px;
+          right: -12px;
+
+        }
+      }
+    }
+
+    .role {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 30px;
+      margin-top: -10px;
+
+      .block {
+        width: 0%;
+        height: inherit;
+        background: #0f0106;
+        position: absolute;
+        animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+        animation-delay: 2s;
+        display: flex;
+      }
+
+      p {
+        animation: secFadeIn 2s forwards;
+        animation-delay: 3.2s;
+        opacity: 0;
+        font-weight: 400;
+        font-family: 'Lato';
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+    }
+  }
 }
 
-.loading:nth-child(1) {
-  border-bottom-width : 8px;
-  border-color : white;
-  animation: animate1 2s linear infinite;
-  filter: drop-shadow(0px 0px 10px white);
-}
-
-@keyframes animate1 {
+@keyframes mainBlock {
   0% {
-    transform: rotateX(40deg) rotateY(-50deg) rotateZ(0deg);
-  }
+    width: 0%;
+    left: 0;
 
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
   100% {
-    transform: rotateX(40deg) rotateY(-50deg) rotateZ(360deg);
+    width: 0;
+    left: 100%;
   }
 }
 
-.loading:nth-child(2) {
-  border-bottom-width : 8px;
-  border-color : black;
-  animation: animate2 2s linear infinite;
-  filter: drop-shadow(0px 0px 10px black);
-}
-
-@keyframes animate2 {
+@keyframes secBlock {
   0% {
-    transform: rotateX(55deg) rotateY(15deg) rotateZ(0deg);
-  }
+    width: 0%;
+    left: 0;
 
+  }
+  50% {
+    width: 100%;
+    left: 0;
+
+  }
   100% {
-    transform: rotateX(55deg) rotateY(15deg) rotateZ(360deg);
+    width: 0;
+    left: 100%;
   }
 }
 
-.loading:nth-child(3) {
-  border-bottom-width : 8px;
-  border-color : red;
-  animation: animate3 2s linear infinite;
-  filter: drop-shadow(0px 0px 10px red);
-}
-
-@keyframes animate3 {
+@keyframes mainFadeIn {
   0% {
-    transform: rotateX(40deg) rotateY(60deg) rotateZ(0deg);
+    opacity: 0;
   }
-
   100% {
-    transform: rotateX(40deg) rotateY(60deg) rotateZ(360deg);
+    opacity: 1;
   }
 }
 
+
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: #c92424;
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    background: #c92424;
+    opacity: 1;
+    bottom: 45px;
+  }
+   65% {
+      width: 7px;
+    height: 7px;
+      bottom: 0px;
+      width: 15px
+   }
+   80% {
+      width: 10px;
+    height: 10px;
+      bottom: 20px
+   }
+  100% {
+    width: 7px;
+    height: 7px;
+    background: #c92424;
+    border: 0px solid #222;
+    bottom: 13px;
+
+  }
+}
+
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+
+
+@keyframes top {
+  0% {
+    opacity: 0;
+     bottom: -80px
+  }
+  100% {
+    opacity: 1;
+     bottom: 0px
+
+  }
+}
+
+@keyframes icon {
+  0% {
+    opacity: 0;
+     transform: scale(0.0);
+  }
+   50% {
+      opacity: 1;
+     transform: scale(1.3) rotate(-02deg);
+   }
+  100% {
+    opacity: 1;
+     bottom: 0px;
+  }
+}
 
 @layer base{
   h1,h2,h3,h4,h5,h6{
