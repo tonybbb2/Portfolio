@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { IoLogoHtml5 } from 'react-icons/io'
 import { RiCss3Fill } from 'react-icons/ri';
 import { TbBrandJavascript, TbBrandReactNative, TbBrandRedux, TbBrandKotlin } from 'react-icons/tb';
@@ -8,14 +9,16 @@ import { SiTailwindcss, SiBootstrap, SiBlazor, SiBulma, SiExpress, SiPhp, SiCode
 import { SiNextdotjs } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io5";
 import { DiJqueryLogo, DiDotnet, DiMysql, DiPython   } from 'react-icons/di'
+import imageJS from '/public/javascript-3.png'
+import imageCSS from '/public/css-29-256.png'
 
 
 export const Skills = () => {
 
     const frontEndSkills = [
         { name: "HTML5", icon: <IoLogoHtml5 className='text-5xl text-orange-500 w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-orange-500'},
-        { name: "CSS3", icon: <RiCss3Fill className='text-5xl text-[#2299f8] w-[64px] h-[64px] ' />, hoverColor: 'hover:shadow-[#2299f8]'},
-        { name: "JavaScript", icon: <TbBrandJavascript className='text-5xl text-[#f0dc55] w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-[#f0dc55]'},
+        { name: "CSS3", icon: <Image src={imageCSS} className='text-5xl text-[#2299f8] w-[64px] h-[64px] ' />, hoverColor: 'hover:shadow-[#2299f8]'},
+        { name: "JavaScript", icon: <Image src={imageJS} className='text-5xl text-[#f0dc55] w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-[#f0dc55]'},
         { name: "TypeScript", icon: <BiLogoTypescript className='text-5xl text-[#2f74c0] w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-[#2f74c0]'},
         { name: "jQuery", icon: <DiJqueryLogo className='text-5xl text-[#21ace2] w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-[#21ace2]'},
         { name: "ReactJS", icon: <TbBrandReactNative className='text-5xl text-[#017fa5] w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-[#017fa5]'},
@@ -30,7 +33,7 @@ export const Skills = () => {
     ];
 
     const backEndSkills = [
-        { name: "NodeJS", icon: <IoLogoNodejs className='text-5xl text-[#75ad63] w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-[#75ad63]'},
+        { name: "NodeJS", icon: <Image src={imageJS} className='text-5xl text-[#75ad63] w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-[#75ad63]'},
         { name: "Express", icon: <SiExpress className='text-5xl text-black w-[64px] h-[64px]'/>, hoverColor: 'hover:shadow-black'},
         { name: "PHP", icon: <SiPhp  className='text-5xl text-[#787cb4] w-[64px] h-[64px]'/>, hoverColor: 'hover:shadow-[#787cb4]'},
         { name: "Codeigniter", icon: <SiCodeigniter className='text-5xl text-[#f14a2b] w-[64px] h-[64px]' />, hoverColor: 'hover:shadow-[#f14a2b]'},

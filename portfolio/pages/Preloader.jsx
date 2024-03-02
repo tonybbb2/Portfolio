@@ -5,18 +5,18 @@ const Preloader = () => {
 
   return (
     <>
-      <div className='w-full h-screen flex flex-col justify-center items-center relative bg-black dark:bg-white'>
+      <div className='w-full h-screen flex flex-col justify-center items-center relative bg-[#FAF9F6] dark:bg-black'>
         <div className="container">
           <div className="box">
 
             <div className="title text-center">
               <span className="block"></span>
-              <h1 className='text-white dark:text-white uppercase'>Tony Bui<span></span></h1>
+              <h1 className='text-black uppercase'>Tony Bui<span></span></h1>
             </div>
 
             <div className="role">
               <div className="block"></div>
-              <p className='text-white'>Jr. web developer</p>
+              <p className='text-black'>Jr. web developer</p>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ export const Main = () => {
           <div className="relative px-4 sm:px-8 lg:px-12">
             <div className="mx-auto max-w-2xl lg:max-w-5xl">
               <div className="top-[var(--avatar-top,theme(spacing.3))] w-full">
-                <div className="relative">
+                <div className="animate-slidein300 opacity-0 relative">
                   <div className="absolute left-0 h-[75px] rounded-full bg-white/90  shadow-xl ring-4 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
                     <Image
                       src={images.profil}
@@ -46,7 +46,7 @@ export const Main = () => {
         </div>
         <div className="flex-auto">
           <div className="sm:px-8 mt-9 mx-auto w-full max-w-7xl lg:px-8 relative px-4">
-            <div className="mx-auto max-w-2xl lg:max-w-5xl">
+            <div className="animate-slidein500 opacity-0 mx-auto max-w-2xl lg:max-w-5xl">
               <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 font-display">
                 <span className="text-[#DA3028]">TONY BUI</span>,
               </h1>
@@ -76,7 +76,7 @@ export const Main = () => {
             </div>
           </div>
         </div>
-        <div className="mt-20 sm:mt-24 w-full">
+        <div className="animate-slidein700 opacity-0 mt-20 sm:mt-24 w-full">
           <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
             {[images.interests5, images.interests2, images.interests05, images.interests3, images.interests4].map((interest, index) => (
               <div key={index} className={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 ${index % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>

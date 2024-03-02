@@ -30,9 +30,24 @@ module.exports = {
             borderColor: "white",
           },
         },
+        slidein: {
+          from: {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         typing: "typing 2.5s steps(35) infinite alternate, blink .7s infinite 5s",
+        slidein : "slidein 1s ease 300ms",
+        slidein300: "slidein 1s ease 300ms forwards",
+        slidein500: "slidein 1s ease 500ms forwards",
+        slidein700: "slidein 1s ease 700ms forwards",
+        slidein900: "slidein 1s ease 900ms forwards",
       },
     },
   },

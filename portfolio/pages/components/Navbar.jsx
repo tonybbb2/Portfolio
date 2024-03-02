@@ -49,7 +49,7 @@ export const Navbar = () => {
   return (
     <div
       className={
-        "relative flex justify-center w-full h-10 top-5 z-[100] gap-[10px]"
+        "animate-slidein900 opacity-0 relative flex justify-center w-full h-10 top-5 z-[100] gap-[10px]"
       }
     >
       <div className="md:flex md:justify-end md:flex-1 md:pr-32">
