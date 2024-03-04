@@ -66,7 +66,7 @@ export const Main = () => {
                   { href: 'https://www.linkedin.com/in/dev-tonybui/', icon: <FaLinkedin className="cursor-pointer"/> },
                   { href: 'https://github.com/tonybbb2', icon: <FaGithub className="cursor-pointer"/> },
                   { href: 'https://www.instagram.com/tooony____/', icon: <FaInstagram  className="cursor-pointer"/> },
-                  { href: '/', icon: <AiOutlineMail className="cursor-pointer"/> },
+                  { href: '/', icon: <AiOutlineMail className="cursor-pointer animate-bounce"/> },
                 ].map((link, index) => (
                   <Link key={index} href={link.href}>
                     {link.icon}

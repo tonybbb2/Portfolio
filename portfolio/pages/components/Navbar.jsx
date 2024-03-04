@@ -90,9 +90,19 @@ export const Navbar = () => {
       <div className="hidden justify-end md:justify-center rounded-full md:flex flex-1 bg-white dark:bg-[#252529] shadow-lg ring-1 ring-zinc-900/5">
         <nav>
           <ul className="flex rounded-full w-full h-full text-black dark:text-white font-semibold font-display text-md">
+            <Link href="/">
+              <li className="relative block px-4 py-2 transition hover:text-red-600">
+                Home
+              </li>
+            </Link>
             <Link href="/About">
               <li className="relative block px-4 py-2 transition hover:text-red-600">
                 About
+              </li>
+            </Link>
+            <Link href="/Work">
+              <li className="relative block px-4 py-2 transition hover:text-red-600">
+                Work
               </li>
             </Link>
             <Link href="/Blog">
@@ -100,17 +110,7 @@ export const Navbar = () => {
                 Blog
               </li>
             </Link>
-            <Link href="/Skills">
-              <li className="relative block px-4 py-2 transition hover:text-red-600">
-                Skills
-              </li>
-            </Link>
-            <Link href="/#projects">
-              <li className="relative block px-4 py-2 transition hover:text-red-600">
-                Projects
-              </li>
-            </Link>
-            <Link href="/#contact">
+            <Link href="/Contact">
               <li className="relative block px-4 py-2 transition hover:text-red-600">
                 Contact
               </li>
