@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       theme: {
         fontFamily: {
-          display: ["Sen"],
+          display: ['Sen' , 'sans-serif'],
         },
       },
       keyframes: {

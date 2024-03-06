@@ -25,50 +25,33 @@ const BlogCards = ({ title, description, time, link, thumbnail }) => {
     return (
         <>
             <div className="w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-800 dark:border-gray-700 flex flex-col transition duration-300 hover:scale-105">
-                <div className="flex justify-between">
-                    <div className="flex px-5 py-4">
-                        <div>
-                            <Image
-                                className="rounded-full max-w-none"
-                                src={profil}
-                                alt=""
-                                width={35}
-                                height={35}
-                            />
-                        </div>
-                        <div className="flex flex-col ml-5 text-xs">
-                            <div className="inline-block font-bold dark:text-white">Tony Bui</div>
-                            <div className="text-slate-500 dark:text-slate-400">{time}</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="flex justify-center w-full">
+                <div className="flex justify-center w-full py-4">
                     {
                         thumbnail ? 
                             <Image
                                 className="rounded-lg"
                                 src={BlogsImage}
                                 alt="test"
-                                width={275}
+                                width={285}
                                 height={200}
                          /> : null
                     }   
                 </div>
-                <h5 className="mt-2 text-lg px-6 py-2 font-bold tracking-tight text-gray-900 dark:text-white">
+                <div aria-hidden="true" className="relative px-5 py-2 flex items-center text-sm font-medium text-red-600 hover:cursor-pointer">
+                    <p>Web development</p>
+                </div>
+                <h5 className="text-lg px-5 py-1 font-bold tracking-tight text-gray-900 dark:text-white">
                     {title}
                 </h5>
-                <hr className="h-px mx-auto my-2 w-3/4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-                <div className="px-5">
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <div className="px-5 mt-2">
+                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 max-h-[75px] overflow-y-auto">
                         {description}
                     </p>
-                    <div aria-hidden="true" className="relative mt-4 mb-4 flex items-center text-sm font-medium text-sky-300 underline hover:cursor-pointer">
-                        <Link href={`/Blog/${link}`}>
-                            <p>Read full blog</p>
-                        </Link>
+                    <div aria-hidden="true" className="flex  mt-4 mb-4 flex items-center text-sm font-medium text-zinc-500 gap-4">
+                            <p>{time}</p>
+                            <p>5 minute read</p>
                     </div>
                 </div>
-
             </div>
         </>
     );
