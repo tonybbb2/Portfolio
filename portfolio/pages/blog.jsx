@@ -41,8 +41,13 @@ export default function Blog({ posts }) {
                         Latest articles
                       </h1>
                       <div>	&nbsp;</div>
-                      <div>
-                        
+                      <div className='flex items-center'>
+                        <label for="sortbox" class="flex items-center space-x-1 cursor-pointer">
+                        <span class="text-md font-semibold text-black dark:text-white uppercase mr-2">All</span>
+                        <svg class="h-4 w-4 text-black dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </label>
                       </div>
                     </div>
                     <div className='grid grid-cols-1 py-8  sm:grid-cols-2 md:grid-cols-3 gap-8 w-full h-auto'>
@@ -53,7 +58,7 @@ export default function Blog({ posts }) {
                             time={post.data.time}
                             link={post.fileName.replace(".mdx", "")}
                             description={post.data.description}
-                            thumbnail={post.data.image}
+                            thumbnail={post.data.previewImage}
                         />
                         ))}   
                     </div>

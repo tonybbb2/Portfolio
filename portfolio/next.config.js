@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ["source.unsplash.com"],
+  },
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   output: "standalone",
   // use: {
@@ -13,7 +16,9 @@ const nextConfig = {
 module.exports = {
   images : {
       domains : [
-        'images.ctfassets.net'
+        'source.unsplash.com',
+        'images.unsplash.com',
+        'www.0xkishan.com'
       ]
   },
   reactStrictMode: true,

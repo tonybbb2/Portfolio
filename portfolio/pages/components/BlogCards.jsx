@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BlogsImage from '../../public/INT0.5.jpg'
+import { CiCalendar } from "react-icons/ci";
+import { BiTimeFive } from "react-icons/bi";
 import profil from "../../public/PRpic.png";
 
 const BlogCards = ({ title, description, time, link, thumbnail }) => {
@@ -30,7 +32,7 @@ const BlogCards = ({ title, description, time, link, thumbnail }) => {
                         thumbnail ? 
                             <Image
                                 className="rounded-lg"
-                                src={BlogsImage}
+                                src={thumbnail}
                                 alt="test"
                                 width={285}
                                 height={200}
@@ -47,9 +49,9 @@ const BlogCards = ({ title, description, time, link, thumbnail }) => {
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 max-h-[75px] overflow-y-auto">
                         {description}
                     </p>
-                    <div aria-hidden="true" className="flex  mt-4 mb-4 flex items-center text-sm font-medium text-zinc-500 gap-4">
-                            <p>{time}</p>
-                            <p>5 minute read</p>
+                    <div aria-hidden="true" className="mt-4 mb-4 flex items-center text-sm font-medium text-zinc-500">
+                            <CiCalendar className="text-lg mr-1"/><p>{time}</p>
+                            <BiTimeFive className="text-lg ml-2 mr-1"/><p>5 minute read</p>
                     </div>
                 </div>
             </div>
