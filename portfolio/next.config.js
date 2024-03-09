@@ -14,14 +14,39 @@ const nextConfig = {
   // },
 }
 module.exports = {
-  images : {
-      domains : [
-        'source.unsplash.com',
-        'images.unsplash.com',
-        'www.0xkishan.com',
-        'images.ctfassets.net',
-        'blog.logrocket.com'
-      ]
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.0xkishan.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.dribbble.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        port: '',
+      },
+    ],
   },
   reactStrictMode: true,
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {

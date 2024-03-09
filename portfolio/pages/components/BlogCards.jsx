@@ -1,44 +1,28 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import BlogsImage from '../../public/INT0.5.jpg'
 import { CiCalendar } from "react-icons/ci";
 import { BiTimeFive } from "react-icons/bi";
-import profil from "../../public/PRpic.png";
 
 const BlogCards = ({ title, description, time, link, thumbnail, minuteRead, type }) => {
-    const [dynamicThumbnail, setDynamicThumbnail] = useState(null);
-
-    useEffect(() => {
-        const importThumbnail = async () => {
-            try {
-                // Dynamically import the image based on the thumbnail prop
-                const dynamicImage = await import(`${thumbnail}`);
-                setDynamicThumbnail(dynamicImage.default);
-            } catch (error) {
-                console.error('Error loading image:', error);
-            }
-        };
-
-        importThumbnail();
-
-    }, [thumbnail]);
-
     return (
         <>
-            <Link href={link}>
+            <Link href={`/Blog/${link}`}>
                 <div className="w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-800 dark:border-gray-700 flex flex-col transition duration-300 hover:scale-105">
                     <div className="flex justify-center w-full py-4">
-                        {
-                            thumbnail ?
-                                <Image
-                                    className="rounded-lg"
-                                    src={thumbnail}
-                                    alt="test"
-                                    width={285}
-                                    height={200}
-                                /> : null
-                        }
+                        {thumbnail ? (
+                            <Image
+                                className="rounded-lg"
+                                src={thumbnail}
+                                alt="test"
+                                width={285}
+                                height={200}
+                                objectFit="contain"
+                                quality={100}
+                                layout="fixed"
+                                unoptimized
+                            />
+                        ) : null}
                     </div>
                     <div aria-hidden="true" className="relative px-5 py-2 flex items-center text-sm font-medium text-red-600 hover:cursor-pointer">
                         <p>{type}</p>
