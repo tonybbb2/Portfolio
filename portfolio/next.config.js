@@ -18,7 +18,9 @@ module.exports = {
       domains : [
         'source.unsplash.com',
         'images.unsplash.com',
-        'www.0xkishan.com'
+        'www.0xkishan.com',
+        'images.ctfassets.net',
+        'blog.logrocket.com'
       ]
   },
   reactStrictMode: true,

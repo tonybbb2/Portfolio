@@ -50,7 +50,7 @@ export default function Blog({ posts }) {
                         </label>
                       </div>
                     </div>
-                    <div className='grid grid-cols-1 py-8  sm:grid-cols-2 md:grid-cols-3 gap-8 w-full h-auto'>
+                    <div className='grid grid-cols-1 py-8  sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full h-auto'>
                       {posts.map((post, index) => (
                           <BlogCards
                             key={index}
@@ -59,6 +59,8 @@ export default function Blog({ posts }) {
                             link={post.fileName.replace(".mdx", "")}
                             description={post.data.description}
                             thumbnail={post.data.previewImage}
+                            type={post.data.type}
+                            minuteRead={post.data.readingTime}
                         />
                         ))}   
                     </div>
