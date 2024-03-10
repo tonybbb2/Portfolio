@@ -68,7 +68,7 @@ export const Main = () => {
                   { href: 'https://www.instagram.com/tooony____/', icon: <FaInstagram  className="cursor-pointer"/> },
                   { href: '/', icon: <AiOutlineMail className="cursor-pointer animate-bounce"/> },
                 ].map((link, index) => (
-                  <Link key={index} href={link.href}>
+                  <Link key={index} href={link.href} rel="noopener noreferrer" target="_blank">
                     {link.icon}
                   </Link>
                 ))}
