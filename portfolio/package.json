@@ -28,6 +28,8 @@
     "react-router-dom": "^6.4.3",
     "react-toggle-dark-mode": "^1.1.1",
     "react-use-downloader": "^1.2.1",
+    "rehype-code-titles": "^1.2.0",
+    "rehype-prism-plus": "^2.0.0",
     "remark-mdx-images": "^3.0.0",
     "sharp": "^0.33.2"
   },
