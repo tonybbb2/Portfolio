@@ -4,36 +4,7 @@ import { MdWork, MdMarkEmailUnread } from "react-icons/md";
 import { GiCloudDownload } from "react-icons/gi";
 import Article from "./Article";
 
-export const Recent = () => {
-  const [news, setNews] = useState([]);
-
-  const newsAPI = async () => {
-    try {
-      const res = await fetch(
-        `https://newsapi.org/v2/everything?q=Technology&from=2024-02-01&sortBy=popularity&apiKey=522437cc2f7e4cdaa4038cc4689b2b70`,
-        {
-          method: "GET",
-        }
-      );
-      const data = await res.json();
-      // Check if articles are available
-      if (data.articles && data.articles.length > 0) {
-        // Get the top 3 articles
-        const top3Articles = data.articles.slice(0, 2);
-        setNews(top3Articles);
-      } else {
-        console.log("No articles found.");
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    newsAPI();
-    console.log(news);
-  }, [news]);
-
+export const Recent = ({ posts }) => {
   // Import images dynamically as needed
   const images = {
     Primaco: require("../../public/primacoLogo.png"),
@@ -87,17 +58,18 @@ export const Recent = () => {
                   <h1 className="text-4xl font-display text-black dark:text-white uppercase ">
                     <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
                     <span className="text-xs text-[#DA3028]">
-                      check out my blogs
+                      Blogs
                     </span>
                     <br />
-                    How i build my Website
+                    How I build my website
                   </h1>
-                  {news.map((article, index) => (
+                  {posts.filter(article => article.data.type === "Web development").slice(0, 3).map((article, index) => (
+                    console.log(article),
                     <Article
                       key={index}
-                      title={article.title}
-                      description={article.description}
-                      time={article.publishedAt}
+                      title={article.data.title}
+                      description={article.data.description}
+                      time={article.data.time}
                     />
                   ))}
                 </div>
