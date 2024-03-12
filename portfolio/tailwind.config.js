@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,7 +10,7 @@ module.exports = {
     extend: {
       theme: {
         fontFamily: {
-          display: ['Sen' , 'sans-serif'],
+          display: ['Sen', 'sans-serif'],
         },
       },
       keyframes: {
@@ -43,7 +44,7 @@ module.exports = {
       },
       animation: {
         typing: "typing 2.5s steps(35) infinite alternate, blink .7s infinite 5s",
-        slidein : "slidein 1s ease 300ms",
+        slidein: "slidein 1s ease 300ms",
         slidein300: "slidein 1s ease 300ms forwards",
         slidein500: "slidein 1s ease 500ms forwards",
         slidein700: "slidein 1s ease 700ms forwards",

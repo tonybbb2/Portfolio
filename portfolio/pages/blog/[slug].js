@@ -151,7 +151,7 @@ export default function PostPage({ source, frontMatter }) {
                 <Link href={"/Blog"}>
                   <IoMdArrowBack className="text-2xl" />
                 </Link>
-                <p className="text-md font-semibold px-1">All blogs</p>
+                <p className="text-md font-semibold px-1 ">All blogs</p>
               </div>
               <div>&nbsp;</div>
               <div>

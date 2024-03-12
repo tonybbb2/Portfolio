@@ -1,10 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import BlogCards from "./components/BlogCards"
 
 export default function Blog({ posts }) {
+  const [blogsFilter, setBlogsFilter] = useState([]);
+  const [filterOption, setfilterOption] = useState("All");
+  const [displayedPosts, setDisplayedPosts] = useState(6); // Initial number of displayed posts
+
+  useEffect(() => {
+    let defaultPosts = posts;
+
+    async function filter() {
+      let filteredPosts = posts;
+      if (filterOption !== "All") {
+        filteredPosts = posts.filter((post) => post.data.type === filterOption);
+      }
+
+      console.log(filterOption)
+
+      setBlogsFilter(filteredPosts);
+    }
+
+    console.log(defaultPosts);
+    setBlogsFilter(defaultPosts);
+    filter();
+    // Reset displayedPosts to 6 whenever filterOption changes
+    setDisplayedPosts(6);
+  }, [posts, filterOption]);
+
+  const loadMorePosts = () => {
+    // Increase the number of displayed posts to the length of the filtered posts array
+    setDisplayedPosts(blogsFilter.length);
+  };
+
+  const loadLessPosts = () => {
+    // Set the number of displayed posts back to 6
+    setDisplayedPosts(6);
+  };
+
   return (
     <div id="Blog">
       <div className="sm:px-8 mt-16 sm:mt-32">
@@ -41,18 +76,21 @@ export default function Blog({ posts }) {
                     Latest articles
                   </h1>
                   <div>	&nbsp;</div>
-                  <div className='flex items-center'>
-                    <label for="sortbox" class="flex items-center space-x-1 cursor-pointer">
-                      <span class="text-md font-semibold text-black dark:text-white uppercase mr-2">All</span>
-                      <svg class="h-4 w-4 text-black dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </label>
+                  <div className='flex items-center mt-4'>
+                    <form class="w-38">
+                      <select id="blogs" class="border  border-zinc-700 dark:bg-zinc-700 text-sm tracking-tight font-bold rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2 bg-transparent text-zinc-700 dark:text-white cursor-pointer" onChange={event => setfilterOption(event.target.value)}>
+                        <option defaultValue="All">All</option>
+                        <option value="Tutorials">Tutorials</option>
+                        <option value="Web development">Web development</option>
+                        <option value="Virtual reality">Virtual reality</option>
+                        <option value="Artificial intelligence">Artificial intelligence</option>
+                      </select>
+                    </form>
                   </div>
                 </div>
                 <div className='grid grid-cols-1 py-8 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full h-auto'>
-                  {posts
-                    .slice(1, 7) // Create a shallow copy of the array to avoid mutating the original array
+                  {blogsFilter
+                    .slice(0, displayedPosts) // Create a shallow copy of the array to avoid mutating the original array
                     .sort((a, b) => {
                       // Convert date strings to Date objects
                       const getDate = (str) => new Date(str.replace(/(\d+)(st|nd|rd|th)/, "$1"));
@@ -74,42 +112,30 @@ export default function Blog({ posts }) {
                       />
                     ))}
                 </div>
-                <div class="flex justify-center items-center gap-20 mt-6">
-                  <button
-                    class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-full select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                      aria-hidden="true" class="w-4 h-4">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
-                    </svg>
-                    Previous
-                  </button>
-                  <div class="flex items-center gap-10">
+                {/* Load more button */}
+                {blogsFilter.length > 6 && displayedPosts < blogsFilter.length ? (
+                  <div className="flex justify-center items-center gap-20 mt-6">
                     <button
-                      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                      type="button">
-                      <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                        1
-                      </span>
-                    </button>
-                    <button
-                      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-full text-center align-middle font-sans text-xs font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                      type="button">
-                      <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                        2
-                      </span>
+                      className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-gray-900/10 dark:bg-zinc-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-red-600"
+                      type="button"
+                      onClick={loadMorePosts}
+                    >
+                      Load more
                     </button>
                   </div>
-                  <button
-                    class="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-full select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    type="button">
-                    Next
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                      aria-hidden="true" class="w-4 h-4">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
-                    </svg>
-                  </button>
-                </div>
+                ) : null}
+                {/* Load less button */}
+                {displayedPosts > 6 ? (
+                  <div className="flex justify-center items-center gap-20 mt-6">
+                    <button
+                      className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-gray-900/10 dark:bg-zinc-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-red-600"
+                      type="button"
+                      onClick={loadLessPosts}
+                    >
+                      Load less
+                    </button>
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>
