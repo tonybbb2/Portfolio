@@ -87,10 +87,10 @@ export const Recent = () => {
                   <h1 className="text-4xl font-display text-black dark:text-white uppercase ">
                     <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
                     <span className="text-xs text-[#DA3028]">
-                      Read my blogs!
+                      check out my blogs
                     </span>
                     <br />
-                    Recents blogs
+                    How i build my Website
                   </h1>
                   {news.map((article, index) => (
                     <Article

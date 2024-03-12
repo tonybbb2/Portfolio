@@ -81,18 +81,18 @@ type: Web development
   <div className="mt-6">
     ```html
     <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>My Tailwind CSS Project</title>
-            <link href="./src/tailwind.css" rel="stylesheet" />
-            <link href="./src/custom.css" rel="stylesheet" />
-        </head>
-        <body>
-            <!-- Your website content goes here -->
-        </body>
-        </html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Tailwind CSS Project</title>
+        <link href="./src/tailwind.css" rel="stylesheet" />
+        <link href="./src/custom.css" rel="stylesheet" />
+      </head>
+      <body>
+        <!-- Your website content goes here -->
+      </body>
+    </html>
     ```
 </div>
 <div className="mt-12">
@@ -105,48 +105,21 @@ type: Web development
   </p>
   <div className="mt-6">
     ```html
-        <header class="px-6 py-4 text-white bg-gray-800">
-        <div class="container flex items-center justify-between mx-auto">
-            <a href="#" class="text-2xl font-bold">MyWebsite</a>
-            <nav class="hidden space-x-4 md:flex">
+    <header class="px-6 py-4 text-white bg-gray-800">
+      <div class="container flex items-center justify-between mx-auto">
+        <a href="#" class="text-2xl font-bold">MyWebsite</a>
+          <nav class="hidden space-x-4 md:flex">
             <a href="#" class="hover:text-gray-300">Home</a>
             <a href="#" class="hover:text-gray-300">Features</a>
             <a href="#" class="hover:text-gray-300">Pricing</a>
             <a href="#" class="hover:text-gray-300">Contact</a>
-            </nav>
-        </div>
-        </header>
+          </nav>
+      </div>
+    </header>
     ```
   </div>
   <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
     With Tailwind CSS, you can easily control the layout, colors, typography, and responsiveness of your website by applying utility classes to your HTML elements.
-  </p>
-</div>
-<div className="mt-12">
-  <p className="text-3xl font-bold text-black dark:text-white">Customizing Tailwind CSS</p>
-  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
-    Tailwind CSS excels in its customizability. To modify the default styles, open the tailwind.config.js file and adjust the settings as needed. For instance, to change the primary color, add the following to your configuration:
-  </p>
-  <div className="mt-6">
-    ```js
-        module.exports = {
-        theme: {
-            extend: {
-            backgroundColor: {
-                primary: '#1D3557',
-            },
-            textColor: {
-                primary: '#1D3557',
-            },
-            },
-        },
-        variants: {},
-        plugins: [],
-        }
-    ```
-  </div>
-  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
-    Rebuild your CSS file to see the changes take effect.
   </p>
 </div>
 <div className="mt-12">
@@ -156,16 +129,16 @@ type: Web development
   </p>
   <div className="mt-6">
     ```js
-        module.exports = {
-        content: ['./src/**/*.html'],
-        theme: {
-            extend: {
-            // Customizations go here
-            },
+    module.exports = {
+      content: ['./src/**/*.html'],
+      theme: {
+        extend: {
+        // Customizations go here
         },
-        variants: {},
-        plugins: [],
-        }
+      },
+      variants: {},
+      plugins: [],
+    }
     ```
   </div>
 </div>
