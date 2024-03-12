@@ -11,12 +11,12 @@ const Preloader = () => {
 
             <div className="title text-center">
               <span className="block"></span>
-              <h1 className='text-black uppercase'>Tony Bui<span></span></h1>
+              <h1 className='text-black dark:text-white uppercase'>Tony Bui<span></span></h1>
             </div>
 
             <div className="role">
               <div className="block"></div>
-              <p className='text-black'>Jr. web developer</p>
+              <p className='text-black dark:text-white'>Jr. web developer</p>
             </div>
           </div>
         </div>

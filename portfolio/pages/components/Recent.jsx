@@ -48,30 +48,41 @@ export const Recent = ({ posts }) => {
   ];
 
   return (
-    <div id="Blog">
-      <div className="sm:px-8 mt-24 md:mt-28">
+    <div>
+      <div className="sm:px-8 mt-4 sm:mt-8 md:mt-14">
         <div className="mx-auto w-full max-w-7xl lg:px-8">
           <div className="relative px-4 mt-12 sm:px-8 lg:px-12">
             <div className="mx-auto max-w-2xl lg:max-w-5xl">
               <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-                <div className="flex flex-col gap-16">
+                <div className="flex flex-col gap-16 ">
                   <h1 className="text-4xl font-display text-black dark:text-white uppercase ">
-                    <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
                     <span className="text-xs text-[#DA3028]">
                       Blogs
                     </span>
                     <br />
                     How I build my website
                   </h1>
-                  {posts.filter(article => article.data.type === "Web development").slice(0, 3).map((article, index) => (
-                    console.log(article),
-                    <Article
-                      key={index}
-                      title={article.data.title}
-                      description={article.data.description}
-                      time={article.data.time}
-                    />
-                  ))}
+                  {posts
+                    .slice() // Create a shallow copy of the array to avoid mutating the original array
+                    .sort((a, b) => {
+                      // Convert date strings to Date objects
+                      const getDate = (str) => new Date(str.replace(/(\d+)(st|nd|rd|th)/, "$1"));
+                      const dateA = getDate(a.data.time);
+                      const dateB = getDate(b.data.time);
+                      // Compare dates
+                      return dateA - dateB; // Sort in ascending order (oldest to newest)
+                    })
+                    .filter(article => article.data.type === "Web development") // Filter based on type
+                    .slice(0, 3) // Select first three articles
+                    .map((article, index) => (
+                      <Article
+                        key={index}
+                        title={article.data.title}
+                        description={article.data.description}
+                        time={article.data.time}
+                        url={article.fileName.replace(".mdx", "")}
+                      />
+                    ))}
                 </div>
                 <div className="space-y-10 lg:pl-16 xl:pl-24">
                   <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
