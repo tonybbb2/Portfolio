@@ -77,9 +77,10 @@ export default function PostPage({ source, frontMatter }) {
             <ProgressBar target={mainRef} />
             <div className="flex justify-start px-10 text-black dark:text-white">
               <Link href={"/Blog"}>
-                <IoMdArrowBack className="text-2xl" />
+                <button className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20">
+                  <IoMdArrowBack />
+                </button>
               </Link>
-              <p className="text-md px-1">return</p>
             </div>
             <header id="blogStart" className="mt-8 text-center">
               <span className="text-md font-semibold text-[#DA3028]">
@@ -149,9 +150,10 @@ export default function PostPage({ source, frontMatter }) {
             <div className="flex justify-between px-14 mt-20 text-black dark:text-white">
               <div className="flex justify-center mt-4">
                 <Link href={"/Blog"}>
-                  <IoMdArrowBack className="text-2xl" />
+                  <button className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20">
+                    <IoMdArrowBack />
+                  </button>
                 </Link>
-                <p className="text-md font-semibold px-1 ">All blogs</p>
               </div>
               <div>&nbsp;</div>
               <div>

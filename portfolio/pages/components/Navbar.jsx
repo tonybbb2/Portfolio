@@ -24,7 +24,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    if (router.asPath.match(/^\/(About|Blog|Skills)(\/[^\/]+)?$/)) {
+    if (router.asPath.match(/^\/(About|Blog|Skills|Contact)(\/[^\/]+)?$/)) {
       setShowProfil(true);
     } else {
       setNavBg("#252529");

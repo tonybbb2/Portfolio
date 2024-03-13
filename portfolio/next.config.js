@@ -46,6 +46,11 @@ module.exports = {
         hostname: 'images.pexels.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'media.istockphoto.com',
+        port: '',
+      },
     ],
   },
   reactStrictMode: true,
