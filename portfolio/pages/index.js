@@ -4,12 +4,14 @@ import matter from 'gray-matter'
 import path from 'path'
 import Main from "./components/Main";
 import Recent from "./components/Recent";
+import MainAbout from './components/MainAbout';
 
 export default function Home({posts}) {
 
   return (
     <div>
       <Main />
+      <MainAbout />
       <Recent posts={posts}/>
     </div>
   );
