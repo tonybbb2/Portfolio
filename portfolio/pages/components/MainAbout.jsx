@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
@@ -11,14 +10,14 @@ export const MainAbout = () => {
                     <div className="relative px-4 sm:px-8 lg:px-12">
                         <div className="mx-auto max-w-2xl lg:max-w-5xl">
                             <div className="">
-                                <section class="mb-32 text-center px-10">
-                                    <div class="">
+                                <section className="mb-32 text-center px-10">
+                                    <div className="">
                                         <div>
-                                            <div class="grid items-center lg:grid-cols-2">
-                                                <div class="">
+                                            <div className="grid items-center lg:grid-cols-2">
+                                                <div>
                                                     <div
                                                         class="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.55)] dark:shadow-black/20 md:px-12 lg:-mr-14">
-                                                        <h2 class="text-3xl text-black dark:text-zinc-300 font-bold uppercase mb-4 tracking-tighter">
+                                                        <h2 className="text-3xl text-black dark:text-zinc-300 font-bold uppercase mb-4 tracking-tighter">
                                                             About me
                                                         </h2>
                                                         <hr className="h-px my-8 bg-red-600 border-0"></hr>
@@ -33,12 +32,11 @@ export const MainAbout = () => {
                                                                 </Link>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
-                                                <div class="md:mb-12 lg:mb-0 transition duration-300 ease-in-out hover:scale-105">
+                                                <div className="md:mb-12 lg:mb-0 transition duration-300 ease-in-out hover:scale-105">
                                                     <img src="https://images.unsplash.com/photo-1645640505245-f23c8289b591?q=100&w=1000&h=850&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                                        class="w-full rounded-lg shadow-lg dark:shadow-black/20 object-cover" alt="image" />
+                                                        className="w-full rounded-lg shadow-lg dark:shadow-black/20 object-cover" alt="image" />
                                                 </div>
                                             </div>
                                         </div>

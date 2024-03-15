@@ -1,12 +1,11 @@
 import matter from "gray-matter";
 import Image from "next/image";
 import fs from 'fs';
-import { useRouter } from 'next/router';
 import Link from "next/link";
 import rehypePrism from "rehype-prism-plus";
 import rehypeCodeTitles from "rehype-code-titles";
 import { ProgressBar } from "../components/ProgressBar";
-import { CiCalendar, CiShare1 } from "react-icons/ci";
+import { CiCalendar } from "react-icons/ci";
 import { BiTimeFive } from "react-icons/bi";
 import { IoMdArrowBack } from "react-icons/io";
 import { MDXRemote } from "next-mdx-remote";
@@ -16,20 +15,21 @@ import profil from "../../public/PRpic.png";
 import path from "path";
 import { postFilePaths, POSTS_PATH } from "/lib/mdxUtils.js";
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   FacebookShareButton,
   FacebookIcon,
   LinkedinShareButton,
   LinkedinIcon,
   TwitterShareButton,
+  RedditShareButton,
+  RedditIcon,
   TwitterIcon,
   EmailShareButton,
   EmailIcon,
 } from 'next-share'
 
 export default function PostPage({ source, frontMatter }) {
-  const router = useRouter();
   const mainRef = useRef(null);
   const [copied, setCopied] = useState(false);
   const [url, setURL] = useState("");
@@ -40,6 +40,16 @@ export default function PostPage({ source, frontMatter }) {
     navigator.clipboard.writeText(currentURL);
     setCopied(true);
   };
+
+  useEffect(() => {
+    if (copied) {
+      const timer = setTimeout(() => {
+        setCopied(false);
+      }, 2500); // 3000 milliseconds = 3 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [copied]);
 
   const shareButtons = (
     <div className="flex justify-between mt-1 gap-1 text-zinc-700 dark:text-white">
@@ -53,6 +63,12 @@ export default function PostPage({ source, frontMatter }) {
       >
         <FacebookIcon size={25} round />
       </FacebookShareButton>
+      <RedditShareButton
+        url={url}
+        hashtag={'#Blog'}
+      >
+        <RedditIcon size={25} round />
+      </RedditShareButton>
       <TwitterShareButton
         url={url}
         title={frontMatter.title}
@@ -105,7 +121,7 @@ export default function PostPage({ source, frontMatter }) {
                   src={frontMatter.previewImage}
                   width={785}
                   height={585}
-                  className="rounded-3xl overflow-hidden"
+                  className="rounded-3xl overflow-hidden duration-300 ease-in-out hover:scale-[1.02]"
                   objectFit="contain"
                   quality={100}
                   unoptimized
@@ -133,6 +149,19 @@ export default function PostPage({ source, frontMatter }) {
               <div className="col-span-3">
                 <MDXRemote {...source} components={{}} />
                 <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+                {copied &&
+                  <div className="flex items-center p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-zinc-700 dark:text-green-400" role="alert">
+                    <div className="flex items-center text-sm text-green-800 rounded-lg bg-green-50 dark:bg-zinc-700 dark:text-green-400" role="alert">
+                      <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                      </svg>
+                      <span className="sr-only">Info</span>
+                      <div>
+                        <span className="font-medium ml-2">Link copied succesfully!</span>
+                      </div>
+                    </div>
+                  </div>
+                }
                 <div className="flex justify-between">
                   <div className="text-xl text-red-600 font-bold mt-2">
                     <p>Share article</p>
