@@ -24,7 +24,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    if (router.asPath.match(/^\/(About|Blog|Skills|Contact)(\/[^\/]+)?$/)) {
+    if (router.asPath.match(/^\/(About|Blog|Skills|Contact|Thank-you)(\/[^\/]+)?$/)) {
       setShowProfil(true);
     } else {
       setNavBg("#252529");
@@ -43,6 +43,14 @@ export const Navbar = () => {
     };
     window.addEventListener("scroll", handleShadow);
   }, []);
+
+  const routes = [
+    { path: '/', label: 'Home' },
+    { path: '/About', label: 'About' },
+    { path: '/Work', label: 'Work' },
+    { path: '/Blog', label: 'Blog' },
+    { path: '/Contact', label: 'Contact' },
+  ];
 
   return (
     <div
@@ -88,31 +96,17 @@ export const Navbar = () => {
       <div className="hidden justify-end md:justify-center rounded-full md:flex flex-1 bg-white dark:bg-[#252529] shadow-lg ring-1 ring-zinc-900/5">
         <nav>
           <ul className="flex rounded-full w-full h-full text-black dark:text-white font-semibold font-display text-md">
-            <Link href="/">
-              <li className="relative block px-4 py-2 transition hover:text-red-600">
-                Home
-              </li>
-            </Link>
-            <Link href="/About">
-              <li className="relative block px-4 py-2 transition hover:text-red-600">
-                About
-              </li>
-            </Link>
-            <Link href="/Work">
-              <li className="relative block px-4 py-2 transition hover:text-red-600">
-                Work
-              </li>
-            </Link>
-            <Link href="/Blog">
-              <li className="relative block px-4 py-2 transition hover:text-red-600">
-                Blog
-              </li>
-            </Link>
-            <Link href="/Contact">
-              <li className="relative block px-4 py-2 transition hover:text-red-600">
-                Contact
-              </li>
-            </Link>
+            {routes.map((route) => (
+              <Link key={route.path} href={route.path}>
+                <li className={`relative block px-4 py-2 transition ${router.pathname === route.path ? 'text-red-600' : 'text-black dark:text-white'
+                  }`}>
+                  <p className="hover:text-red-600">{route.label}</p>
+                  {router.pathname === route.path && (
+                    <span className="absolute inset-x-0 bottom-[-0.5px] h-[2.5px] bg-gradient-to-r from-red-500/0 via-red-600/40 to-red-600/0"></span>
+                  )}
+                </li>
+              </Link>
+            ))}
           </ul>
         </nav>
       </div>

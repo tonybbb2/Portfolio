@@ -9,11 +9,11 @@ import MainAbout from './components/MainAbout';
 export default function Home({posts}) {
 
   return (
-    <div>
+    <>
       <Main />
       <MainAbout />
       <Recent posts={posts}/>
-    </div>
+    </>
   );
 }
 

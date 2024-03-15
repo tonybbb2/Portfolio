@@ -1,10 +1,39 @@
 import React, { useEffect, useState } from "react";
+import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation'
+import axios from 'axios';
 import Image from "next/image";
 import { MdWork, MdMarkEmailUnread } from "react-icons/md";
 import { GiCloudDownload } from "react-icons/gi";
 import Article from "./Article";
 
 export const Recent = ({ posts }) => {
+
+  const router = useRouter()
+  const { register, handleSubmit, errors, reset } = useForm();
+
+  async function onSubmitForm(values) {
+    let config = {
+      method: 'post',
+      url: '/api/subscribe',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: values,
+    };
+
+    try {
+      const response = await axios(config)
+      if (response.status === 200) {
+        reset()
+        router.push('/Thank-you')
+      }
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
   // Import images dynamically as needed
   const images = {
     Primaco: require("../../public/primacoLogo.png"),
@@ -17,7 +46,7 @@ export const Recent = ({ posts }) => {
   const experiences = [
     {
       company: "Primaco",
-      role: "Junior web developer",
+      role: "Web developer",
       date: "2023 ----- Present",
       image: images.Primaco,
     },
@@ -86,7 +115,7 @@ export const Recent = ({ posts }) => {
                 </div>
                 <div className="space-y-10 lg:pl-16 xl:pl-24">
                   <div className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"></div>
-                  <form className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+                  <form className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40" onSubmit={handleSubmit(onSubmitForm)}>
                     <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                       <MdMarkEmailUnread size={20} />
                       <span className="ml-3">Stay up to date</span>
@@ -100,6 +129,8 @@ export const Recent = ({ posts }) => {
                         type="email"
                         placeholder="Email address"
                         aria-label="Email address"
+                        name='email'
+                        {...register('email', { required: { value: true, message: 'Please enter your email if you would like to join' } })}
                         required
                         className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10"
                       ></input>
@@ -116,9 +147,9 @@ export const Recent = ({ posts }) => {
                       <MdWork size={20} />
                       <span className="ml-3">Experience</span>
                     </h2>
-                    <ol className="mt-6 space-y-4">
+                    <div className="mt-6 space-y-4">
                       {experiences.map((experience, index) => (
-                        <li key={index} className="flex gap-4">
+                        <div key={index} className="flex gap-4">
                           <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                             <Image
                               src={experience.image}
@@ -140,9 +171,9 @@ export const Recent = ({ posts }) => {
                               <time dateTime="2015">{experience.date}</time>
                             </dd>
                           </dl>
-                        </li>
+                        </div>
                       ))}
-                    </ol>
+                    </div>
                     <a
                       className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
                       href="/TonyBui_CV.pdf"

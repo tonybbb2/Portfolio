@@ -1,13 +1,21 @@
+'use client'
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import fs from 'fs'
 import matter from 'gray-matter'
+import axios from 'axios';
 import path from 'path'
+import { useForm } from 'react-hook-form';
 import BlogCards from "./components/BlogCards"
 
 export default function Blog({ posts }) {
+
+  const router = useRouter()
+
   const [blogsFilter, setBlogsFilter] = useState([]);
   const [filterOption, setfilterOption] = useState("All");
   const [displayedPosts, setDisplayedPosts] = useState(6); // Initial number of displayed posts
+  const { register, handleSubmit, errors, reset } = useForm();
 
   useEffect(() => {
     let defaultPosts = posts;
@@ -40,6 +48,28 @@ export default function Blog({ posts }) {
     setDisplayedPosts(6);
   };
 
+  async function onSubmitForm(values) {
+    let config = {
+      method: 'post',
+      url: '/api/subscribe',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: values,
+    };
+
+    try {
+      const response = await axios(config)
+      if (response.status === 200) {
+        reset()
+        router.push('/Thank-you')
+      }
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div id="Blog">
       <div className="sm:px-8 mt-16 sm:mt-32">
@@ -50,24 +80,28 @@ export default function Blog({ posts }) {
                 <h1 className='text-4xl font-bold tracking-tight p-2 text-zinc-800 sm:text-5xl dark:text-zinc-100'>
                   Welcome to my <span className='underline underline-offset-8  decoration-4 decoration-red-600'>blog</span>
                 </h1>
-                <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>Join me on my journey as I share my insights and experiences on web development, business, and content creation.</p>
+                <p className='mt-6 text-base text-zinc-600 dark:text-zinc-400'>Join me on my journey as I share my insights and experiences on web development, programming, and more.</p>
                 <p className='text-base text-zinc-600 dark:text-zinc-400'>
-                  All of my long-form thoughts on technology, programming, AI, and more, collected in chronological order.
+                  All of my long-form thoughts are collected in chronological order below.
                 </p>
                 <div className="mt-10 flex justify-center">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    aria-label="Enter your email"
-                    required
-                    className="w-1/2 appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10"
-                  ></input>
-                  <button
-                    className="inline-flex items-center justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70 ml-4 flex-none"
-                    type="submit"
-                  >
-                    Join
-                  </button>
+                  <form className="w-full" >
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      aria-label="Enter your email"
+                      name='email'
+                      {...register('email', { required: { value: true, message: 'Please enter your email if you would like to join' } })}
+                      required
+                      className="w-1/2 appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10"
+                    ></input>
+                    <button
+                      className="inline-flex items-center justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70 ml-4 flex-none"
+                      type="submit"
+                    >
+                      Join
+                    </button>
+                  </form>
                 </div>
               </header>
               <div className='mt-16 sm:mt-20'>
@@ -116,7 +150,7 @@ export default function Blog({ posts }) {
                 {blogsFilter.length > 6 && displayedPosts < blogsFilter.length ? (
                   <div className="flex justify-center items-center gap-20 mt-6">
                     <button
-                      className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-gray-900/10 dark:bg-zinc-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-red-600"
+                      className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
                       type="button"
                       onClick={loadMorePosts}
                     >
@@ -128,7 +162,7 @@ export default function Blog({ posts }) {
                 {displayedPosts > 6 ? (
                   <div className="flex justify-center items-center gap-20 mt-6">
                     <button
-                      className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-gray-900/10 dark:bg-zinc-700 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none dark:border-red-600"
+                      className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
                       type="button"
                       onClick={loadLessPosts}
                     >

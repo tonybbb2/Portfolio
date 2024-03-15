@@ -53,20 +53,15 @@ export const Main = () => {
               <h1 className="animate-typing overflow-hidden whitespace-nowrap text-4xl font-bold tracking-tight text-zinc-800 sm:text-6xl dark:text-zinc-100 font-display">
                 A junior web developer
               </h1>
-              <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-                I'm Tony, a junior web developer based in Montreal, Canada.
-                With a deep passion for coding, I specialize in crafting
-                responsive websites that blend creativity with
-                functionality, while continuously exploring the diverse
-                realms of computer science to expand my knowledge and
-                skills.
+              <p className="w-full md:w-3/4 mt-6 text-base tracking-wide text-zinc-600 dark:text-zinc-400">
+                I'm Tony, a Montreal-based web developer passionate about coding. My expertise lies in creating responsive websites that seamlessly merge creativity with functionality. I specialize in both backend and frontend development, constantly delving into the expansive realms of computer science to enhance my skills and knowledge.
               </p>
               <div className="mt-6 flex gap-6 text-2xl text-[#18181B] dark:text-gray-400">
                 {[
-                  { href: 'https://www.linkedin.com/in/dev-tonybui/', icon: <FaLinkedin className="cursor-pointer"/> },
-                  { href: 'https://github.com/tonybbb2', icon: <FaGithub className="cursor-pointer"/> },
-                  { href: 'https://www.instagram.com/tooony____/', icon: <FaInstagram  className="cursor-pointer"/> },
-                  { href: '/', icon: <AiOutlineMail className="cursor-pointer animate-bounce"/> },
+                  { href: 'https://www.linkedin.com/in/dev-tonybui/', icon: <FaLinkedin className="cursor-pointer" /> },
+                  { href: 'https://github.com/tonybbb2', icon: <FaGithub className="cursor-pointer" /> },
+                  { href: 'https://www.instagram.com/tooony____/', icon: <FaInstagram className="cursor-pointer" /> },
+                  { href: '/', icon: <AiOutlineMail className="cursor-pointer animate-bounce" /> },
                 ].map((link, index) => (
                   <Link key={index} href={link.href} rel="noopener noreferrer" target="_blank">
                     {link.icon}
