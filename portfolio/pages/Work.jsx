@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function Work() {
+
+    
     return (
         <>
             <main className='flex-auto'>
@@ -18,7 +20,9 @@ export default function Work() {
                                     </p>
                                 </header>
                                 <div className='mt-16 sm:mt-20'>
-
+                                    <ul className='grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3'>
+                                        <li className='group relative flex flex-col items-start'></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
