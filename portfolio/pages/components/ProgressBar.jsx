@@ -45,3 +45,5 @@ export const ProgressBar = ({ target }) => {
     </>
   );
 };
+
+export default ProgressBar;

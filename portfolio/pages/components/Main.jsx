@@ -9,11 +9,11 @@ export const Main = () => {
   // Import images dynamically as needed
   const images = {
     profil: require("../../public/PRpic.png"),
-    interests05: require("../../public/INT0.5.jpg"),
+    interests05: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=1000&h=700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     interests2: require("../../public/INT2.jpg"),
-    interests3: require("../../public/INT00.jpg"),
-    interests4: require("../../public/INT002.jpg"),
-    interests5: require("../../public/INT5.jpg"),
+    interests3: "https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    interests4: require("../../public/INT00.jpg"),
+    interests5: "https://images.unsplash.com/photo-1601588462060-470011bd9a18?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     Primaco: require("../../public/primacoLogo.png"),
     metro: require("../../public/metroLogo.jpg"),
     PLPS: require("../../public/PLPS.png"),
@@ -33,7 +33,7 @@ export const Main = () => {
                   <div className="absolute left-0 h-[75px] rounded-full bg-white/90  shadow-xl ring-4 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10">
                     <Image
                       src={images.profil}
-                      alt="/"
+                      alt="/hero-image"
                       className="rounded-full"
                       width={75}
                       height={75}

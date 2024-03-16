@@ -6,6 +6,7 @@ import Image from "next/image";
 import { MdWork, MdMarkEmailUnread } from "react-icons/md";
 import { GiCloudDownload } from "react-icons/gi";
 import Article from "./Article";
+import Link from "next/link";
 
 export const Recent = ({ posts }) => {
 
@@ -78,7 +79,7 @@ export const Recent = ({ posts }) => {
 
   return (
     <div>
-      <div className="sm:px-8 mt-4 sm:mt-8 md:mt-14">
+      <div className="sm:px-8">
         <div className="mx-auto w-full max-w-7xl lg:px-8">
           <div className="relative px-4 mt-12 sm:px-8 lg:px-12">
             <div className="mx-auto max-w-2xl lg:max-w-5xl">
@@ -143,9 +144,14 @@ export const Recent = ({ posts }) => {
                     </div>
                   </form>
                   <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-                    <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                      <MdWork size={20} />
-                      <span className="ml-3">Experience</span>
+                    <h2 className="flex justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                      <div className="flex justify-center">
+                        <MdWork size={20} />
+                        <span className="ml-3">Experience</span>
+                      </div>
+                      <Link href={'/Work'}>
+                         <span className="flex underline text-xs items-center text-red-600 tracking-tight cursor-pointer">Work & skills</span>
+                      </Link>
                     </h2>
                     <div className="mt-6 space-y-4">
                       {experiences.map((experience, index) => (

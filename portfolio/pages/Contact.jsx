@@ -60,7 +60,7 @@ const Contact = () => {
                                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6 items-center'>
                                         <div className='w-full h-[80%] border border-gray-200 dark:border-zinc-700 shadow bg-white dark:bg-zinc-800  rounded-xl'>
                                             <div className='p-6'>
-                                                <Image src={'https://images.unsplash.com/photo-1547082299-de196ea013d6?q=100&w=450&h=375&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} className='rounded-xl' width={450} height={550} />
+                                                <Image src={'https://images.unsplash.com/photo-1547082299-de196ea013d6?q=100&w=450&h=375&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="Contact preview image" className='rounded-xl' width={450} height={550} />
                                                 <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
                                                 <div className='flex justify-around p-2 text-black dark:text-white'>
                                                     <FaXTwitter size={25} className="" />

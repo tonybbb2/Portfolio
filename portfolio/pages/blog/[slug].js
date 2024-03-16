@@ -4,6 +4,7 @@ import fs from 'fs';
 import Link from "next/link";
 import rehypePrism from "rehype-prism-plus";
 import rehypeCodeTitles from "rehype-code-titles";
+import { useRouter } from 'next/router'
 import { ProgressBar } from "../components/ProgressBar";
 import { CiCalendar } from "react-icons/ci";
 import { BiTimeFive } from "react-icons/bi";
@@ -30,6 +31,8 @@ import {
 } from 'next-share'
 
 export default function PostPage({ source, frontMatter }) {
+  const router = useRouter();
+
   const mainRef = useRef(null);
   const [copied, setCopied] = useState(false);
   const [url, setURL] = useState("");
@@ -93,7 +96,8 @@ export default function PostPage({ source, frontMatter }) {
             <ProgressBar target={mainRef} />
             <div className="flex justify-start px-10 text-black dark:text-white">
               <Link href={"/Blog"}>
-                <button className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20">
+                <button className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+                        onClick={() => router.back()}>
                   <IoMdArrowBack />
                 </button>
               </Link>
@@ -121,6 +125,7 @@ export default function PostPage({ source, frontMatter }) {
                   src={frontMatter.previewImage}
                   width={785}
                   height={585}
+                  alt="preview image"
                   className="rounded-3xl overflow-hidden duration-300 ease-in-out hover:scale-[1.02]"
                   objectFit="contain"
                   quality={100}
@@ -179,7 +184,8 @@ export default function PostPage({ source, frontMatter }) {
             <div className="flex justify-between px-14 mt-20 text-black dark:text-white">
               <div className="flex justify-center mt-4">
                 <Link href={"/Blog"}>
-                  <button className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20">
+                  <button className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+                          onClick={() => router.back()}>
                     <IoMdArrowBack />
                   </button>
                 </Link>

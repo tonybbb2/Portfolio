@@ -26,8 +26,6 @@ export default function Blog({ posts }) {
         filteredPosts = posts.filter((post) => post.data.type === filterOption);
       }
 
-      console.log(filterOption)
-
       setBlogsFilter(filteredPosts);
     }
 
@@ -85,7 +83,7 @@ export default function Blog({ posts }) {
                   All of my long-form thoughts are collected in chronological order below.
                 </p>
                 <div className="mt-10 flex justify-center">
-                  <form className="w-full" >
+                  <form className="w-full" onSubmit={handleSubmit(onSubmitForm)}>
                     <input
                       type="email"
                       placeholder="Enter your email"

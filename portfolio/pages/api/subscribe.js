@@ -11,7 +11,7 @@ export default function handler(req, res) {
     secure: true,
     auth: {
       user: 'bui.tony35@gmail.com',
-      pass: 'sibp nykl mufk okyv'
+      pass: `${process.env.NEXT_NODEMAILER_APP_PASSWORD}`
     }
   });
 
@@ -24,11 +24,10 @@ export default function handler(req, res) {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
-      res.send('error');
+      res.send(error);
     } else {
-      res.send('success');
+      res.send(info);
     }
-  });
+  }); 
 
 }

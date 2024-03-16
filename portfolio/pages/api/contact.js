@@ -14,7 +14,7 @@ export default function handler(req, res) {
     secure: true,
     auth: {
       user: 'bui.tony35@gmail.com',
-      pass: 'sibp nykl mufk okyv'
+      pass: `${process.env.NEXT_NODEMAILER_APP_PASSWORD}`
     }
   });
 
