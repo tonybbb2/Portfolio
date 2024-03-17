@@ -71,7 +71,7 @@ const About = () => {
                 <ul role="list">
                   <li className="flex">
                     <FaXTwitter size={22} className="text-zinc-700" />
-                    <Link href="/">
+                    <Link href="https://twitter.com/tonydev35">
                       <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600 ">
                         Follow on X
                       </span>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const Main = () => {
 
@@ -58,6 +59,7 @@ export const Main = () => {
               </p>
               <div className="mt-6 flex gap-6 text-2xl text-[#18181B] dark:text-gray-400">
                 {[
+                  { href: 'https://twitter.com/tonydev35', icon : <FaXTwitter lassName="cursor-pointer" /> },
                   { href: 'https://www.linkedin.com/in/dev-tonybui/', icon: <FaLinkedin className="cursor-pointer" /> },
                   { href: 'https://github.com/tonybbb2', icon: <FaGithub className="cursor-pointer" /> },
                   { href: 'https://www.instagram.com/tooony____/', icon: <FaInstagram className="cursor-pointer" /> },
