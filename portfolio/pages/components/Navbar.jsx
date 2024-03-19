@@ -135,23 +135,23 @@ export const Navbar = () => {
           }
         >
           <ul
-            className="py-2 text-sm text-gray-700 dark:text-gray-200"
+            className="py-2 text-md text-gray-700 dark:text-gray-200"
             aria-labelledby="dropdownDefaultButton"
           >
             <li>
               <a
                 href="#"
-                className="block py-2 text-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block py-2 text-center hover:bg-gray-100 dark:hover:bg-zinc-700 dark:hover:text-white"
               >
-                FR
+                🇫🇷
               </a>
             </li>
             <li>
               <a
                 href="#"
-                className="block mx-auto py-2 text-center hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block mx-auto py-2 text-center hover:bg-gray-100 dark:hover:bg-zinc-700 dark:hover:text-white"
               >
-                EN
+                🇺🇸
               </a>
             </li>
           </ul>
