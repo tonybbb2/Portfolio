@@ -23,18 +23,18 @@ export default function Work() {
                                         Many new projects are on the way, I'm only getting started!
                                     </p>
                                 </header>
-                                <div className='mt-16 sm:mt-20 p-12'>
+                                <div className='mt-16 sm:mt-20 p-6'>
                                     <div className='grid md:grid-cols-2 gap-8'>
-                                        <div className='relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:cursor-pointer '>
-                                            <Image className='rounded-xl grayscale hover:grayscale-0 hover:scale-110 transition duration-500 cursor-pointer object-cover' src={backgroundImg} width={500} height={300} alt='/' />
-                                            <div className='hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
-
+                                        <div className='relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 inset-0 group hover:cursor-pointer '>
+                                            <Image className='rounded-xl grayscale hover:grayscale-0 hover:scale-105 transition duration-500 cursor-pointer object-cover' src={backgroundImg} width={500} height={300} alt='/' />
+                                            <div className='hidden w-1/2 h-auto text-center group-hover:block absolute top-[92%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full bg-zinc-700 bg-gradient-to-t from-teal-500 to-teal-400'>
+                                                <p className='text-white text-md font-semibold'>VI fitness application</p>
                                             </div>
                                         </div>
                                         <div className='relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:cursor-pointer '>
-                                            <Image className='rounded-xl grayscale hover:grayscale-0  hover:scale-110 transition duration-500 cursor-pointer object-cover' src={backgroundImg2} width={500} height={300} alt='/' />
-                                            <div className='hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
-
+                                            <Image className='rounded-xl grayscale hover:grayscale-0  hover:scale-105 transition duration-500 cursor-pointer object-cover' src={backgroundImg2} width={500} height={300} alt='/' />
+                                            <div className='hidden w-1/2 h-auto text-center group-hover:block absolute top-[92%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full bg-zinc-700 bg-gradient-to-t from-teal-500 to-teal-400'>
+                                                <p className='text-white text-md font-semibold'>FullStack Netflix clone</p>
                                             </div>
                                         </div>
                                     </div>

@@ -7,6 +7,14 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const About = () => {
+
+  const socialLinksData = [
+    { Icon: FaXTwitter, href: "https://twitter.com/tonydev35", text: "Follow on Twitter" },
+    { Icon: FaLinkedin, href: "https://www.linkedin.com/in/dev-tonybui/", text: "Follow on LinkedIn" },
+    { Icon: FaGithub, href: "https://github.com/tonybbb2", text: "Follow on Github" },
+    { Icon: FaInstagram, href: "https://www.instagram.com/tooony____/", text: "Follow on Instagram" },
+  ];
+
   return (
     <main className="flex-auto">
       <div className="sm:px-8 mt-16 sm:mt-32">
@@ -69,38 +77,16 @@ const About = () => {
               </div>
               <div className="lg:pl-20">
                 <ul role="list">
-                  <li className="flex">
-                    <FaXTwitter size={22} className="text-zinc-700" />
-                    <Link href="https://twitter.com/tonydev35">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600 ">
-                        Follow on X
-                      </span>
-                    </Link>
-                  </li>
-                  <li className="mt-4 flex">
-                    <FaLinkedin size={22} className="text-zinc-700" />
-                    <Link href="https://www.linkedin.com/in/dev-tonybui/">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600 ">
-                        Follow on LinkedIn
-                      </span>
-                    </Link>
-                  </li>
-                  <li className="mt-4 flex">
-                    <FaGithub size={22} className="text-zinc-700" />
-                    <Link href="https://github.com/tonybbb2">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600">
-                        Follow on Github
-                      </span>
-                    </Link>
-                  </li>
-                  <li className="mt-4 flex">
-                    <FaInstagram size={22} className="text-zinc-700" />
-                    <Link href="https://www.instagram.com/tooony____/">
-                      <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600">
-                        Follow on Instagram
-                      </span>
-                    </Link>
-                  </li>
+                  {socialLinksData.map(({ Icon, href, text }, index) => (
+                    <li key={index} className="flex mt-5">
+                      <Icon size={22} className="text-zinc-700" />
+                      <Link href={href} rel="noopener noreferrer" target="_blank">
+                        <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600">
+                          {text}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
                   <li className="mt-8 border-t pt-8 border-zinc-700/40 flex">
                     <AiOutlineMail size={22} className="text-zinc-700" />
                     <Link href="mailto:'Bui.tony35@gmail.com'">
