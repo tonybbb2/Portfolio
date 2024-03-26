@@ -102,7 +102,7 @@ export const Recent = ({ posts }) => {
                       // Compare dates
                       return dateA - dateB; // Sort in ascending order (oldest to newest)
                     })
-                    .filter(article => article.data.type === "Web development") // Filter based on type
+                    .filter(article => article.data.type === "Tutorials") // Filter based on type
                     .slice(0, 3) // Select first three articles
                     .map((article, index) => (
                       <Article

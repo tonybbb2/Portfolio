@@ -22,7 +22,7 @@ const Article = ({ title, description, time, url }) => {
                         {description}
                     </p>
                     <div aria-hidden="true" className="relative z-10 mt-4 flex justify-center items-center text-sm font-medium text-red-500 gap-1 ">
-                        Read article <MdOutlineKeyboardDoubleArrowRight />
+                        Read article <MdOutlineKeyboardDoubleArrowRight className='text-xs mt-1'/>
                     </div>
                 </article>
             </Link>

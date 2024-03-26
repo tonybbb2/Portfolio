@@ -4,5 +4,184 @@ time : February 5th 2024
 description : "Discover my journey of leveraging MDX to craft personalized blogs within Next.js. Join me as I share insights, tips, and step-by-step instructions, perfect for beginners eager to integrate MDX into their own Next.js projects."
 readingTime : 10 minute read
 previewImage: https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800&h=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-type : Web development
+type : Tutorials
 ---
+
+<p className="text-balance text-zinc-600 dark:text-zinc-400 text-semibold text-lg">
+  Welcome to the world of dynamic blogging with MDX and Next.js! In this guide, I'll walk you through the process of leveraging MDX (Markdown + JSX) to create rich and interactive blog posts within a Next.js application. By the end of this tutorial, you'll have the knowledge and tools to craft engaging content for your own website using MDX.
+</p>
+
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Understanding MDX</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Before we dive into the tutorial, let's briefly discuss what MDX is and why it's a game-changer for content creators. MDX is a format that combines Markdown, a lightweight markup language for formatting plain text, with JSX, a syntax extension for JavaScript often used with React. This powerful combination allows you to embed React components directly within Markdown, enabling dynamic and interactive content creation.
+  </p>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Prerequisites</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    To follow along with this tutorial, you should have a basic understanding of Next.js and React. Make sure you have Node.js and npm (Node Package Manager) installed on your machine.
+  </p>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Setting Up Your Development Environment</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Let's start by creating a new Next.js project. Open your terminal and run the following commands:
+  </p>
+  <div className="mt-6">
+    ```bash
+npx create-next-app my-mdx-blog
+cd my-mdx-blog
+    ```
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Installing MDX</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Next, we need to install MDX and its dependencies. Run the following command in your terminal:
+  </p>
+  <div className="mt-6">
+    ```bash
+npm install @next/mdx @mdx-js/loader
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Creating MDX Pages</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    In Next.js, MDX pages live in the pages directory just like regular React components. Let's create our first MDX page. Inside the pages directory, create a new file named blog.mdx and add the following content:
+  </p>
+  <div className="mt-6">
+    ```basic
+---
+title: My First MDX Blog Post
+date: February 5, 2024
+---
+
+# Welcome to My MDX Blog!
+
+This is my first MDX blog post written in Next.js. Isn't it amazing? We can use Markdown syntax for basic text formatting.
+
+Let's add a code snippet:
+
+```jsx
+import React from 'react';
+
+const MyComponent = () => {
+  return <div>Hello, MDX!</div>;
+};
+
+export default MyComponent;
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Rendering MDX Content</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    To render MDX content in our Next.js application, we need to configure the MDX loader. Create a file named next.config.js in the root of your project and add the following code:
+  </p>
+  <div className="mt-6">
+    ```js
+    // next.config.js
+    const withMDX = require('@next/mdx')();
+
+    module.exports = withMDX({
+        pageExtensions: ['mdx'],
+    });
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Displaying MDX Posts</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Now, let's create a component to display our MDX blog posts. Create a new file named BlogPost.js in the components directory and add the following code:
+  </p>
+    <div className="mt-6">
+    ```js
+    // components/BlogPost.js
+    import { MDXRemote } from 'next-mdx-remote';
+    import { serialize } from 'next-mdx-remote/serialize';
+
+    const BlogPost = ({ source }) => {
+        return <MDXRemote {...source} />;
+    };
+
+    export default BlogPost;
+    ```
+  </div>
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Fetching MDX Content</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Next, let's fetch the MDX content for our blog posts. Create a directory named posts in the root of your project and add a sample MDX file named hello-world.mdx with the following content:
+  </p>
+    <div className="mt-6">
+    ```basic
+---
+title: My First MDX Blog Post
+date: February 5, 2024
+---
+
+# Welcome to My MDX Blog!
+
+This is my first MDX blog post written in Next.js. Isn't it amazing? We can use Markdown syntax for basic text formatting.
+
+...
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Creating a Blog Page</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Now that we have our MDX blog posts, let's create a page to display them. Create a new file named blog.js in the pages directory and add the following code:
+  </p>
+  <div className="mt-6">
+    ```js
+    // pages/blog.js
+    import fs from 'fs';
+    import path from 'path';
+    import matter from 'gray-matter';
+    import BlogPost from '../components/BlogPost';
+
+    const Blog = ({ posts }) => {
+    return (
+        <div>
+        {posts.map((post, index) => (
+            <BlogPost key={index} source={post.mdxSource} />
+        ))}
+        </div>
+    );
+    };
+
+    export const getStaticProps = async () => {
+        const postsDirectory = path.join(process.cwd(), 'posts');
+        const filenames = fs.readdirSync(postsDirectory);
+
+        const posts = filenames.map((filename) => {
+            const filePath = path.join(postsDirectory, filename);
+            const content = fs.readFileSync(filePath, 'utf-8');
+            const { data, content: mdxSource } = matter(content);
+
+            return {
+            frontMatter: data,
+            mdxSource,
+        };
+    });
+
+    return {
+        props: {
+                posts,
+            },
+        };
+    };
+
+    export default Blog;
+    ```
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Conclusion</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Congratulations! You've successfully created a dynamic blog using MDX and Next.js. In this tutorial, we covered the basics of setting up MDX, creating MDX files, rendering MDX content, and displaying blog posts dynamically. With MDX, the possibilities for creating interactive and engaging content are endless. Experiment with different components, customize your blog layout, and let your creativity shine!
+  </p>
+</div>
+</div>
