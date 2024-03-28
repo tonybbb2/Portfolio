@@ -51,9 +51,7 @@ export default function Work() {
                             VI fitness application
                           </h5>
                           <p class="mb-6 text-zinc-500 dark:text-zinc-400">
-                            Ut pretium ultricies dignissim. Sed sit amet mi eget
-                            urna placerat vulputate. Ut vulputate est non quam
-                            dignissim elementum. Donec a ullamcorper diam.
+                            VI fitness is an application that allow people who want to follow a workout to achieve their fitness goals.
                           </p>
                           <div className="flex grid grid-cols-4 text-center gap-1 p-2">
                             <span class="flex items-center justify-center bg-blue-900 text-[10px] me-2 py-0.5 rounded text-white"><SiKotlin className="text-xs mr-2"/>Kotlin</span>
@@ -100,16 +98,14 @@ export default function Work() {
                             Full stack Netflix clone
                           </h5>
                           <p class="mb-6 text-zinc-500 dark:text-zinc-400">
-                            Ut pretium ultricies dignissim. Sed sit amet mi eget
-                            urna placerat vulputate. Ut vulputate est non quam
-                            dignissim elementum. Donec a ullamcorper diam.
+                            This full stack Netlix clone is made for people to understand how simple and efficient Netflix is created.
                           </p>
                           <div className="flex grid grid-cols-4 text-center gap-1 p-2">
                             <span class="flex items-center justify-center bg-[#67D4F2] text-[10px] me-2 py-0.5 rounded text-white"><DiReact className="text-xs mr-2"/>React.js</span>
                             <span class="flex items-center justify-center bg-orange-700 text-[10px] me-2 py-0.5 rounded text-white"><SiFirebase className="text-xs mr-2"/>Firebase</span>
                             <span class="flex items-center justify-center bg-orange-400 text-[10px] me-2 py-0.5 rounded text-white"><SiAuthelia className="text-xs mr-2"/>Firebase auth</span>
                             <span class="flex items-center justify-center bg-[#17B5D0] text-[10px] me-2 py-0.5 rounded text-white"><BiLogoTailwindCss className="text-xs mr-2"/>Tailwind CSS</span>
-                            <span class="flex items-center justify-center bg-[#0D253F] text-[10px] me-2 py-0.5 rounded text-white"><TbApi className="text-xs mr-2"/>Moviestore API</span>
+                            <span class="flex items-center justify-center bg-[#0D253F] text-[10px] me-2 py-0.5 rounded text-white"><TbApi className="text-xs mr-2"/>theMovieStore</span>
                           </div>
                           <div className="flex justify-center items-center mt-6 gap-2">
                             <button
