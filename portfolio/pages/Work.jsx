@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 import backgroundImg from "/public/mockupVi.png";
 import backgroundImg2 from "/public/browsermockup.png";
-import { SiKotlin, SiOpenai, SiFirebase, SiGooglemaps, SiHeroku   } from "react-icons/si";
-import { DiMysql } from "react-icons/di";
-import { BiLogoNodejs, BiLogoJavascript  } from "react-icons/bi";
+import { SiKotlin, SiOpenai, SiFirebase, SiGooglemaps, SiHeroku, SiAuthelia   } from "react-icons/si";
+import { DiMysql, DiReact  } from "react-icons/di";
+import { BiLogoNodejs, BiLogoJavascript, BiLogoTailwindCss   } from "react-icons/bi";
+import { TbApi } from "react-icons/tb";
 
 export default function Work() {
   return (
@@ -63,6 +64,52 @@ export default function Work() {
                             <span class="flex items-center justify-center bg-orange-700 text-[10px] me-2 py-0.5 rounded text-white"><SiFirebase className="text-xs mr-2"/>Firebase</span>
                             <span class="flex items-center justify-center bg-[#46AF61] text-[10px] me-2 py-0.5 rounded text-white"><SiGooglemaps className="text-xs mr-2"/>GoogleMaps</span>
                             <span class="flex items-center justify-center bg-[#4A0E97] text-[10px] me-2 py-0.5 rounded text-white"><SiHeroku className="text-xs mr-2"/>Heroku</span>
+                          </div>
+                          <div className="flex justify-center items-center mt-6 gap-2">
+                            <button
+                              className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-700 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+                              type="button"
+                            >
+                              Source code
+                            </button>
+                            <button
+                              className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-700 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+                              type="button"
+                            >
+                              Demo
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-6 lg:mb-0">
+                      <div class="relative block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-zinc-800">
+                        <div class="flex">
+                          <div class="relative mx-4 -mt-4 w-full overflow-hidden rounded-xl bg-cover bg-no-repeat shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+                            <Image
+                              className="rounded-xl hover:scale-105 transition duration-500 cursor-pointer object-cover"
+                              src={backgroundImg2}
+                              width={500}
+                              height={200}
+                              alt="/"
+                            />
+                          </div>
+                        </div>
+                        <div class="p-6 text-center">
+                          <h5 class="mb-4 text-xl font-bold text-zinc-800 dark:text-white">
+                            Full stack Netflix clone
+                          </h5>
+                          <p class="mb-6 text-zinc-500 dark:text-zinc-400">
+                            Ut pretium ultricies dignissim. Sed sit amet mi eget
+                            urna placerat vulputate. Ut vulputate est non quam
+                            dignissim elementum. Donec a ullamcorper diam.
+                          </p>
+                          <div className="flex grid grid-cols-4 text-center gap-1 p-2">
+                            <span class="flex items-center justify-center bg-[#67D4F2] text-[10px] me-2 py-0.5 rounded text-white"><DiReact className="text-xs mr-2"/>React.js</span>
+                            <span class="flex items-center justify-center bg-orange-700 text-[10px] me-2 py-0.5 rounded text-white"><SiFirebase className="text-xs mr-2"/>Firebase</span>
+                            <span class="flex items-center justify-center bg-orange-400 text-[10px] me-2 py-0.5 rounded text-white"><SiAuthelia className="text-xs mr-2"/>Firebase auth</span>
+                            <span class="flex items-center justify-center bg-[#17B5D0] text-[10px] me-2 py-0.5 rounded text-white"><BiLogoTailwindCss className="text-xs mr-2"/>Tailwind CSS</span>
+                            <span class="flex items-center justify-center bg-[#0D253F] text-[10px] me-2 py-0.5 rounded text-white"><TbApi className="text-xs mr-2"/>Moviestore API</span>
                           </div>
                           <div className="flex justify-center items-center mt-6 gap-2">
                             <button
