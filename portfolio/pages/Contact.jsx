@@ -63,14 +63,13 @@ const Contact = () => {
                                             <div className='p-6'>
                                                 <Image src={'https://images.unsplash.com/photo-1547082299-de196ea013d6?q=100&w=450&h=375&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="Contact preview image" className='rounded-xl' width={450} height={550} />
                                                 <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-                                                <div className='flex justify-around p-2 text-black dark:text-white'>
+                                                <div className='flex justify-around p-2 text-zinc-600 dark:text-white'>
                                                     <Link href={'https://twitter.com/tonydev35'}>
                                                         <FaXTwitter size={25} />
                                                     </Link>
                                                     <FaLinkedin size={25} />
                                                     <FaGithub size={25} />
                                                     <FaInstagram size={25} />
-                                                    <AiOutlineMail size={25} />
                                                 </div>
                                             </div>
                                         </div>

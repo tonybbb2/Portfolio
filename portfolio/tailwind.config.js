@@ -23,6 +23,10 @@ module.exports = {
             width: "100%",
           },
         },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
         blink: {
           "50%": {
             borderColor: "transparent",
@@ -49,6 +53,7 @@ module.exports = {
         slidein500: "slidein 1s ease 500ms forwards",
         slidein700: "slidein 1s ease 700ms forwards",
         slidein900: "slidein 1s ease 900ms forwards",
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
       },
     },
   },
