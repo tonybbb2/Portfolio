@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import backgroundImg from "/public/mockupVi.png";
 import backgroundImg2 from "/public/browsermockup.png";
 import backgroundImg3 from "/public/browsermockup_2.png";
-import { SiKotlin, SiOpenai, SiFirebase, SiGooglemaps, SiHeroku, SiAuthelia, SiNextdotjs, SiPrisma } from "react-icons/si";
-import { DiMysql, DiReact } from "react-icons/di";
+import { SiKotlin, SiOpenai, SiFirebase, SiGooglemaps, SiHeroku, SiAuthelia, SiNextdotjs, SiPrisma, SiPhp, SiJquery, SiBootstrap, SiDotnet, SiBlazor, SiCsharp, SiVisualstudiocode, SiPostman, SiPhpstorm } from "react-icons/si";
+import { DiMysql, DiReact, DiCodeigniter } from "react-icons/di";
 import { BiLogoNodejs, BiLogoJavascript, BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi";
 import { BsStripe, BsYoutube } from "react-icons/bs";
-import { TbApi, TbSlashes } from "react-icons/tb";
+import { TbApi, TbSlashes, TbJson } from "react-icons/tb";
+import { FaGitAlt } from "react-icons/fa6";
+import { GrMysql } from "react-icons/gr";
 import { FcGoogle } from "react-icons/fc";
 
 export default function Work() {
@@ -21,7 +23,7 @@ export default function Work() {
                                 <header className="max-w-full none md:flex">
                                     <div className="max-w-2xl">
                                         <p className="text-red-600 text-sm font-semibold uppercase">
-                                            Projects
+                                            Projects & professional skills
                                         </p>
                                         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
                                             Things I’ve made trying to prove myself in this industry
@@ -36,167 +38,112 @@ export default function Work() {
                                         </p>
                                     </div>
                                     <div className="self-center text-center h-full w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-                                        <div class="w-full inline-flex flex-nowrap">
-                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                                        <div class="w-full inline-flex flex-nowrap mt-5">
+                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-6 [&_img]:max-w-none animate-infinite-scroll">
                                                 <li>
-                                                    <SiNextdotjs className="text-xl " />
+                                                    <SiPhp className="text-2xl text-[#7b7fb5]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiJquery className="text-2xl text-[#106daf]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <BiLogoJavascript className="text-2xl text-[#EDD729]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiBootstrap className="text-2xl text-[#7f18f9]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <DiCodeigniter className="text-2xl text-[#f0472a]" />
                                                 </li>
                                             </ul>
-                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-6 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiPhp className="text-2xl text-[#7b7fb5]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiJquery className="text-2xl text-[#106daf]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <BiLogoJavascript className="text-2xl text-[#EDD729]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiBootstrap className="text-2xl text-[#7f18f9]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <DiCodeigniter className="text-2xl text-[#f0472a]" />
                                                 </li>
                                             </ul>
                                         </div><div class="w-full inline-flex flex-nowrap mt-4">
-                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-7 [&_img]:max-w-none animate-infinite-scroll">
                                                 <li>
-                                                    <SiNextdotjs className="text-xl " />
+                                                    <SiDotnet className="text-2xl text-black" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiBlazor className="text-2xl text-[#613494]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiCsharp className="text-2xl text-[#34a037]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <GrMysql className="text-2xl text-[#4c83a3]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <TbJson className="text-2xl text-black" />
                                                 </li>
                                             </ul>
-                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-7 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiDotnet className="text-2xl text-black" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiBlazor className="text-2xl text-[#613494]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiCsharp className="text-2xl text-[#34a037]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <GrMysql className="text-2xl text-[#4c83a3]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <TbJson className="text-2xl text-black" />
                                                 </li>
                                             </ul>
                                         </div><div class="w-full inline-flex flex-nowrap mt-4">
-                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                                            <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
                                                 <li>
-                                                    <SiNextdotjs className="text-xl " />
+                                                    <SiVisualstudiocode className="text-2xl text-[#a175d7]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiVisualstudiocode className="text-2xl text-[#22a7ea]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiPhpstorm className="text-2xl text-black" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiPostman className="text-2xl text-[#f76935]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <FaGitAlt className="text-2xl text-[#e84e31]" />
                                                 </li>
                                             </ul>
                                             <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiVisualstudiocode className="text-2xl text-[#a175d7]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiVisualstudiocode className="text-2xl text-[#22a7ea]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiPhpstorm className="text-2xl text-black" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <SiPostman className="text-2xl text-[#f76935]" />
                                                 </li>
                                                 <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
-                                                </li>
-                                                <li>
-                                                    <SiNextdotjs className="text-xl" />
+                                                    <FaGitAlt className="text-2xl text-[#e84e31]" />
                                                 </li>
                                             </ul>
                                         </div>
-
                                     </div>
                                 </header>
                                 <div className="mt-16 sm:mt-20 p-12">
@@ -206,7 +153,7 @@ export default function Work() {
                                                 <div class="flex">
                                                     <div class="relative mx-4 -mt-4 w-full overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                                                         <Image
-                                                            className="rounded-xl hover:scale-105 transition duration-500 cursor-pointer object-cover"
+                                                            className="rounded-xl hover:scale-150 transition duration-500 cursor-pointer object-cover"
                                                             src={backgroundImg}
                                                             width={500}
                                                             height={200}
@@ -253,7 +200,7 @@ export default function Work() {
                                                 <div class="flex">
                                                     <div class="relative mx-4 -mt-4 w-full overflow-hidden rounded-xl bg-cover bg-no-repeat shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                                                         <Image
-                                                            className="rounded-xl hover:scale-105 transition duration-500 cursor-pointer object-cover"
+                                                            className="rounded-xl hover:scale-150 transition duration-500 cursor-pointer object-cover"
                                                             src={backgroundImg3}
                                                             width={500}
                                                             height={200}
@@ -300,7 +247,7 @@ export default function Work() {
                                                 <div class="flex">
                                                     <div class="relative mx-4 -mt-4 w-full overflow-hidden rounded-xl bg-cover bg-no-repeat shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                                                         <Image
-                                                            className="rounded-xl hover:scale-105 transition duration-500 cursor-pointer object-cover"
+                                                            className="rounded-xl hover:scale-150 transition duration-500 cursor-pointer object-cover"
                                                             src={backgroundImg2}
                                                             width={500}
                                                             height={200}
