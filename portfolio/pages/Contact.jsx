@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FaXTwitter } from "react-icons/fa6";
-import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -64,12 +63,18 @@ const Contact = () => {
                                                 <Image src={'https://images.unsplash.com/photo-1547082299-de196ea013d6?q=100&w=450&h=375&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="Contact preview image" className='rounded-xl' width={450} height={550} />
                                                 <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
                                                 <div className='flex justify-around p-2 text-zinc-600 dark:text-white'>
-                                                    <Link href={'https://twitter.com/tonydev35'}>
+                                                    <Link href={'https://twitter.com/tonydev35'} rel="noopener noreferrer" target="_blank">
                                                         <FaXTwitter size={25} />
                                                     </Link>
-                                                    <FaLinkedin size={25} />
-                                                    <FaGithub size={25} />
-                                                    <FaInstagram size={25} />
+                                                    <Link href={'https://www.linkedin.com/in/dev-tonybui/'}  rel="noopener noreferrer" target="_blank">
+                                                        <FaLinkedin size={25} />
+                                                    </Link>
+                                                    <Link href={'https://github.com/tonybbb2'} rel="noopener noreferrer" target="_blank">
+                                                        <FaGithub size={25} />
+                                                    </Link>
+                                                    <Link href={'https://www.instagram.com/tooony____/'} rel="noopener noreferrer" target="_blank">
+                                                        <FaInstagram size={25} />
+                                                    </Link>
                                                 </div>
                                             </div>
                                         </div>

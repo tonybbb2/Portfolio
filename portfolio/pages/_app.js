@@ -1,17 +1,29 @@
 import "../styles/globals.css";
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
+import { useRouter } from "next/router";
 import Navbar from "./components/Navbar";
 import Preloader from "./Preloader";
 import Footer from "./components/Footer";
 import Head from "next/head";
-import { Suspense } from 'react'
+import { Suspense } from "react";
+import Load from "./components/Load";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const [render, setRender] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     setTimeout(() => setLoading(false), 5500);
-  }, []);
+
+    router.events.on("routeChangeStart", (url) => {
+      setRender(true);
+    });
+
+    router.events.on("routeChangeComplete", (url) => {
+      setRender(false);
+    });
+  }, [router.events]);
 
   return (
     <>
@@ -44,12 +56,16 @@ function MyApp({ Component, pageProps }) {
               </div>
               <div className="relative flex w-full flex-col">
                 <Navbar />
-                <Component {...pageProps} />
+                {render ? (
+                  <Load />
+                ) : (
+                  <Component {...pageProps} />
+                )}
                 <Footer />
               </div>
             </div>
-            </Suspense>
-          </Fragment>
+          </Suspense>
+        </Fragment>
       ) : (
         <Preloader />
       )}

@@ -76,7 +76,7 @@ export default function Work() {
                                         </div><div class="w-full inline-flex flex-nowrap mt-4">
                                             <ul class="flex items-center justify-center md:justify-start [&_li]:mx-7 [&_img]:max-w-none animate-infinite-scroll">
                                                 <li>
-                                                    <SiDotnet className="text-2xl text-black" />
+                                                    <SiDotnet className="text-2xl text-black dark:text-white" />
                                                 </li>
                                                 <li>
                                                     <SiBlazor className="text-2xl text-[#613494]" />
@@ -88,12 +88,12 @@ export default function Work() {
                                                     <GrMysql className="text-2xl text-[#4c83a3]" />
                                                 </li>
                                                 <li>
-                                                    <TbJson className="text-2xl text-black" />
+                                                    <TbJson className="text-2xl text-black dark:text-white" />
                                                 </li>
                                             </ul>
                                             <ul class="flex items-center justify-center md:justify-start [&_li]:mx-7 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
                                                 <li>
-                                                    <SiDotnet className="text-2xl text-black" />
+                                                    <SiDotnet className="text-2xl text-black dark:text-white" />
                                                 </li>
                                                 <li>
                                                     <SiBlazor className="text-2xl text-[#613494]" />
@@ -105,7 +105,7 @@ export default function Work() {
                                                     <GrMysql className="text-2xl text-[#4c83a3]" />
                                                 </li>
                                                 <li>
-                                                    <TbJson className="text-2xl text-black" />
+                                                    <TbJson className="text-2xl text-black dark:text-white" />
                                                 </li>
                                             </ul>
                                         </div><div class="w-full inline-flex flex-nowrap mt-4">
@@ -117,7 +117,7 @@ export default function Work() {
                                                     <SiVisualstudiocode className="text-2xl text-[#22a7ea]" />
                                                 </li>
                                                 <li>
-                                                    <SiPhpstorm className="text-2xl text-black" />
+                                                    <SiPhpstorm className="text-2xl text-black dark:text-white" />
                                                 </li>
                                                 <li>
                                                     <SiPostman className="text-2xl text-[#f76935]" />
@@ -134,7 +134,7 @@ export default function Work() {
                                                     <SiVisualstudiocode className="text-2xl text-[#22a7ea]" />
                                                 </li>
                                                 <li>
-                                                    <SiPhpstorm className="text-2xl text-black" />
+                                                    <SiPhpstorm className="text-2xl text-black dark:text-white" />
                                                 </li>
                                                 <li>
                                                     <SiPostman className="text-2xl text-[#f76935]" />
