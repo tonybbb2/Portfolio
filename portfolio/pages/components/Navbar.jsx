@@ -154,6 +154,17 @@ export const Navbar = () => {
             Navigation
           </h2>
         </div>
+        <nav className="mt-6">
+          <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-600  dark:divide-zinc-100/5 dark:text-zinc-300">
+          {routes.map((route) => (
+              <Link key={route.path} href={route.path}>
+                <li>
+                  <p className="block py-2">{route.label}</p>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </nav>
       </div>
     </div>
   );
