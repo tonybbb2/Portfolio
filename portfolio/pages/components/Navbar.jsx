@@ -113,49 +113,12 @@ export const Navbar = () => {
       <div className="flex justify-start md:flex-1 md:pl-32">
         <button
           type="button"
-          aria-label="Choose your language"
-          onClick={handleLang}
-          className="group rounded-full px-3 py-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
-        >
-          <MdOutlineLanguage size={20} className="text-black dark:text-white" />
-        </button>
-        <button
-          type="button"
           aaria-label="Toggle dark mode"
           className="group rounded-full px-3 py-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20  ml-2"
         >
           <Switcher className="text-black dark:text-white" />
         </button>
-        <div
-          id="dropdown-lang"
-          className={
-            lang
-              ? "absolute w-[45px] top-12 z-10 bg-white rounded-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
-              : "hidden"
-          }
-        >
-          <ul
-            className="py-2 text-md text-gray-700 dark:text-gray-200"
-            aria-labelledby="dropdownDefaultButton"
-          >
-            <li>
-              <a
-                href="#"
-                className="block py-2 text-center hover:bg-gray-100 dark:hover:bg-zinc-700 dark:hover:text-white"
-              >
-                🇫🇷
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block mx-auto py-2 text-center hover:bg-gray-100 dark:hover:bg-zinc-700 dark:hover:text-white"
-              >
-                🇺🇸
-              </a>
-            </li>
-          </ul>
-        </div>
+
       </div>
       <div
         className={

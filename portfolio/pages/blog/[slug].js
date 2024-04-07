@@ -35,12 +35,10 @@ export default function PostPage({ source, frontMatter }) {
 
   const mainRef = useRef(null);
   const [copied, setCopied] = useState(false);
-  const [url, setURL] = useState("");
+  const [url, setURL] = useState(window.location.href);
 
   const handleClick = () => {
-    const currentURL = window.location.href;
-    setURL(currentURL);
-    navigator.clipboard.writeText(currentURL);
+    navigator.clipboard.writeText(url);
     setCopied(true);
   };
 

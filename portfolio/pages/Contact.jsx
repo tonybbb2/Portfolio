@@ -98,7 +98,7 @@ const Contact = () => {
                                                     <label class="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" for='email'>Email</label>
                                                     <input
                                                         type="Email"
-                                                        placeholder="portfolio@gmail.com"
+                                                        placeholder="youremail@gmail.com"
                                                         aria-label="Enter your email"
                                                         name='email'
                                                         {...register('email', { required: { value: true, message: 'Please enter your email' } })}
@@ -122,7 +122,7 @@ const Contact = () => {
                                                     <label class="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" for='message'>Message</label>
                                                     <textarea
                                                         type="Message"
-                                                        placeholder="Give me some of your feedback"
+                                                        placeholder="Give me some of your feedback (ex. comments, improvements, blog, project suggestions, bugs...)"
                                                         name='message'
                                                         aria-label="Enter a message"
                                                         {...register('message', {
