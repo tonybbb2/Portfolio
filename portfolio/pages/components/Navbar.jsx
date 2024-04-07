@@ -1,150 +1,199 @@
-import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
-import { AiOutlineClose, AiOutlineMail } from 'react-icons/ai';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { AiFillGitlab } from 'react-icons/ai';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import profil from '../../public/IMG_3544.png'
-
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { MdOutlineLanguage } from "react-icons/md";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import profil from "../../public/PRpic.png";
+import Switcher from "../components/Switcher";
 
 export const Navbar = () => {
+  const [nav, setNav] = useState(false);
+  const [lang, setLang] = useState(false);
+  const [showProfil, setShowProfil] = useState(false);
+  const [shadow, setShadsow] = useState(false);
+  const [navBg, setNavBg] = useState("#ecf0f3");
+  const [LinkColor, setLinkColor] = useState("#1f2937");
+  const router = useRouter();
 
-    const [nav, setNav] = useState(false)
-    const [shadow, setShadsow] = useState(false)
-    const [navBg, setNavBg] = useState('#ecf0f3');
-    const [LinkColor, setLinkColor] = useState('#1f2937');
-    const router = useRouter();
+  const handleNav = () => {
+    setNav(!nav);
+  };
 
-    const handleNav = () => {
-        setNav(!nav);
+  const handleLang = () => {
+    setLang(!lang);
+  };
+
+  useEffect(() => {
+    if (router.asPath.match(/^\/(About|Blog|Skills|Contact|Thank-you|Work)(\/[^\/]+)?$/)) {
+      setShowProfil(true);
+    } else {
+      setNavBg("#252529");
+      setShowProfil(false);
+      setLinkColor("#1f2937");
     }
+  }, [router]);
 
-    useEffect(() => {
-        if (
-            
-            router.asPath === '/Comics' ||
-            router.asPath === '/Anime' ||
-            router.asPath === '/Pokemon' ||
-            router.asPath === '/Podcasts' ||
-            router.asPath === '/Vi' ||
-            router.asPath === '/Portfolio' ||
-            router.asPath === '/Netflix'
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY > 50) {
+        setShadsow(true);
+      } else {
+        setShadsow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  }, []);
 
-        ) {
-            setNavBg('transparent')
-            setLinkColor('#ecf0f3')
-        }
-        else {
-            setNavBg('#ecf0f3')
-            setLinkColor('#1f2937')
-        }
+  const routes = [
+    { path: '/', label: 'Home' },
+    { path: '/About', label: 'About' },
+    { path: '/Work', label: 'Work' },
+    { path: '/Blog', label: 'Blog' },
+    { path: '/Contact', label: 'Contact' },
+  ];
 
-
-    }, [router])
-
-
-    useEffect(() => {
-        const handleShadow = () => {
-            if (window.scrollY > 70) {
-                setShadsow(true)
-            } else {
-                setShadsow(false)
-            }
-        }
-        window.addEventListener('scroll', handleShadow)
-    }, [])
-
-    return (
-        <div style={{ backgroundColor: `${navBg}` }} className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
-            <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-                <Image src={profil} alt='/' width='100' height='80' />
-                <div>
-                    <ul style={{ color: `${LinkColor}` }} className='hidden md:flex'>
-                        <Link href='/#main'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Accueil</li>
-                        </Link>
-                        <Link href='/#about'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>À propos</li>
-                        </Link>
-                        <Link href='/#skills'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Compétences</li>
-                        </Link>
-                        <Link href='/#projects'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Projets</li>
-                        </Link>
-                        <Link href='/#contact'>
-                            <li className='ml-10 text-sm uppercase hover:border-b'>Contact</li>
-                        </Link>
-
-                        <a href='../../public/static/mycv.pdf' download><li className='ml-10 text-sm uppercase hover:border-b'>CV</li></a>
-
-
-                    </ul>
-                </div>
-                <div onClick={handleNav} className='md:hidden'>
-                    <AiOutlineMenu size={25} />
-                </div>
-            </div>
-            <div className={nav ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/80' : ''}>
-                <div className={nav ? ' fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500' :
-                    'fixed left-[-100%] top-0 p-10 ease-in duration-500'
-                }>
-                    <div>
-                        <div className='flex w-full items-center justify-between'>
-                            <Link href='/'>
-                                <Image src={profil} alt='/' width='90' height='75' />
-                            </Link>
-                            <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
-                                <AiOutlineClose size={25} />
-                            </div>
-                        </div>
-                        <div className='border-b border-gray-300 my-4'>
-                            <p className='w-[85%] md:w-[90%] py-4'>Construisons quelque chose ensemble!</p>
-                        </div>
-                    </div>
-                    <div className='py-4 flex flex-col'>
-                        <ul className='uppercase'>
-                            <Link href='/'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Accueil</li>
-                            </Link>
-                            <Link href='/#about'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>À propos </li>
-                            </Link>
-                            <Link href='/#skills'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Compétences</li>
-                            </Link>
-                            <Link href='/#projects'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Projets</li>
-                            </Link>
-                            <Link href='/#contact'>
-                                <li onClick={() => setNav(false)} className='py-4 text-sm'>Contact</li>
-                            </Link>
-                        </ul>
-                        <div className='pt-40'>
-                            <p className='uppercase tracking-widest text-red-500'>Connectez-vous avec moi!</p>
-                            <div className='flex items-center justify-between my-4 w-full sm:w[80%]'>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <Link href='https://www.linkedin.com/in/tony-bui-383a52253/'><FaLinkedin /></Link>
-                                </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <Link href='https://github.com/tonybbb2'><FaGithub /></Link>
-                                </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <Link href='https://gitlab.com/Tony.Bui21'><AiFillGitlab /></Link>
-                                </div>
-                                <div className='rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-200'>
-                                    <Link href='/#contact'><AiOutlineMail onClick={() => setNav(false)} /></Link>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div
+      className={
+        "animate-slidein900 opacity-0 relative flex justify-center w-full h-10 top-5 z-[100] gap-[10px]"
+      }
+    >
+      <div className="md:flex md:justify-end md:flex-1 md:pr-32">
+        <div
+          className={
+            showProfil
+              ? "hidden sm:block h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10 cursor-pointer"
+              : "hidden"
+          }
+        >
+          <Link className="pointer-events-auto" href="/">
+            <Image src={profil} alt="/" className="rounded-full" />
+          </Link>
         </div>
-    )
-}
+      </div>
+      <div onClick={handleNav} className="flex justify-end md:hidden">
+        <button
+          className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
+          type="button"
+          aria-expanded="false"
+        >
+          Menu
+          <svg
+            viewBox="0 0 8 6"
+            aria-hidden="true"
+            className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400"
+          >
+            <path
+              d="M1.75 1.75 4 4.25l2.25-2.5"
+              fill="none"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div className="hidden justify-end md:justify-center rounded-full md:flex flex-1 bg-white dark:bg-[#252529] shadow-lg ring-1 ring-zinc-900/5">
+        <nav>
+          <ul className="flex rounded-full w-full h-full text-black dark:text-white font-semibold font-display text-md">
+            {routes.map((route) => (
+              <Link key={route.path} href={route.path}>
+                <li className={`relative block px-4 py-2 transition ${router.pathname === route.path ? 'text-red-600' : 'text-black dark:text-white'
+                  }`}>
+                  <p className="hover:text-red-600">{route.label}</p>
+                  {router.pathname === route.path && (
+                    <span className="absolute inset-x-0 bottom-[-0.5px] h-[2.5px] bg-gradient-to-r from-red-500/0 via-red-600/40 to-red-600/0"></span>
+                  )}
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </nav>
+      </div>
+      <div className="flex justify-start md:flex-1 md:pl-32">
+        <button
+          type="button"
+          aria-label="Choose your language"
+          onClick={handleLang}
+          className="group rounded-full px-3 py-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+        >
+          <MdOutlineLanguage size={20} className="text-black dark:text-white" />
+        </button>
+        <button
+          type="button"
+          aaria-label="Toggle dark mode"
+          className="group rounded-full px-3 py-2 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20  ml-2"
+        >
+          <Switcher className="text-black dark:text-white" />
+        </button>
+        <div
+          id="dropdown-lang"
+          className={
+            lang
+              ? "absolute w-[45px] top-12 z-10 bg-white rounded-lg ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+              : "hidden"
+          }
+        >
+          <ul
+            className="py-2 text-md text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownDefaultButton"
+          >
+            <li>
+              <a
+                href="#"
+                className="block py-2 text-center hover:bg-gray-100 dark:hover:bg-zinc-700 dark:hover:text-white"
+              >
+                🇫🇷
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="block mx-auto py-2 text-center hover:bg-gray-100 dark:hover:bg-zinc-700 dark:hover:text-white"
+              >
+                🇺🇸
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        className={
+          nav
+            ? "fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 md:hidden"
+            : "hidden"
+        }
+      >
+        <div className="flex flex-row-reverse items-center justify-between">
+          <button
+            aria-label="Close menu"
+            className="-m-1 p-1"
+            type="button"
+            data-headlessui-state="open"
+            onClick={handleNav}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="h-6 w-6 text-zinc-500 dark:text-zinc-400"
+            >
+              <path
+                d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
+                fill="none"
+                stroke="currentColor"
+                strokewidth-width="1.5"
+                stroke-strokelinecap="round"
+                strokeLinejoin="round"
+              ></path>
+            </svg>
+          </button>
+          <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+            Navigation
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -2,10 +2,7 @@ import nodemailer from 'nodemailer';
 
 export default function handler(req, res) {
   const {
-    name,
-    telephone,
     email,
-    message
   } = req.body;
 
   const transporter = nodemailer.createTransport({
@@ -21,18 +18,16 @@ export default function handler(req, res) {
   const mailOptions = {
     from: email,
     to: 'bui.tony35@gmail.com',
-    subject: 'Sent from my website',
-    text: `Ceci est un message de ${name}, ${telephone}. ${message} : ${email}`
+    subject: `Subscription from ${email}`,
+    text: `${email} subscribed to your news letter!`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
-      res.send('error');
+      res.send(error);
     } else {
-      console.log('Email sent: ' + info.response);
-      res.send('success');
+      res.send(info);
     }
-  });
+  }); 
 
 }

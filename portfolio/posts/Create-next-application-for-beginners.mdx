@@ -1,0 +1,148 @@
+---
+title: "How I created a Next.js App: A Step-by-Step Guide for Beginners"
+time: February 1st 2024
+description: "Dive into my step-by-step guide and learn how to build a Next.js app from the ground up. Perfect for beginners, this tutorial will equip you with the knowledge and skills needed to create your own Next.js project with confidence."
+readingTime: 7 minute read
+previewImage: https://cdn.dribbble.com/userupload/4083900/file/original-af6fd9a0f697fc74d006f73f0e9d1ed5.png?resize=800x600
+type : Tutorials
+---
+
+<p className="text-balance text-zinc-600 dark:text-zinc-400 text-semibold text-lg">
+  Welcome to the world of Next.js! In this guide, we'll walk through the process
+  of building a Next.js web application step by step. Whether you're new to web
+  development or just new to Next.js, by the end of this tutorial, you'll have a
+  solid understanding of how to create your own Next.js app.
+</p>
+
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">What is Next.js?</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Before we dive into the tutorial, let's briefly discuss what Next.js is and why it's gaining popularity among web developers. Next.js is a React framework that enables server-side rendering, static site generation, and other powerful features out of the box. Its intuitive API and robust ecosystem make it an excellent choice for building modern web applications.
+  </p>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Prerequisites</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    To follow along with this tutorial, you'll need basic knowledge of HTML, CSS, and JavaScript. Familiarity with React is helpful but not required. Make sure you have Node.js and npm (Node Package Manager) installed on your machine.
+  </p>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Setting Up Your Development Environment</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Before we start coding, let's set up our development environment. Open your terminal and create a new directory for your Next.js project. Navigate into the directory and run the following command to initialize a new npm project:
+  </p>
+  <div className="mt-6">
+    ```bash
+mkdir my-nextjs-app
+cd my-nextjs-app
+npm init -y
+    ```
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Installing Next.js</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    With our project initialized, let's install Next.js and React. Run the following command in your terminal:
+  </p>
+  <div className="mt-6">
+    ```bash
+npm install next react react-dom
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Creating Pages</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    In Next.js, each JavaScript file in the <i>pages</i> directory corresponds to a route in your application. Let's create our first page. Inside the <i>pages</i> directory, create a new file named <i>index.js</i> and add the following code:
+  </p>
+  <div className="mt-6">
+    ```js
+    // pages/index.js
+    import React from 'react';
+
+    const Home = () => {
+    return (
+        <div>
+            <h1>Welcome to My Next.js App!</h1>
+            <p>This is the home page of our Next.js application.</p>
+        </div>
+    );
+    };
+
+    export default Home;
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Starting the Development Server</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Now that we have our first page, let's start the Next.js development server. Run the following command in your terminal:
+  </p>
+  <div className="mt-6">
+    ```bash
+npm run dev
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Viewing Your Next.js App</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Open your web browser and navigate to http://localhost:3000 to see your Next.js app in action. You should see the welcome message from our index.js page.
+  </p>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Adding Styles</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Next.js supports CSS modules out of the box, making it easy to style your components. Let's create a simple stylesheet for our home page. Create a new file named <i>styles.module.css</i> in the <i>pages</i> directory and add the following CSS:
+  </p>
+  <div className="mt-6">
+    ```css
+/* pages/styles.module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Updating the Home Page</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Let's import our stylesheet and apply styles to the home page. Update the index.js file as follows:
+  </p>
+  <div className="mt-6">
+    ```js
+    // pages/index.js
+    import React from 'react';
+    import styles from './styles.module.css';
+
+    const Home = () => {
+    return (
+        <div className={styles.container}>
+            <h1>Welcome to My Next.js App!</h1>
+            <p>This is the home page of our Next.js application.</p>
+        </div>
+    );
+    };
+
+    export default Home;
+    ```
+  </div>
+</div>
+<div className="mt-12">
+  <p className="text-3xl font-bold text-black dark:text-white">Conclusion</p>
+  <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-8">
+    Congratulations! You've successfully created a Next.js app from scratch. In this tutorial, we covered the basics of setting up a Next.js project, creating pages, adding styles, and starting the development server. This is just the beginning of your Next.js journey. Experiment with different features, explore the Next.js documentation, and keep building amazing web applications!
+  </p>
+</div>
+</div>
