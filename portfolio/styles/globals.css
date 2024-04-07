@@ -105,11 +105,11 @@ img {
         animation: secFadeIn 2s forwards;
         animation-delay: 3.2s;
         opacity: 0;
-        font-weight: 400;
-        font-family: 'Lato';
+        font-weight: 600;
+        font-family: 'arial';
         font-size: 12px;
         text-transform: uppercase;
-        letter-spacing: 5px;
+        letter-spacing: 3px;
       }
     }
   }

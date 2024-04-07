@@ -7,12 +7,27 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const About = () => {
-
   const socialLinksData = [
-    { Icon: FaXTwitter, href: "https://twitter.com/tonydev35", text: "Follow on Twitter" },
-    { Icon: FaLinkedin, href: "https://www.linkedin.com/in/dev-tonybui/", text: "Follow on LinkedIn" },
-    { Icon: FaGithub, href: "https://github.com/tonybbb2", text: "Follow on Github" },
-    { Icon: FaInstagram, href: "https://www.instagram.com/tooony____/", text: "Follow on Instagram" },
+    {
+      Icon: FaXTwitter,
+      href: "https://twitter.com/tonydev35",
+      text: "Follow on Twitter",
+    },
+    {
+      Icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/dev-tonybui/",
+      text: "Follow on LinkedIn",
+    },
+    {
+      Icon: FaGithub,
+      href: "https://github.com/tonybbb2",
+      text: "Follow on Github",
+    },
+    {
+      Icon: FaInstagram,
+      href: "https://www.instagram.com/tooony____/",
+      text: "Follow on Instagram",
+    },
   ];
 
   return (
@@ -40,7 +55,7 @@ const About = () => {
                 <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                   <p>
                     Growing up, I was always fascinated by technology,
-                    especially video games. However I never thought I'd be into
+                    especially video games. However, I never thought I'd be into
                     coding until I built my first PC. It was a significant
                     turning point for me—I suddenly knew I wanted to study
                     computer science. After three years of college, I graduated
@@ -57,21 +72,26 @@ const About = () => {
                     a big part of my routine—work, eat, and gym sessions.
                   </p>
                   <p>
-                    In addition to bodybuilding, I have ambitious plans to dive
-                    into the world of Muay Thai. I'm eager to dedicate myself to
-                    rigorous training, honing my skills with the aim of one day
-                    journeying to Thailand to train alongside the sport's
-                    finest. It's a dream I'm unwaveringly committed to
-                    realizing. As I look forward, I'm thrilled to embark on my
-                    newfound passion for powerlifting, with competing in
-                    powerlifting competitions as a primary goal.
+                    In addition to bodybuilding, I'm excited to immerse myself
+                    in the world of Muay Thai. I'm eager to dedicate myself to
+                    intense training, focusing on improving my skills with the
+                    ultimate goal of training alongside the sport's top athletes
+                    in Thailand. This is a dream I'm fully committed to
+                    achieving. Looking ahead, I plan to compete in Muay Thai
+                    tournaments within the next 1-2 years.
                   </p>
                   <p>
-                    By pursuing both powerlifting and Muay Thai, I'm
-                    continuously shaping and strengthening not just my body, but
-                    also my character. Each challenge I undertake is an
-                    opportunity for growth, and I eagerly anticipate the journey
-                    ahead.
+                    By dedicating myself to both bodybuilding and Muay Thai, I'm
+                    not only sculpting my physique but also fortifying my
+                    character. Every challenge I embrace becomes a catalyst for
+                    personal growth. Regardless of where my career path leads,
+                    the discipline and resilience developed through my physical
+                    pursuits will undoubtedly translate into every aspect of my
+                    life, including coding.
+                  </p>
+                  <p>
+                    oh and I am also a big fan of cars 
+                    but we can keep this subject for our next meeting 😄
                   </p>
                 </div>
               </div>
@@ -80,7 +100,11 @@ const About = () => {
                   {socialLinksData.map(({ Icon, href, text }, index) => (
                     <li key={index} className="flex mt-5">
                       <Icon size={22} className="text-zinc-700" />
-                      <Link href={href} rel="noopener noreferrer" target="_blank">
+                      <Link
+                        href={href}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
                         <span className="ml-4 text-zinc-900 dark:text-white font-display hover:text-red-600 dark:hover:text-red-600">
                           {text}
                         </span>
