@@ -7,7 +7,7 @@ import { BiTimeFive } from "react-icons/bi";
 const BlogCards = ({ title, description, time, link, thumbnail, minuteRead, type }) => {
     return (
         <>
-            <Link href={`/Blog/${link}`}>
+            <Link href={`/blog/${link}`}>
                 <div className="w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-zinc-800 dark:border-gray-700 flex flex-col transition duration-300 hover:scale-105">
                     <div className="flex justify-center w-full py-4">
                         {thumbnail ? (

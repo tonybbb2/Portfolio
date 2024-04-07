@@ -23,7 +23,7 @@ const Thankyou = () => {
                                 </header>
                             </div>
                             <div className="flex justify-start px-10 mt-8 text-black dark:text-white">
-                                <Link href={"/Blog"}>
+                                <Link href={"/blog"}>
                                     <button className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
                                             onClick={() => router.back()}>
                                         <IoMdArrowBack />

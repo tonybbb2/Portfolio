@@ -14,7 +14,7 @@ export const Footer = () => {
                                         <Link href='/About'><p className='transition hover:text-red-600 cursor-pointer'>Home</p></Link>
                                         <Link href='/About'><p className='transition hover:text-red-600 cursor-pointer'>About</p></Link>
                                         <Link href='/Work'><p className='transition hover:text-red-600 cursor-pointer'>Work</p></Link>
-                                        <Link href='/Blog'><p className='transition hover:text-red-600 cursor-pointer'>Blog</p></Link>
+                                        <Link href='/blog'><p className='transition hover:text-red-600 cursor-pointer'>Blog</p></Link>
                                         <Link href='/Contact'><p className='transition hover:text-red-600 cursor-pointer'>Contact</p></Link>
                                     </div>
                                     <p className='text-sm text-zinc-400 dark:text-zinc-500'>© 2024 Tony Bui. All rights reserved.</p>
