@@ -16,7 +16,7 @@ const Preloader = () => {
 
             <div className="role">
               <div className="block"></div>
-              <p className='text-black dark:text-white'>Jr. web developer</p>
+              <p className='text-black dark:text-white'>Software Developer</p>
             </div>
           </div>
         </div>
