@@ -31,10 +31,10 @@ function MyApp({ Component, pageProps }) {
         <Fragment>
           <Suspense>
             <Head>
-              <title>Tony Bui - Web developper</title>
+              <title>Tony Bui - Software Developer</title>
               <meta
                 name="description"
-                content="Personal website - web developer"
+                content="Personal Website - Software Developer"
               />
               <link rel="icon" href="/PRpicTransparent.png" type="image/png" />
               <link rel="preconnect" href="https://fonts.googleapis.com" />

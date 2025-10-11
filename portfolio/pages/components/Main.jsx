@@ -52,10 +52,10 @@ export const Main = () => {
                 <span className="text-[#DA3028]">TONY BUI</span>,
               </h1>
               <h1 className="animate-typing overflow-hidden whitespace-nowrap text-4xl font-bold tracking-tight text-zinc-800 sm:text-6xl dark:text-zinc-100 font-display">
-                A junior web developer
+                A Software Developer
               </h1>
               <p className="w-full md:w-3/4 mt-6 text-base tracking-wide text-zinc-600 dark:text-zinc-400">
-                I'm Tony, a Montreal-based web developer passionate about coding. My expertise lies in creating responsive websites that seamlessly merge creativity with functionality. I specialize in both backend and frontend development, constantly delving into the expansive realms of computer science to enhance my skills and knowledge.
+                I'm Tony, a Montreal-based Software Developer passionate about coding. My expertise lies in creating responsive websites that seamlessly merge creativity with functionality. I specialize in both backend and frontend development, constantly delving into the expansive realms of computer science to enhance my skills and knowledge.
               </p>
               <div className="mt-6 flex gap-6 text-2xl text-zinc-700 dark:text-gray-400">
                 {[
