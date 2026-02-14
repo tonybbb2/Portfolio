@@ -17,7 +17,7 @@ export const Footer = () => {
                                         <Link href='/blog'><p className='transition hover:text-red-600 cursor-pointer'>Blog</p></Link>
                                         <Link href='/Contact'><p className='transition hover:text-red-600 cursor-pointer'>Contact</p></Link>
                                     </div>
-                                    <p className='text-sm text-zinc-400 dark:text-zinc-500'>© 2024 Tony Bui. All rights reserved.</p>
+                                    <p className='text-sm text-zinc-400 dark:text-zinc-500'>© 2026 Tony Bui. All rights reserved.</p>
                                 </div>
                             </div>
                         </div>
