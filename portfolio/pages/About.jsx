@@ -50,7 +50,7 @@ const About = () => {
               <div className="lg:order-first lg:row-span-2">
                 <h1 className="text-4xl font-display font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
                   I’m <span className="text-[#DA3028]">Tony Bui</span>. I live
-                  in Montreal City, where I work as a Web Developper.
+                  in Montreal City, where I work as a Software Developer.
                 </h1>
                 <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
                   <p>
