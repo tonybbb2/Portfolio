@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CiCalendar } from "react-icons/ci";
 import { BiTimeFive } from "react-icons/bi";
 
-const BlogCards = ({ title, description, time, link, thumbnail, minuteRead, type }) => {
+const BlogCards = ({ title, description, time, link, thumbnail, minuteRead, type, eager = false }) => {
     return (
         <>
             <Link href={`/blog/${link}`}>
@@ -17,10 +17,11 @@ const BlogCards = ({ title, description, time, link, thumbnail, minuteRead, type
                                 alt="test"
                                 width={285}
                                 height={200}
-                                objectFit="contain"
+                                style={{ objectFit: "contain" }}
                                 quality={100}
-                                layout="fixed"
                                 unoptimized
+                                loading={eager ? "eager" : "lazy"}
+                                sizes="285px"
                             />
                         ) : null}
                     </div>

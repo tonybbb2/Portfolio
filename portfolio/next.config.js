@@ -14,7 +14,9 @@ const nextConfig = {
   // },
 }
 module.exports = {
+  outputFileTracingRoot: __dirname,
   images: {
+    qualities: [75, 100],
     remotePatterns: [
       {
         protocol: 'https',

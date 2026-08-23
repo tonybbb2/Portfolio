@@ -44,6 +44,8 @@ const About = () => {
                     height={800}
                     alt="gym picture"
                     className="aspect-square rotate-3 rounded-4xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                    loading="eager"
+                    sizes="(min-width: 1024px) 448px, 320px"
                   ></Image>
                 </div>
               </div>

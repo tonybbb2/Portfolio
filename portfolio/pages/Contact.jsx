@@ -60,7 +60,7 @@ const Contact = () => {
                                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6 items-center'>
                                         <div className='w-full h-[80%] border border-gray-200 dark:border-zinc-700 shadow bg-white dark:bg-zinc-800  rounded-xl'>
                                             <div className='p-6'>
-                                                <Image src={'https://images.unsplash.com/photo-1547082299-de196ea013d6?q=100&w=450&h=375&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="Contact preview image" className='rounded-xl' width={450} height={550} />
+                                                <Image src={'https://images.unsplash.com/photo-1547082299-de196ea013d6?q=100&w=450&h=375&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="Contact preview image" className='w-full h-auto rounded-xl' width={450} height={375} loading="eager" sizes="(min-width: 768px) 450px, calc(100vw - 5rem)" />
                                                 <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
                                                 <div className='flex justify-around p-2 text-zinc-600 dark:text-white'>
                                                     <Link href={'https://twitter.com/tonydev35'} rel="noopener noreferrer" target="_blank">
@@ -83,7 +83,7 @@ const Contact = () => {
                                             <p className='text-md text-zinc-700 dark:text-zinc-500 tracking-tight'>I will usually hit you back within an hour.</p>
                                             <form onSubmit={handleSubmit(onSubmitForm)}>
                                                 <div className='mt-12'>
-                                                    <label class="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" for='name'>Name</label>
+                                                    <label className="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" htmlFor='name'>Name</label>
                                                     <input
                                                         type="Name"
                                                         placeholder="John Doe"
@@ -95,7 +95,7 @@ const Contact = () => {
                                                     ></input>
                                                 </div>
                                                 <div className='mt-6'>
-                                                    <label class="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" for='email'>Email</label>
+                                                    <label className="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" htmlFor='email'>Email</label>
                                                     <input
                                                         type="Email"
                                                         placeholder="youremail@gmail.com"
@@ -107,7 +107,7 @@ const Contact = () => {
                                                     ></input>
                                                 </div>
                                                 <div className='mt-6'>
-                                                    <label class="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" for='telephone'>Phone</label>
+                                                    <label className="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" htmlFor='telephone'>Phone</label>
                                                     <input
                                                         type="text"
                                                         placeholder="+1 (800) 123-4567"
@@ -119,7 +119,7 @@ const Contact = () => {
                                                     ></input>
                                                 </div>
                                                 <div className='mt-6'>
-                                                    <label class="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" for='message'>Message</label>
+                                                    <label className="block mb-2 text-sm font-semibold text-zinc-700 dark:text-white" htmlFor='message'>Message</label>
                                                     <textarea
                                                         type="Message"
                                                         placeholder="Give me some of your feedback (ex. comments, improvements, blog, project suggestions, bugs...)"
@@ -147,7 +147,7 @@ const Contact = () => {
                                                         </div>
                                                     </div>
                                                 }
-                                                <button class="w-full px-6 py-3 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-teal-700 rounded-lg hover:bg-teal-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                                                <button className="w-full px-6 py-3 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-teal-700 rounded-lg hover:bg-teal-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                                                     Send message
                                                 </button>
                                             </form>

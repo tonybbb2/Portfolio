@@ -7,6 +7,12 @@ import Footer from "./components/Footer";
 import Head from "next/head";
 import { Suspense } from "react";
 import Load from "./components/Load";
+import { Sen } from "next/font/google";
+
+const sen = Sen({
+  subsets: ["latin"],
+  variable: "--font-sen",
+});
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -37,18 +43,8 @@ function MyApp({ Component, pageProps }) {
                 content="Personal Website - Software Developer"
               />
               <link rel="icon" href="/PRpicTransparent.png" type="image/png" />
-              <link rel="preconnect" href="https://fonts.googleapis.com" />
-              <link
-                rel="preconnect"
-                href="https://fonts.gstatic.com"
-                crossorigin
-              />
-              <link
-                href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap"
-                rel="stylesheet"
-              ></link>
             </Head>
-            <div className="flex w-full bg-white dark:bg-[#040406]">
+            <div className={`${sen.variable} flex w-full bg-white dark:bg-[#040406]`}>
               <div className="fixed inset-0 flex justify-center sm:px-8">
                 <div className="flex w-full max-w-7xl lg:px-8">
                   <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 shadow-2xl shadow-gray-500"></div>

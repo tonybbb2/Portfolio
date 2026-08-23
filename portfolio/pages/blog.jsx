@@ -109,8 +109,8 @@ export default function Blog({ posts }) {
                   </h1>
                   <div>	&nbsp;</div>
                   <div className='flex items-center mt-4'>
-                    <form class="w-38">
-                      <select id="blogs" class="border  border-zinc-700 dark:bg-zinc-700 text-sm tracking-tight font-bold rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2 bg-transparent text-zinc-700 dark:text-white cursor-pointer" onChange={event => setfilterOption(event.target.value)}>
+                    <form className="w-38">
+                      <select id="blogs" className="border  border-zinc-700 dark:bg-zinc-700 text-sm tracking-tight font-bold rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2 bg-transparent text-zinc-700 dark:text-white cursor-pointer" onChange={event => setfilterOption(event.target.value)}>
                         <option defaultValue="All">All</option>
                         <option value="Tutorials">Tutorials</option>
                         <option value="Web development">Web development</option>
@@ -141,6 +141,7 @@ export default function Blog({ posts }) {
                         thumbnail={post.data.previewImage}
                         type={post.data.type}
                         minuteRead={post.data.readingTime}
+                        eager={index < 3}
                       />
                     ))}
                 </div>

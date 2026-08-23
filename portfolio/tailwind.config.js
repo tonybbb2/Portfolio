@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       theme: {
         fontFamily: {
-          display: ['Sen', 'sans-serif'],
+          display: ['var(--font-sen)', 'sans-serif'],
         },
       },
       keyframes: {

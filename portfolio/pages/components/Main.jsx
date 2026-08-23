@@ -38,6 +38,7 @@ export const Main = () => {
                       className="rounded-full"
                       width={75}
                       height={75}
+                      priority
                     />
                   </div>
                 </div>
@@ -83,10 +84,12 @@ export const Main = () => {
             {[images.interests5, images.interests2, images.interests05, images.interests3, images.interests4].map((interest, index) => (
               <div key={index} className={`relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800 ${index % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
                 <Image
-                  className={`absolute z-1 object-fill'}`}
-                  layout="fill"
+                  className="object-cover"
+                  fill
                   src={interest}
-                  alt="/"
+                  alt="A glimpse of Tony's interests"
+                  sizes="(min-width: 640px) 18rem, 11rem"
+                  priority
                 />
                 {index === 2 && <h1 className="absolute text-white z-0"></h1>}
               </div>
