@@ -258,12 +258,6 @@ export default function Work() {
                                 Source code
                               </button>
                             </Link>
-                            <button
-                              className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-700 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
-                              type="button"
-                            >
-                              Demo
-                            </button>
                           </div>
                         </div>
                       </div>
@@ -338,12 +332,6 @@ export default function Work() {
                                 Source code
                               </button>
                             </Link>
-                            <button
-                              className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-700 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
-                              type="button"
-                            >
-                              Demo
-                            </button>
                           </div>
                         </div>
                       </div>
@@ -407,12 +395,6 @@ export default function Work() {
                                 Source code
                               </button>
                             </Link>
-                            <button
-                              className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-gray-900 dark:text-white uppercase align-middle transition-all rounded-full select-none bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-700 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
-                              type="button"
-                            >
-                              Demo
-                            </button>
                           </div>
                         </div>
                       </div>

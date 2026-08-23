@@ -5,6 +5,7 @@ import path from 'path'
 import Main from "./components/Main";
 import Recent from "./components/Recent";
 import MainAbout from './components/MainAbout';
+import GitHubContributions from './components/GitHubContributions';
 
 export default function Home({posts}) {
 
@@ -12,6 +13,7 @@ export default function Home({posts}) {
     <>
       <Main />
       <MainAbout />
+      <GitHubContributions />
       <Recent posts={posts}/>
     </>
   );
