@@ -5,16 +5,16 @@ export const Load = () => {
         <div className="sm:px-8 mt-16 sm:mt-32">
           <div className="mx-auto w-full max-w-7xl lg:px-8">
             <div className="relative px-4 sm:px-8 lg:px-12">
-              <div class="flex items-center justify-center w-full h-[45vh] text-zinc-800 dark:text-zinc-200 dark:bg-gray-950">
+              <div className="flex items-center justify-center w-full h-[45vh] text-zinc-800 dark:text-zinc-200 dark:bg-gray-950">
                 <div>
-                  <h1 class="text-xl font-bold flex items-center">
+                  <h1 className="text-xl font-bold flex items-center">
                     L
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
-                      stroke-width="0"
+                      strokeWidth="0"
                       viewBox="0 0 24 24"
-                      class="animate-spin"
+                      className="animate-spin"
                       height="1em"
                       width="1em"
                       xmlns="http://www.w3.org/2000/svg"

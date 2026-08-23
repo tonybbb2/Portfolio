@@ -30,6 +30,10 @@ import {
   EmailIcon,
 } from 'next-share'
 
+const mdxComponents = {
+  p: ({ children, ...props }) => <div {...props}>{children}</div>,
+};
+
 export default function PostPage({ source, frontMatter }) {
   const router = useRouter();
 
@@ -125,9 +129,11 @@ export default function PostPage({ source, frontMatter }) {
                   height={585}
                   alt="preview image"
                   className="rounded-3xl overflow-hidden duration-300 ease-in-out hover:scale-[1.02]"
-                  objectFit="contain"
+                  style={{ objectFit: "contain", width: "100%", height: "auto" }}
                   quality={100}
                   unoptimized
+                  loading="eager"
+                  sizes="(min-width: 768px) 785px, calc(100vw - 5rem)"
                 />
               </div>
               <div className="flex justify-around text-base text-zinc-600 dark:text-zinc-400 py-2">
@@ -150,7 +156,7 @@ export default function PostPage({ source, frontMatter }) {
             <div className="grid grid-cols-2 md:grid-cols-5 mt-16">
               <div>&nbsp;</div>
               <div className="col-span-3">
-                <MDXRemote {...source} components={{}} />
+                <MDXRemote {...source} components={mdxComponents} />
                 <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
                 {copied &&
                   <div className="flex items-center p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-zinc-700 dark:text-green-400" role="alert">

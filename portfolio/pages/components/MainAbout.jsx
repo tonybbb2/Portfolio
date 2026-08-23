@@ -32,7 +32,7 @@ export const MainAbout = () => {
                                     </div>
                                     <div className="md:mb-12 lg:mb-0 transition duration-300 ease-in-out hover:scale-105">
                                         <Image src={"https://images.unsplash.com/photo-1645640505245-f23c8289b591?q=100&w=1000&h=850&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} width={1000} height={850}
-                                            className="w-full rounded-lg shadow-lg dark:shadow-black/20 object-cover" alt="image" />
+                                            className="w-full h-auto rounded-lg shadow-lg dark:shadow-black/20 object-cover" alt="Tony's workspace" sizes="(min-width: 1024px) 512px, calc(100vw - 5rem)" />
                                     </div>
                                 </div>
                             </section>
